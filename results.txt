@@ -1,0 +1,23 @@
+~/Desktop/ballsaction via 🐍 v3.13.5 (venv) took 3h55m36s 
+❯  python evaluate.py 
+Using device: cuda
+Loading Custom Dataset...
+Dataset initialized with 313 valid clips.
+Initializing Model Architecture...
+
+Evaluating 3 checkpoints on 313 custom data samples...
+--------------------------------------------------
+
+Loading: tsm_resnet18_best.pth
+  Result => Loss: 1.0992 | Accuracy: 60.06%
+
+Loading: tsm_resnet18_epoch_5.pth
+  Result => Loss: 1.0992 | Accuracy: 60.06%
+
+Loading: tsm_resnet18_epoch_10.pth
+  Result => Loss: 1.3022 | Accuracy: 67.41%
+
+Evaluation Complete!
+
+
+NAH MANN, THIS AIN'T WORKING, WE GOTTA THINK NEW, FORGET THE ARCHITECTURE FOR A MINUTE, VISUALLY IN INDIVIDUAL FRAMES, WHAT CAN WE DETECT THAT WOULD INDICATE THE POSSSIBILTY OF ONE OF THESE 4 ACTIONS. IF I AM TO JUST LOOK AT ONE FRAME CAN I DETECT THE POSSIBILTY OF FREEKCIK, IS WILL THAT FRAME BE ENOUGH TO DISCRIMINATE BETWEEN A FREEKICK AND A RANDOM EVENT?
