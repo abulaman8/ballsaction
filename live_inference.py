@@ -248,7 +248,10 @@ def main():
         print(f"No videos found in {DATA_DIR}.")
         return
         
-    test_video = random.choice(videos)
+    test_video = os.path.join(DATA_DIR, "MD1 STP-BVB-012_720p.mp4")
+    if not os.path.exists(test_video):
+        print(f"Requested video not found: {test_video}")
+        return
     
     frame_queue = queue.Queue()
     stop_event = threading.Event()
