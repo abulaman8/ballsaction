@@ -81,6 +81,8 @@ tensorboard==2.21.0
 tensorboard-data-server==0.7.2
 termcolor==3.3.0
 torch==2.14.0
+torchaudio==2.11.0
+torchcodec==0.16.0
 torchvision==0.29.0
 tqdm==4.70.0
 triton==3.8.0
