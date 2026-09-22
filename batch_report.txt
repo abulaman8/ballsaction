@@ -1,0 +1,935 @@
+[MD1 FCB-RBL-009_720p] Clip 0 (Window: 1859.5s -> 1879.5s, Clipped: 1854.5s -> 1884.5s)
+  - Audio (Whistle): 18.1%
+  - Video (Foul): 91.5%
+  - Fused: 91.5% 
+
+[MD1 FCB-RBL-009_720p] Clip 1 (Window: 2279.5s -> 2299.5s, Clipped: 2274.5s -> 2304.5s)
+  - Audio (Whistle): 21.1%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD1 FCB-RBL-009_720p] Clip 2 (Window: 2319.5s -> 2339.5s, Clipped: 2314.5s -> 2344.5s)
+  - Audio (Whistle): 20.4%
+  - Video (Foul): 94.3%
+  - Fused: 94.3% 
+
+[MD1 FCB-RBL-009_720p] Clip 3 (Window: 2389.5s -> 2409.5s, Clipped: 2384.5s -> 2414.5s)
+  - Audio (Whistle): 22.0%
+  - Video (Foul): 99.8%
+  - Fused: 99.8% 
+
+[MD1 FCB-RBL-009_720p] Clip 4 (Window: 6689.5s -> 6709.5s, Clipped: 6684.5s -> 6714.5s)
+  - Audio (Whistle): 18.5%
+  - Video (Foul): 99.4%
+  - Fused: 99.4% 
+
+[MD1 FCB-RBL-009_720p] Clip 5 (Window: 6709.5s -> 6729.5s, Clipped: 6704.5s -> 6734.5s)
+  - Audio (Whistle): 19.9%
+  - Video (Foul): 99.7%
+  - Fused: 99.7% 
+
+[MD2 HSV-STP-008_720p] Clip 0 (Window: 4059.5s -> 4079.5s, Clipped: 4054.5s -> 4084.5s)
+  - Audio (Whistle): 21.9%
+  - Video (Foul): 97.4%
+  - Fused: 97.4% 
+
+[MD2 HSV-STP-008_720p] Clip 1 (Window: 4069.5s -> 4089.5s, Clipped: 4064.5s -> 4094.5s)
+  - Audio (Whistle): 21.4%
+  - Video (Foul): 98.7%
+  - Fused: 98.7% 
+
+[MD2 HSV-STP-008_720p] Clip 2 (Window: 4359.5s -> 4379.5s, Clipped: 4354.5s -> 4384.5s)
+  - Audio (Whistle): 18.9%
+  - Video (Foul): 99.8%
+  - Fused: 99.8% 
+
+[MD2 HSV-STP-008_720p] Clip 3 (Window: 4369.5s -> 4389.5s, Clipped: 4364.5s -> 4394.5s)
+  - Audio (Whistle): 20.3%
+  - Video (Foul): 99.4%
+  - Fused: 99.4% 
+
+[MD2 HSV-STP-008_720p] Clip 4 (Window: 4389.5s -> 4409.5s, Clipped: 4384.5s -> 4414.5s)
+  - Audio (Whistle): 20.2%
+  - Video (Foul): 85.2%
+  - Fused: 85.2% 
+
+[MD2 HSV-STP-008_720p] Clip 5 (Window: 4419.5s -> 4439.5s, Clipped: 4414.5s -> 4444.5s)
+  - Audio (Whistle): 19.9%
+  - Video (Foul): 99.8%
+  - Fused: 99.8% 
+
+[MD2 HSV-STP-008_720p] Clip 6 (Window: 4489.5s -> 4509.5s, Clipped: 4484.5s -> 4514.5s)
+  - Audio (Whistle): 19.2%
+  - Video (Foul): 90.0%
+  - Fused: 90.0% 
+
+[MD2 HSV-STP-008_720p] Clip 7 (Window: 4559.5s -> 4579.5s, Clipped: 4554.5s -> 4584.5s)
+  - Audio (Whistle): 21.8%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD2 HSV-STP-008_720p] Clip 8 (Window: 4569.5s -> 4589.5s, Clipped: 4564.5s -> 4594.5s)
+  - Audio (Whistle): 17.5%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD2 HSV-STP-008_720p] Clip 9 (Window: 4579.5s -> 4599.5s, Clipped: 4574.5s -> 4604.5s)
+  - Audio (Whistle): 18.6%
+  - Video (Foul): 99.6%
+  - Fused: 99.6% 
+
+[MD2 HSV-STP-008_720p] Clip 10 (Window: 5729.5s -> 5749.5s, Clipped: 5724.5s -> 5754.5s)
+  - Audio (Whistle): 20.7%
+  - Video (Foul): 93.9%
+  - Fused: 93.9% 
+
+[MD2 HSV-STP-008_720p] Clip 11 (Window: 5739.5s -> 5759.5s, Clipped: 5734.5s -> 5764.5s)
+  - Audio (Whistle): 19.7%
+  - Video (Foul): 91.0%
+  - Fused: 91.0% 
+
+[MD2 HSV-STP-008_720p] Clip 12 (Window: 5749.5s -> 5769.5s, Clipped: 5744.5s -> 5774.5s)
+  - Audio (Whistle): 18.8%
+  - Video (Foul): 98.4%
+  - Fused: 98.4% 
+
+[MD2 HSV-STP-008_720p] Clip 13 (Window: 5909.5s -> 5929.5s, Clipped: 5904.5s -> 5934.5s)
+  - Audio (Whistle): 22.9%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD2 HSV-STP-008_720p] Clip 14 (Window: 5919.5s -> 5939.5s, Clipped: 5914.5s -> 5944.5s)
+  - Audio (Whistle): 21.9%
+  - Video (Foul): 90.9%
+  - Fused: 90.9% 
+
+[MD2 HSV-STP-008_720p] Clip 15 (Window: 6719.5s -> 6739.5s, Clipped: 6714.5s -> 6744.5s)
+  - Audio (Whistle): 19.2%
+  - Video (Foul): 89.8%
+  - Fused: 89.8% 
+
+[MD2 HSV-STP-008_720p] Clip 16 (Window: 6729.5s -> 6749.5s, Clipped: 6724.5s -> 6754.5s)
+  - Audio (Whistle): 18.4%
+  - Video (Foul): 85.2%
+  - Fused: 85.2% 
+
+[MD3 SCF-VFB-005_720p] Clip 0 (Window: 679.6s -> 699.6s, Clipped: 674.6s -> 704.6s)
+  - Audio (Whistle): 37.9%
+  - Video (Foul): 88.7%
+  - Fused: 88.7% 
+
+[MD3 SCF-VFB-005_720p] Clip 1 (Window: 2719.9s -> 2739.9s, Clipped: 2714.9s -> 2744.9s)
+  - Audio (Whistle): 30.4%
+  - Video (Foul): 98.6%
+  - Fused: 98.6% 
+
+[MD3 SCF-VFB-005_720p] Clip 2 (Window: 3870.1s -> 3890.1s, Clipped: 3865.1s -> 3895.1s)
+  - Audio (Whistle): 93.5%
+  - Video (Foul): 72.5%
+  - Fused: 100.0% (Boosted)
+
+[MD3 SCF-VFB-005_720p] Clip 3 (Window: 4090.1s -> 4110.1s, Clipped: 4085.1s -> 4115.1s)
+  - Audio (Whistle): 35.5%
+  - Video (Foul): 95.0%
+  - Fused: 95.0% 
+
+[MD3 SCF-VFB-005_720p] Clip 4 (Window: 4330.2s -> 4350.2s, Clipped: 4325.2s -> 4355.2s)
+  - Audio (Whistle): 47.6%
+  - Video (Foul): 99.2%
+  - Fused: 99.2% 
+
+[MD3 SCF-VFB-005_720p] Clip 5 (Window: 4370.2s -> 4390.2s, Clipped: 4365.2s -> 4395.2s)
+  - Audio (Whistle): 97.6%
+  - Video (Foul): 72.7%
+  - Fused: 100.0% (Boosted)
+
+[MD3 SCF-VFB-005_720p] Clip 6 (Window: 4960.3s -> 4980.3s, Clipped: 4955.3s -> 4985.3s)
+  - Audio (Whistle): 90.0%
+  - Video (Foul): 72.1%
+  - Fused: 99.1% (Boosted)
+
+[MD3 SCF-VFB-005_720p] Clip 7 (Window: 5240.3s -> 5260.3s, Clipped: 5235.3s -> 5265.3s)
+  - Audio (Whistle): 38.1%
+  - Video (Foul): 85.5%
+  - Fused: 85.5% 
+
+[MD3 SCF-VFB-005_720p] Clip 8 (Window: 5280.3s -> 5300.3s, Clipped: 5275.3s -> 5305.3s)
+  - Audio (Whistle): 68.9%
+  - Video (Foul): 98.3%
+  - Fused: 98.3% 
+
+[MD3 SCF-VFB-005_720p] Clip 9 (Window: 5320.3s -> 5340.3s, Clipped: 5315.3s -> 5345.3s)
+  - Audio (Whistle): 63.7%
+  - Video (Foul): 91.5%
+  - Fused: 91.5% 
+
+[MD3 SCF-VFB-005_720p] Clip 10 (Window: 5340.3s -> 5360.3s, Clipped: 5335.3s -> 5365.3s)
+  - Audio (Whistle): 40.8%
+  - Video (Foul): 85.8%
+  - Fused: 85.8% 
+
+[MD3 SCF-VFB-005_720p] Clip 11 (Window: 5370.3s -> 5390.3s, Clipped: 5365.3s -> 5395.3s)
+  - Audio (Whistle): 73.9%
+  - Video (Foul): 93.9%
+  - Fused: 93.9% 
+
+[MD3 SCF-VFB-005_720p] Clip 12 (Window: 5380.3s -> 5400.3s, Clipped: 5375.3s -> 5405.3s)
+  - Audio (Whistle): 80.2%
+  - Video (Foul): 89.7%
+  - Fused: 89.7% 
+
+[MD3 SCF-VFB-005_720p] Clip 13 (Window: 5710.4s -> 5730.4s, Clipped: 5705.4s -> 5735.4s)
+  - Audio (Whistle): 95.5%
+  - Video (Foul): 56.4%
+  - Fused: 85.0% (Boosted)
+
+[MD3 SCF-VFB-005_720p] Clip 14 (Window: 6480.5s -> 6500.5s, Clipped: 6475.5s -> 6505.5s)
+  - Audio (Whistle): 34.2%
+  - Video (Foul): 93.5%
+  - Fused: 93.5% 
+
+[MD3 SCF-VFB-005_720p] Clip 15 (Window: 6570.5s -> 6590.5s, Clipped: 6565.5s -> 6595.5s)
+  - Audio (Whistle): 39.6%
+  - Video (Foul): 94.1%
+  - Fused: 94.1% 
+
+[MD3 SCF-VFB-005_720p] Clip 16 (Window: 6580.5s -> 6600.5s, Clipped: 6575.5s -> 6605.5s)
+  - Audio (Whistle): 37.3%
+  - Video (Foul): 99.9%
+  - Fused: 99.9% 
+
+[MD3 SCF-VFB-005_720p] Clip 17 (Window: 6640.5s -> 6660.5s, Clipped: 6635.5s -> 6665.5s)
+  - Audio (Whistle): 96.5%
+  - Video (Foul): 87.0%
+  - Fused: 100.0% (Boosted)
+
+[MD3 SCF-VFB-005_720p] Clip 18 (Window: 6790.5s -> 6810.5s, Clipped: 6785.5s -> 6815.5s)
+  - Audio (Whistle): 97.2%
+  - Video (Foul): 78.4%
+  - Fused: 100.0% (Boosted)
+
+[MD3 SCF-VFB-005_720p] Clip 19 (Window: 7000.6s -> 7020.6s, Clipped: 6995.6s -> 7025.6s)
+  - Audio (Whistle): 99.6%
+  - Video (Foul): 59.6%
+  - Fused: 89.5% (Boosted)
+
+[MD31 M05-FCB-003_720p] Clip 0 (Window: 2099.5s -> 2119.5s, Clipped: 2094.5s -> 2124.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 99.5%
+  - Fused: 99.5% 
+
+[MD31 M05-FCB-003_720p] Clip 1 (Window: 2109.5s -> 2129.5s, Clipped: 2104.5s -> 2134.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 99.9%
+  - Fused: 99.9% 
+
+[MD31 M05-FCB-003_720p] Clip 2 (Window: 2199.5s -> 2219.5s, Clipped: 2194.5s -> 2224.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 93.4%
+  - Fused: 93.4% 
+
+[MD31 M05-FCB-003_720p] Clip 3 (Window: 2219.5s -> 2239.5s, Clipped: 2214.5s -> 2244.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 97.3%
+  - Fused: 97.3% 
+
+[MD31 M05-FCB-003_720p] Clip 4 (Window: 2229.5s -> 2249.5s, Clipped: 2224.5s -> 2254.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 99.5%
+  - Fused: 99.5% 
+
+[MD31 M05-FCB-003_720p] Clip 5 (Window: 2709.5s -> 2729.5s, Clipped: 2704.5s -> 2734.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 99.8%
+  - Fused: 99.8% 
+
+[MD31 M05-FCB-003_720p] Clip 6 (Window: 2899.5s -> 2919.5s, Clipped: 2894.5s -> 2924.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 88.2%
+  - Fused: 88.2% 
+
+[MD31 M05-FCB-003_720p] Clip 7 (Window: 4089.5s -> 4109.5s, Clipped: 4084.5s -> 4114.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 88.9%
+  - Fused: 88.9% 
+
+[MD31 M05-FCB-003_720p] Clip 8 (Window: 4129.5s -> 4149.5s, Clipped: 4124.5s -> 4154.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 99.9%
+  - Fused: 99.9% 
+
+[MD31 M05-FCB-003_720p] Clip 9 (Window: 4139.5s -> 4159.5s, Clipped: 4134.5s -> 4164.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD31 M05-FCB-003_720p] Clip 10 (Window: 4289.5s -> 4309.5s, Clipped: 4284.5s -> 4314.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 91.4%
+  - Fused: 91.4% 
+
+[MD31 M05-FCB-003_720p] Clip 11 (Window: 4379.5s -> 4399.5s, Clipped: 4374.5s -> 4404.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 85.1%
+  - Fused: 85.1% 
+
+[MD31 M05-FCB-003_720p] Clip 12 (Window: 4389.5s -> 4409.5s, Clipped: 4384.5s -> 4414.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD31 M05-FCB-003_720p] Clip 13 (Window: 5379.5s -> 5399.5s, Clipped: 5374.5s -> 5404.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 89.0%
+  - Fused: 89.0% 
+
+[MD31 M05-FCB-003_720p] Clip 14 (Window: 6069.5s -> 6089.5s, Clipped: 6064.5s -> 6094.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD31 M05-FCB-003_720p] Clip 15 (Window: 6089.5s -> 6109.5s, Clipped: 6084.5s -> 6114.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 85.6%
+  - Fused: 85.6% 
+
+[MD31 M05-FCB-003_720p] Clip 16 (Window: 6109.5s -> 6129.5s, Clipped: 6104.5s -> 6134.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 86.7%
+  - Fused: 86.7% 
+
+[MD31 M05-FCB-003_720p] Clip 17 (Window: 6129.5s -> 6149.5s, Clipped: 6124.5s -> 6154.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD31 M05-FCB-003_720p] Clip 18 (Window: 6139.5s -> 6159.5s, Clipped: 6134.5s -> 6164.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 99.8%
+  - Fused: 99.8% 
+
+[MD31 M05-FCB-003_720p] Clip 19 (Window: 6149.5s -> 6169.5s, Clipped: 6144.5s -> 6174.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 99.6%
+  - Fused: 99.6% 
+
+[MD31 M05-FCB-003_720p] Clip 20 (Window: 6159.5s -> 6179.5s, Clipped: 6154.5s -> 6184.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 96.9%
+  - Fused: 96.9% 
+
+[MD31 M05-FCB-003_720p] Clip 21 (Window: 6799.5s -> 6819.5s, Clipped: 6794.5s -> 6824.5s)
+  - Audio (Whistle): 79.5%
+  - Video (Foul): 88.7%
+  - Fused: 88.7% 
+
+[MD15 BVB-BMG-014_720p] Clip 0 (Window: 119.5s -> 139.5s, Clipped: 114.5s -> 144.5s)
+  - Audio (Whistle): 58.5%
+  - Video (Foul): 92.5%
+  - Fused: 92.5% 
+
+[MD15 BVB-BMG-014_720p] Clip 1 (Window: 1289.5s -> 1309.5s, Clipped: 1284.5s -> 1314.5s)
+  - Audio (Whistle): 99.8%
+  - Video (Foul): 73.5%
+  - Fused: 100.0% (Boosted)
+
+[MD15 BVB-BMG-014_720p] Clip 2 (Window: 1299.5s -> 1319.5s, Clipped: 1294.5s -> 1324.5s)
+  - Audio (Whistle): 99.8%
+  - Video (Foul): 74.8%
+  - Fused: 100.0% (Boosted)
+
+[MD15 BVB-BMG-014_720p] Clip 3 (Window: 2759.5s -> 2779.5s, Clipped: 2754.5s -> 2784.5s)
+  - Audio (Whistle): 88.3%
+  - Video (Foul): 86.0%
+  - Fused: 100.0% (Boosted)
+
+[MD15 BVB-BMG-014_720p] Clip 4 (Window: 2769.5s -> 2789.5s, Clipped: 2764.5s -> 2794.5s)
+  - Audio (Whistle): 88.3%
+  - Video (Foul): 85.2%
+  - Fused: 100.0% (Boosted)
+
+[MD15 BVB-BMG-014_720p] Clip 5 (Window: 2779.5s -> 2799.5s, Clipped: 2774.5s -> 2804.5s)
+  - Audio (Whistle): 86.0%
+  - Video (Foul): 98.2%
+  - Fused: 100.0% (Boosted)
+
+[MD15 BVB-BMG-014_720p] Clip 6 (Window: 2789.5s -> 2809.5s, Clipped: 2784.5s -> 2814.5s)
+  - Audio (Whistle): 86.0%
+  - Video (Foul): 94.1%
+  - Fused: 100.0% (Boosted)
+
+[MD15 BVB-BMG-014_720p] Clip 7 (Window: 3429.5s -> 3449.5s, Clipped: 3424.5s -> 3454.5s)
+  - Audio (Whistle): 45.2%
+  - Video (Foul): 88.0%
+  - Fused: 88.0% 
+
+[MD15 BVB-BMG-014_720p] Clip 8 (Window: 3439.5s -> 3459.5s, Clipped: 3434.5s -> 3464.5s)
+  - Audio (Whistle): 55.7%
+  - Video (Foul): 90.2%
+  - Fused: 90.2% 
+
+[MD15 BVB-BMG-014_720p] Clip 9 (Window: 4219.5s -> 4239.5s, Clipped: 4214.5s -> 4244.5s)
+  - Audio (Whistle): 58.4%
+  - Video (Foul): 96.1%
+  - Fused: 96.1% 
+
+[MD15 BVB-BMG-014_720p] Clip 10 (Window: 4399.5s -> 4419.5s, Clipped: 4394.5s -> 4424.5s)
+  - Audio (Whistle): 91.5%
+  - Video (Foul): 92.6%
+  - Fused: 100.0% (Boosted)
+
+[MD15 BVB-BMG-014_720p] Clip 11 (Window: 5199.5s -> 5219.5s, Clipped: 5194.5s -> 5224.5s)
+  - Audio (Whistle): 96.2%
+  - Video (Foul): 66.0%
+  - Fused: 94.9% (Boosted)
+
+[MD15 BVB-BMG-014_720p] Clip 12 (Window: 6049.5s -> 6069.5s, Clipped: 6044.5s -> 6074.5s)
+  - Audio (Whistle): 61.7%
+  - Video (Foul): 89.3%
+  - Fused: 89.3% 
+
+[MD15 BVB-BMG-014_720p] Clip 13 (Window: 6179.5s -> 6199.5s, Clipped: 6174.5s -> 6204.5s)
+  - Audio (Whistle): 97.9%
+  - Video (Foul): 80.2%
+  - Fused: 100.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 0 (Window: 709.5s -> 729.5s, Clipped: 704.5s -> 734.5s)
+  - Audio (Whistle): 48.1%
+  - Video (Foul): 92.5%
+  - Fused: 92.5% 
+
+[MD2 BVB-FCU-010_720p] Clip 1 (Window: 1579.5s -> 1599.5s, Clipped: 1574.5s -> 1604.5s)
+  - Audio (Whistle): 99.1%
+  - Video (Foul): 73.1%
+  - Fused: 100.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 2 (Window: 1589.5s -> 1609.5s, Clipped: 1584.5s -> 1614.5s)
+  - Audio (Whistle): 98.8%
+  - Video (Foul): 92.2%
+  - Fused: 100.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 3 (Window: 2099.6s -> 2119.6s, Clipped: 2094.6s -> 2124.6s)
+  - Audio (Whistle): 99.4%
+  - Video (Foul): 87.3%
+  - Fused: 100.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 4 (Window: 2119.6s -> 2139.6s, Clipped: 2114.6s -> 2144.6s)
+  - Audio (Whistle): 44.0%
+  - Video (Foul): 95.2%
+  - Fused: 95.2% 
+
+[MD2 BVB-FCU-010_720p] Clip 5 (Window: 2129.6s -> 2149.6s, Clipped: 2124.6s -> 2154.6s)
+  - Audio (Whistle): 89.5%
+  - Video (Foul): 99.0%
+  - Fused: 100.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 6 (Window: 2139.6s -> 2159.6s, Clipped: 2134.6s -> 2164.6s)
+  - Audio (Whistle): 90.1%
+  - Video (Foul): 63.8%
+  - Fused: 90.9% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 7 (Window: 2579.6s -> 2599.6s, Clipped: 2574.6s -> 2604.6s)
+  - Audio (Whistle): 79.9%
+  - Video (Foul): 99.9%
+  - Fused: 99.9% 
+
+[MD2 BVB-FCU-010_720p] Clip 8 (Window: 2589.6s -> 2609.6s, Clipped: 2584.6s -> 2614.6s)
+  - Audio (Whistle): 84.7%
+  - Video (Foul): 94.1%
+  - Fused: 94.1% 
+
+[MD2 BVB-FCU-010_720p] Clip 9 (Window: 3179.6s -> 3199.6s, Clipped: 3174.6s -> 3204.6s)
+  - Audio (Whistle): 99.4%
+  - Video (Foul): 74.5%
+  - Fused: 100.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 10 (Window: 4959.7s -> 4979.7s, Clipped: 4954.7s -> 4984.7s)
+  - Audio (Whistle): 91.5%
+  - Video (Foul): 72.7%
+  - Fused: 100.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 11 (Window: 5049.7s -> 5069.7s, Clipped: 5044.7s -> 5074.7s)
+  - Audio (Whistle): 98.1%
+  - Video (Foul): 69.6%
+  - Fused: 99.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 12 (Window: 6549.7s -> 6569.7s, Clipped: 6544.7s -> 6574.7s)
+  - Audio (Whistle): 97.7%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 13 (Window: 6559.7s -> 6579.7s, Clipped: 6554.7s -> 6584.7s)
+  - Audio (Whistle): 97.6%
+  - Video (Foul): 99.9%
+  - Fused: 100.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 14 (Window: 6579.7s -> 6599.7s, Clipped: 6574.7s -> 6604.7s)
+  - Audio (Whistle): 96.9%
+  - Video (Foul): 77.4%
+  - Fused: 100.0% (Boosted)
+
+[MD2 BVB-FCU-010_720p] Clip 15 (Window: 6919.7s -> 6939.7s, Clipped: 6914.7s -> 6944.7s)
+  - Audio (Whistle): 37.2%
+  - Video (Foul): 94.4%
+  - Fused: 94.4% 
+
+[MD2 BVB-FCU-010_720p] Clip 16 (Window: 6929.7s -> 6949.7s, Clipped: 6924.7s -> 6954.7s)
+  - Audio (Whistle): 36.8%
+  - Video (Foul): 88.3%
+  - Fused: 88.3% 
+
+[MD2 SVW-B04-011_720p] Clip 0 (Window: 2159.5s -> 2179.5s, Clipped: 2154.5s -> 2184.5s)
+  - Audio (Whistle): 20.5%
+  - Video (Foul): 90.2%
+  - Fused: 90.2% 
+
+[MD2 SVW-B04-011_720p] Clip 1 (Window: 2739.5s -> 2759.5s, Clipped: 2734.5s -> 2764.5s)
+  - Audio (Whistle): 22.8%
+  - Video (Foul): 93.2%
+  - Fused: 93.2% 
+
+[MD2 SVW-B04-011_720p] Clip 2 (Window: 2789.5s -> 2809.5s, Clipped: 2784.5s -> 2814.5s)
+  - Audio (Whistle): 19.8%
+  - Video (Foul): 98.5%
+  - Fused: 98.5% 
+
+[MD2 SVW-B04-011_720p] Clip 3 (Window: 2799.5s -> 2819.5s, Clipped: 2794.5s -> 2824.5s)
+  - Audio (Whistle): 20.6%
+  - Video (Foul): 86.8%
+  - Fused: 86.8% 
+
+[MD2 SVW-B04-011_720p] Clip 4 (Window: 2809.5s -> 2829.5s, Clipped: 2804.5s -> 2834.5s)
+  - Audio (Whistle): 20.6%
+  - Video (Foul): 93.5%
+  - Fused: 93.5% 
+
+[MD2 SVW-B04-011_720p] Clip 5 (Window: 4629.5s -> 4649.5s, Clipped: 4624.5s -> 4654.5s)
+  - Audio (Whistle): 19.4%
+  - Video (Foul): 99.9%
+  - Fused: 99.9% 
+
+[MD3 FCB-HSV-013_720p] Clip 0 (Window: 3049.5s -> 3069.5s, Clipped: 3044.5s -> 3074.5s)
+  - Audio (Whistle): 28.5%
+  - Video (Foul): 95.3%
+  - Fused: 95.3% 
+
+[MD3 FCB-HSV-013_720p] Clip 1 (Window: 3059.5s -> 3079.5s, Clipped: 3054.5s -> 3084.5s)
+  - Audio (Whistle): 34.5%
+  - Video (Foul): 90.2%
+  - Fused: 90.2% 
+
+[MD3 FCB-HSV-013_720p] Clip 2 (Window: 5469.5s -> 5489.5s, Clipped: 5464.5s -> 5494.5s)
+  - Audio (Whistle): 95.9%
+  - Video (Foul): 79.1%
+  - Fused: 100.0% (Boosted)
+
+[MD3 FCB-HSV-013_720p] Clip 3 (Window: 5479.5s -> 5499.5s, Clipped: 5474.5s -> 5504.5s)
+  - Audio (Whistle): 95.9%
+  - Video (Foul): 99.8%
+  - Fused: 100.0% (Boosted)
+
+[MD3 FCB-HSV-013_720p] Clip 4 (Window: 5749.5s -> 5769.5s, Clipped: 5744.5s -> 5774.5s)
+  - Audio (Whistle): 87.4%
+  - Video (Foul): 98.7%
+  - Fused: 100.0% (Boosted)
+
+[MD3 FCB-HSV-013_720p] Clip 5 (Window: 5759.5s -> 5779.5s, Clipped: 5754.5s -> 5784.5s)
+  - Audio (Whistle): 31.9%
+  - Video (Foul): 99.5%
+  - Fused: 99.5% 
+
+[MD3 FCB-HSV-013_720p] Clip 6 (Window: 5999.5s -> 6019.5s, Clipped: 5994.5s -> 6024.5s)
+  - Audio (Whistle): 46.8%
+  - Video (Foul): 97.7%
+  - Fused: 97.7% 
+
+[MD3 FCB-HSV-013_720p] Clip 7 (Window: 6229.5s -> 6249.5s, Clipped: 6224.5s -> 6254.5s)
+  - Audio (Whistle): 89.1%
+  - Video (Foul): 69.4%
+  - Fused: 96.1% (Boosted)
+
+[MD3 FCB-HSV-013_720p] Clip 8 (Window: 6709.5s -> 6729.5s, Clipped: 6704.5s -> 6734.5s)
+  - Audio (Whistle): 92.7%
+  - Video (Foul): 68.0%
+  - Fused: 95.8% (Boosted)
+
+[MD1 STP-BVB-012_720p] Clip 0 (Window: 229.5s -> 249.5s, Clipped: 224.5s -> 254.5s)
+  - Audio (Whistle): 38.9%
+  - Video (Foul): 87.7%
+  - Fused: 87.7% 
+
+[MD1 STP-BVB-012_720p] Clip 1 (Window: 1029.5s -> 1049.5s, Clipped: 1024.5s -> 1054.5s)
+  - Audio (Whistle): 99.2%
+  - Video (Foul): 97.5%
+  - Fused: 100.0% (Boosted)
+
+[MD1 STP-BVB-012_720p] Clip 2 (Window: 1469.5s -> 1489.5s, Clipped: 1464.5s -> 1494.5s)
+  - Audio (Whistle): 35.4%
+  - Video (Foul): 87.7%
+  - Fused: 87.7% 
+
+[MD1 STP-BVB-012_720p] Clip 3 (Window: 3019.5s -> 3039.5s, Clipped: 3014.5s -> 3044.5s)
+  - Audio (Whistle): 99.1%
+  - Video (Foul): 62.3%
+  - Fused: 92.0% (Boosted)
+
+[MD1 STP-BVB-012_720p] Clip 4 (Window: 3029.5s -> 3049.5s, Clipped: 3024.5s -> 3054.5s)
+  - Audio (Whistle): 99.1%
+  - Video (Foul): 68.8%
+  - Fused: 98.6% (Boosted)
+
+[MD1 STP-BVB-012_720p] Clip 5 (Window: 5149.5s -> 5169.5s, Clipped: 5144.5s -> 5174.5s)
+  - Audio (Whistle): 50.8%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD1 STP-BVB-012_720p] Clip 6 (Window: 5159.5s -> 5179.5s, Clipped: 5154.5s -> 5184.5s)
+  - Audio (Whistle): 25.5%
+  - Video (Foul): 98.9%
+  - Fused: 98.9% 
+
+[MD1 STP-BVB-012_720p] Clip 7 (Window: 5169.5s -> 5189.5s, Clipped: 5164.5s -> 5194.5s)
+  - Audio (Whistle): 90.2%
+  - Video (Foul): 92.0%
+  - Fused: 100.0% (Boosted)
+
+[MD1 STP-BVB-012_720p] Clip 8 (Window: 5399.5s -> 5419.5s, Clipped: 5394.5s -> 5424.5s)
+  - Audio (Whistle): 69.8%
+  - Video (Foul): 92.5%
+  - Fused: 92.5% 
+
+[MD1 STP-BVB-012_720p] Clip 9 (Window: 5409.5s -> 5429.5s, Clipped: 5404.5s -> 5434.5s)
+  - Audio (Whistle): 32.6%
+  - Video (Foul): 96.0%
+  - Fused: 96.0% 
+
+[MD1 STP-BVB-012_720p] Clip 10 (Window: 5419.5s -> 5439.5s, Clipped: 5414.5s -> 5444.5s)
+  - Audio (Whistle): 52.2%
+  - Video (Foul): 99.3%
+  - Fused: 99.3% 
+
+[MD1 STP-BVB-012_720p] Clip 11 (Window: 6559.5s -> 6579.5s, Clipped: 6554.5s -> 6584.5s)
+  - Audio (Whistle): 47.6%
+  - Video (Foul): 90.4%
+  - Fused: 90.4% 
+
+[MD1 STP-BVB-012_720p] Clip 12 (Window: 6579.5s -> 6599.5s, Clipped: 6574.5s -> 6604.5s)
+  - Audio (Whistle): 99.0%
+  - Video (Foul): 94.4%
+  - Fused: 100.0% (Boosted)
+
+[MD7 FCB-BVB-001_720p] Clip 0 (Window: 1169.5s -> 1189.5s, Clipped: 1164.5s -> 1194.5s)
+  - Audio (Whistle): 43.1%
+  - Video (Foul): 96.0%
+  - Fused: 96.0% 
+
+[MD7 FCB-BVB-001_720p] Clip 1 (Window: 1179.5s -> 1199.5s, Clipped: 1174.5s -> 1204.5s)
+  - Audio (Whistle): 89.6%
+  - Video (Foul): 66.2%
+  - Fused: 93.1% (Boosted)
+
+[MD7 FCB-BVB-001_720p] Clip 2 (Window: 1199.5s -> 1219.5s, Clipped: 1194.5s -> 1224.5s)
+  - Audio (Whistle): 98.2%
+  - Video (Foul): 90.8%
+  - Fused: 100.0% (Boosted)
+
+[MD7 FCB-BVB-001_720p] Clip 3 (Window: 2859.5s -> 2879.5s, Clipped: 2854.5s -> 2884.5s)
+  - Audio (Whistle): 49.8%
+  - Video (Foul): 90.6%
+  - Fused: 90.6% 
+
+[MD7 FCB-BVB-001_720p] Clip 4 (Window: 4359.5s -> 4379.5s, Clipped: 4354.5s -> 4384.5s)
+  - Audio (Whistle): 48.0%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD7 FCB-BVB-001_720p] Clip 5 (Window: 4479.5s -> 4499.5s, Clipped: 4474.5s -> 4504.5s)
+  - Audio (Whistle): 33.7%
+  - Video (Foul): 90.0%
+  - Fused: 90.0% 
+
+[MD7 FCB-BVB-001_720p] Clip 6 (Window: 4539.5s -> 4559.5s, Clipped: 4534.5s -> 4564.5s)
+  - Audio (Whistle): 92.9%
+  - Video (Foul): 68.2%
+  - Fused: 96.1% (Boosted)
+
+[MD7 FCB-BVB-001_720p] Clip 7 (Window: 4889.5s -> 4909.5s, Clipped: 4884.5s -> 4914.5s)
+  - Audio (Whistle): 98.7%
+  - Video (Foul): 60.8%
+  - Fused: 90.4% (Boosted)
+
+[MD7 FCB-BVB-001_720p] Clip 8 (Window: 5169.5s -> 5189.5s, Clipped: 5164.5s -> 5194.5s)
+  - Audio (Whistle): 54.8%
+  - Video (Foul): 91.7%
+  - Fused: 91.7% 
+
+[MD7 FCB-BVB-001_720p] Clip 9 (Window: 5359.5s -> 5379.5s, Clipped: 5354.5s -> 5384.5s)
+  - Audio (Whistle): 98.0%
+  - Video (Foul): 60.1%
+  - Fused: 89.5% (Boosted)
+
+[MD7 FCB-BVB-001_720p] Clip 10 (Window: 6139.5s -> 6159.5s, Clipped: 6134.5s -> 6164.5s)
+  - Audio (Whistle): 93.6%
+  - Video (Foul): 62.3%
+  - Fused: 90.3% (Boosted)
+
+[MD7 FCB-BVB-001_720p] Clip 11 (Window: 6229.5s -> 6249.5s, Clipped: 6224.5s -> 6254.5s)
+  - Audio (Whistle): 43.1%
+  - Video (Foul): 85.8%
+  - Fused: 85.8% 
+
+[MD7 FCB-BVB-001_720p] Clip 12 (Window: 6309.5s -> 6329.5s, Clipped: 6304.5s -> 6334.5s)
+  - Audio (Whistle): 92.0%
+  - Video (Foul): 61.2%
+  - Fused: 88.8% (Boosted)
+
+[MD9 KOE-HSV-002_720p] Clip 0 (Window: 719.5s -> 739.5s, Clipped: 714.5s -> 744.5s)
+  - Audio (Whistle): 18.4%
+  - Video (Foul): 99.4%
+  - Fused: 99.4% 
+
+[MD9 KOE-HSV-002_720p] Clip 1 (Window: 769.5s -> 789.5s, Clipped: 764.5s -> 794.5s)
+  - Audio (Whistle): 21.6%
+  - Video (Foul): 93.2%
+  - Fused: 93.2% 
+
+[MD9 KOE-HSV-002_720p] Clip 2 (Window: 1099.5s -> 1119.5s, Clipped: 1094.5s -> 1124.5s)
+  - Audio (Whistle): 19.5%
+  - Video (Foul): 94.6%
+  - Fused: 94.6% 
+
+[MD9 KOE-HSV-002_720p] Clip 3 (Window: 2969.5s -> 2989.5s, Clipped: 2964.5s -> 2994.5s)
+  - Audio (Whistle): 23.3%
+  - Video (Foul): 94.5%
+  - Fused: 94.5% 
+
+[MD9 KOE-HSV-002_720p] Clip 4 (Window: 2979.5s -> 2999.5s, Clipped: 2974.5s -> 3004.5s)
+  - Audio (Whistle): 23.3%
+  - Video (Foul): 94.5%
+  - Fused: 94.5% 
+
+[MD9 KOE-HSV-002_720p] Clip 5 (Window: 2999.5s -> 3019.5s, Clipped: 2994.5s -> 3024.5s)
+  - Audio (Whistle): 17.0%
+  - Video (Foul): 98.4%
+  - Fused: 98.4% 
+
+[MD9 KOE-HSV-002_720p] Clip 6 (Window: 3009.5s -> 3029.5s, Clipped: 3004.5s -> 3034.5s)
+  - Audio (Whistle): 19.2%
+  - Video (Foul): 98.9%
+  - Fused: 98.9% 
+
+[MD9 KOE-HSV-002_720p] Clip 7 (Window: 5779.5s -> 5799.5s, Clipped: 5774.5s -> 5804.5s)
+  - Audio (Whistle): 21.5%
+  - Video (Foul): 96.1%
+  - Fused: 96.1% 
+
+[MD9 KOE-HSV-002_720p] Clip 8 (Window: 5989.5s -> 6009.5s, Clipped: 5984.5s -> 6014.5s)
+  - Audio (Whistle): 24.2%
+  - Video (Foul): 89.0%
+  - Fused: 89.0% 
+
+[MD9 KOE-HSV-002_720p] Clip 9 (Window: 6959.5s -> 6979.5s, Clipped: 6954.5s -> 6984.5s)
+  - Audio (Whistle): 20.1%
+  - Video (Foul): 93.1%
+  - Fused: 93.1% 
+
+[MD9 KOE-HSV-002_720p] Clip 10 (Window: 6969.5s -> 6989.5s, Clipped: 6964.5s -> 6994.5s)
+  - Audio (Whistle): 19.8%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD9 KOE-HSV-002_720p] Clip 11 (Window: 7359.5s -> 7379.5s, Clipped: 7354.5s -> 7384.5s)
+  - Audio (Whistle): 20.3%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD9 KOE-HSV-002_720p] Clip 12 (Window: 7369.5s -> 7389.5s, Clipped: 7364.5s -> 7394.5s)
+  - Audio (Whistle): 19.6%
+  - Video (Foul): 96.0%
+  - Fused: 96.0% 
+
+[MD3 B04-SGE-006_720p] Clip 0 (Window: 549.5s -> 569.5s, Clipped: 544.5s -> 574.5s)
+  - Audio (Whistle): 20.2%
+  - Video (Foul): 89.0%
+  - Fused: 89.0% 
+
+[MD3 B04-SGE-006_720p] Clip 1 (Window: 559.5s -> 579.5s, Clipped: 554.5s -> 584.5s)
+  - Audio (Whistle): 20.2%
+  - Video (Foul): 99.9%
+  - Fused: 99.9% 
+
+[MD3 B04-SGE-006_720p] Clip 2 (Window: 569.5s -> 589.5s, Clipped: 564.5s -> 594.5s)
+  - Audio (Whistle): 19.4%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD3 B04-SGE-006_720p] Clip 3 (Window: 589.5s -> 609.5s, Clipped: 584.5s -> 614.5s)
+  - Audio (Whistle): 18.2%
+  - Video (Foul): 99.4%
+  - Fused: 99.4% 
+
+[MD3 B04-SGE-006_720p] Clip 4 (Window: 599.5s -> 619.5s, Clipped: 594.5s -> 624.5s)
+  - Audio (Whistle): 17.6%
+  - Video (Foul): 96.4%
+  - Fused: 96.4% 
+
+[MD3 B04-SGE-006_720p] Clip 5 (Window: 629.5s -> 649.5s, Clipped: 624.5s -> 654.5s)
+  - Audio (Whistle): 16.7%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD3 B04-SGE-006_720p] Clip 6 (Window: 679.5s -> 699.5s, Clipped: 674.5s -> 704.5s)
+  - Audio (Whistle): 20.5%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD3 B04-SGE-006_720p] Clip 7 (Window: 699.5s -> 719.5s, Clipped: 694.5s -> 724.5s)
+  - Audio (Whistle): 18.7%
+  - Video (Foul): 98.3%
+  - Fused: 98.3% 
+
+[MD3 B04-SGE-006_720p] Clip 8 (Window: 719.5s -> 739.5s, Clipped: 714.5s -> 744.5s)
+  - Audio (Whistle): 21.6%
+  - Video (Foul): 99.9%
+  - Fused: 99.9% 
+
+[MD3 B04-SGE-006_720p] Clip 9 (Window: 739.5s -> 759.5s, Clipped: 734.5s -> 764.5s)
+  - Audio (Whistle): 18.6%
+  - Video (Foul): 98.3%
+  - Fused: 98.3% 
+
+[MD3 B04-SGE-006_720p] Clip 10 (Window: 2259.5s -> 2279.5s, Clipped: 2254.5s -> 2284.5s)
+  - Audio (Whistle): 19.1%
+  - Video (Foul): 87.0%
+  - Fused: 87.0% 
+
+[MD3 B04-SGE-006_720p] Clip 11 (Window: 3059.5s -> 3079.5s, Clipped: 3054.5s -> 3084.5s)
+  - Audio (Whistle): 22.6%
+  - Video (Foul): 96.8%
+  - Fused: 96.8% 
+
+[MD3 B04-SGE-006_720p] Clip 12 (Window: 3079.5s -> 3099.5s, Clipped: 3074.5s -> 3104.5s)
+  - Audio (Whistle): 22.0%
+  - Video (Foul): 99.7%
+  - Fused: 99.7% 
+
+[MD3 B04-SGE-006_720p] Clip 13 (Window: 4459.5s -> 4479.5s, Clipped: 4454.5s -> 4484.5s)
+  - Audio (Whistle): 21.0%
+  - Video (Foul): 90.7%
+  - Fused: 90.7% 
+
+[MD3 B04-SGE-006_720p] Clip 14 (Window: 5399.5s -> 5419.5s, Clipped: 5394.5s -> 5424.5s)
+  - Audio (Whistle): 22.0%
+  - Video (Foul): 87.3%
+  - Fused: 87.3% 
+
+[MD3 B04-SGE-006_720p] Clip 15 (Window: 5809.5s -> 5829.5s, Clipped: 5804.5s -> 5834.5s)
+  - Audio (Whistle): 16.7%
+  - Video (Foul): 92.9%
+  - Fused: 92.9% 
+
+[MD3 B04-SGE-006_720p] Clip 16 (Window: 5819.5s -> 5839.5s, Clipped: 5814.5s -> 5844.5s)
+  - Audio (Whistle): 21.3%
+  - Video (Foul): 99.3%
+  - Fused: 99.3% 
+
+[MD3 B04-SGE-006_720p] Clip 17 (Window: 5829.5s -> 5849.5s, Clipped: 5824.5s -> 5854.5s)
+  - Audio (Whistle): 21.7%
+  - Video (Foul): 93.8%
+  - Fused: 93.8% 
+
+[MD3 B04-SGE-006_720p] Clip 18 (Window: 6959.5s -> 6979.5s, Clipped: 6954.5s -> 6984.5s)
+  - Audio (Whistle): 18.6%
+  - Video (Foul): 99.5%
+  - Fused: 99.5% 
+
+[MD3 B04-SGE-006_720p] Clip 19 (Window: 6969.5s -> 6989.5s, Clipped: 6964.5s -> 6994.5s)
+  - Audio (Whistle): 18.2%
+  - Video (Foul): 86.1%
+  - Fused: 86.1% 
+
+[MD3 B04-SGE-006_720p] Clip 20 (Window: 7249.5s -> 7269.5s, Clipped: 7244.5s -> 7274.5s)
+  - Audio (Whistle): 15.4%
+  - Video (Foul): 97.6%
+  - Fused: 97.6% 
+
+[MD5 KOE-VFB-007_720p] Clip 0 (Window: 1089.5s -> 1109.5s, Clipped: 1084.5s -> 1114.5s)
+  - Audio (Whistle): 99.5%
+  - Video (Foul): 63.2%
+  - Fused: 93.1% (Boosted)
+
+[MD5 KOE-VFB-007_720p] Clip 1 (Window: 1259.5s -> 1279.5s, Clipped: 1254.5s -> 1284.5s)
+  - Audio (Whistle): 88.8%
+  - Video (Foul): 76.4%
+  - Fused: 100.0% (Boosted)
+
+[MD5 KOE-VFB-007_720p] Clip 2 (Window: 1939.5s -> 1959.5s, Clipped: 1934.5s -> 1964.5s)
+  - Audio (Whistle): 67.9%
+  - Video (Foul): 90.4%
+  - Fused: 90.4% 
+
+[MD5 KOE-VFB-007_720p] Clip 3 (Window: 2869.5s -> 2889.5s, Clipped: 2864.5s -> 2894.5s)
+  - Audio (Whistle): 98.8%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% (Boosted)
+
+[MD5 KOE-VFB-007_720p] Clip 4 (Window: 3019.5s -> 3039.5s, Clipped: 3014.5s -> 3044.5s)
+  - Audio (Whistle): 45.5%
+  - Video (Foul): 97.7%
+  - Fused: 97.7% 
+
+[MD5 KOE-VFB-007_720p] Clip 5 (Window: 3029.5s -> 3049.5s, Clipped: 3024.5s -> 3054.5s)
+  - Audio (Whistle): 27.2%
+  - Video (Foul): 99.9%
+  - Fused: 99.9% 
+
+[MD5 KOE-VFB-007_720p] Clip 6 (Window: 5879.5s -> 5899.5s, Clipped: 5874.5s -> 5904.5s)
+  - Audio (Whistle): 32.0%
+  - Video (Foul): 94.1%
+  - Fused: 94.1% 
+
+[MD5 KOE-VFB-007_720p] Clip 7 (Window: 5889.5s -> 5909.5s, Clipped: 5884.5s -> 5914.5s)
+  - Audio (Whistle): 32.0%
+  - Video (Foul): 100.0%
+  - Fused: 100.0% 
+
+[MD5 KOE-VFB-007_720p] Clip 8 (Window: 5899.5s -> 5919.5s, Clipped: 5894.5s -> 5924.5s)
+  - Audio (Whistle): 32.0%
+  - Video (Foul): 99.9%
+  - Fused: 99.9% 
+
+[MD5 KOE-VFB-007_720p] Clip 9 (Window: 5909.5s -> 5929.5s, Clipped: 5904.5s -> 5934.5s)
+  - Audio (Whistle): 34.6%
+  - Video (Foul): 97.9%
+  - Fused: 97.9% 
+
+[MD5 KOE-VFB-007_720p] Clip 10 (Window: 5999.5s -> 6019.5s, Clipped: 5994.5s -> 6024.5s)
+  - Audio (Whistle): 99.4%
+  - Video (Foul): 67.9%
+  - Fused: 97.7% (Boosted)
+
+[MD5 KOE-VFB-007_720p] Clip 11 (Window: 6159.5s -> 6179.5s, Clipped: 6154.5s -> 6184.5s)
+  - Audio (Whistle): 75.9%
+  - Video (Foul): 99.8%
+  - Fused: 99.8% 
+
+[MD5 KOE-VFB-007_720p] Clip 12 (Window: 6219.5s -> 6239.5s, Clipped: 6214.5s -> 6244.5s)
+  - Audio (Whistle): 44.2%
+  - Video (Foul): 99.7%
+  - Fused: 99.7% 
+
+[MD5 KOE-VFB-007_720p] Clip 13 (Window: 7249.5s -> 7269.5s, Clipped: 7244.5s -> 7274.5s)
+  - Audio (Whistle): 47.7%
+  - Video (Foul): 99.2%
+  - Fused: 99.2% 
+
+[MD5 KOE-VFB-007_720p] Clip 14 (Window: 7259.5s -> 7279.5s, Clipped: 7254.5s -> 7284.5s)
+  - Audio (Whistle): 88.1%
+  - Video (Foul): 62.1%
+  - Fused: 88.5% (Boosted)
+
+[MD5 KOE-VFB-007_720p] Clip 15 (Window: 7269.5s -> 7289.5s, Clipped: 7264.5s -> 7294.5s)
+  - Audio (Whistle): 88.1%
+  - Video (Foul): 99.9%
+  - Fused: 100.0% (Boosted)
+
