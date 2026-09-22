@@ -1,0 +1,2530 @@
+System Check: Using cuda for inference
+Loading V2 X3D Video Model...
+-> Video Weights loaded successfully!
+Loading Audio ResNet-18 Model...
+-> Audio Weights loaded successfully!
+[Consumer] Waiting for frames to build the initial 20-second buffer...
+[Producer] Started simulating live feed from 1_224p.mkv at 25.0 FPS.
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 0.0s -> 18.7s
+  --> Audio CNN (Whistle) Conf :  76.4%
+  --> Video X3D (Visual) Conf  :   0.6%
+  --> FUSED CONFIDENCE         :   0.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 672.6ms | Queue Backlog: 1 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 9.6s -> 28.3s
+  --> Audio CNN (Whistle) Conf :  57.3%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 454.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 19.2s -> 37.9s
+  --> Audio CNN (Whistle) Conf :  67.5%
+  --> Video X3D (Visual) Conf  :   0.9%
+  --> FUSED CONFIDENCE         :   0.9% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 410.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 28.8s -> 47.5s
+  --> Audio CNN (Whistle) Conf :  73.1%
+  --> Video X3D (Visual) Conf  :   1.4%
+  --> FUSED CONFIDENCE         :   1.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 401.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 38.4s -> 57.1s
+  --> Audio CNN (Whistle) Conf :  85.2%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :  25.6% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 422.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 48.0s -> 66.7s
+  --> Audio CNN (Whistle) Conf :  74.6%
+  --> Video X3D (Visual) Conf  :   6.9%
+  --> FUSED CONFIDENCE         :   6.9% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 383.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 57.6s -> 76.3s
+  --> Audio CNN (Whistle) Conf :  65.9%
+  --> Video X3D (Visual) Conf  :   0.2%
+  --> FUSED CONFIDENCE         :   0.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 395.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 67.2s -> 85.9s
+  --> Audio CNN (Whistle) Conf :  54.5%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 407.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 76.8s -> 95.5s
+  --> Audio CNN (Whistle) Conf :  45.9%
+  --> Video X3D (Visual) Conf  :   0.8%
+  --> FUSED CONFIDENCE         :   0.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 377.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 86.4s -> 105.1s
+  --> Audio CNN (Whistle) Conf :  71.6%
+  --> Video X3D (Visual) Conf  :  45.0%
+  --> FUSED CONFIDENCE         :  45.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 419.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 96.0s -> 114.7s
+  --> Audio CNN (Whistle) Conf :  73.8%
+  --> Video X3D (Visual) Conf  :   9.6%
+  --> FUSED CONFIDENCE         :   9.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 407.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 105.6s -> 124.3s
+  --> Audio CNN (Whistle) Conf :  79.1%
+  --> Video X3D (Visual) Conf  :   1.7%
+  --> FUSED CONFIDENCE         :   1.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 401.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 115.2s -> 133.9s
+  --> Audio CNN (Whistle) Conf :  59.2%
+  --> Video X3D (Visual) Conf  :  67.6%
+  --> FUSED CONFIDENCE         :  67.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 412.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 124.8s -> 143.5s
+  --> Audio CNN (Whistle) Conf :  58.5%
+  --> Video X3D (Visual) Conf  :   0.7%
+  --> FUSED CONFIDENCE         :   0.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 387.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 134.4s -> 153.1s
+  --> Audio CNN (Whistle) Conf :  73.8%
+  --> Video X3D (Visual) Conf  :   1.2%
+  --> FUSED CONFIDENCE         :   1.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 412.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 144.0s -> 162.7s
+  --> Audio CNN (Whistle) Conf :  95.4%
+  --> Video X3D (Visual) Conf  :  73.9%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 406.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 153.6s -> 172.3s
+  --> Audio CNN (Whistle) Conf :  86.3%
+  --> Video X3D (Visual) Conf  :  19.9%
+  --> FUSED CONFIDENCE         :  45.8% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 393.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 163.2s -> 181.9s
+  --> Audio CNN (Whistle) Conf :  63.0%
+  --> Video X3D (Visual) Conf  :   1.3%
+  --> FUSED CONFIDENCE         :   1.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 382.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 172.8s -> 191.5s
+  --> Audio CNN (Whistle) Conf :  91.6%
+  --> Video X3D (Visual) Conf  :  99.6%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 402.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 182.4s -> 201.1s
+  --> Audio CNN (Whistle) Conf :  96.6%
+  --> Video X3D (Visual) Conf  :   1.1%
+  --> FUSED CONFIDENCE         :  30.1% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 437.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 192.0s -> 210.7s
+  --> Audio CNN (Whistle) Conf :  55.6%
+  --> Video X3D (Visual) Conf  :   3.5%
+  --> FUSED CONFIDENCE         :   3.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 421.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 201.6s -> 220.3s
+  --> Audio CNN (Whistle) Conf :  79.3%
+  --> Video X3D (Visual) Conf  :  93.5%
+  --> FUSED CONFIDENCE         :  93.5% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 430.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 211.2s -> 229.9s
+  --> Audio CNN (Whistle) Conf :  42.2%
+  --> Video X3D (Visual) Conf  :  76.8%
+  --> FUSED CONFIDENCE         :  76.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 451.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 220.8s -> 239.5s
+  --> Audio CNN (Whistle) Conf :  36.5%
+  --> Video X3D (Visual) Conf  :   6.7%
+  --> FUSED CONFIDENCE         :   6.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 425.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 230.4s -> 249.1s
+  --> Audio CNN (Whistle) Conf :  68.2%
+  --> Video X3D (Visual) Conf  :   0.4%
+  --> FUSED CONFIDENCE         :   0.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 449.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 240.0s -> 258.7s
+  --> Audio CNN (Whistle) Conf :  94.4%
+  --> Video X3D (Visual) Conf  :  91.9%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 449.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 249.6s -> 268.3s
+  --> Audio CNN (Whistle) Conf :  95.3%
+  --> Video X3D (Visual) Conf  :  99.2%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 428.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 259.2s -> 277.9s
+  --> Audio CNN (Whistle) Conf :  57.0%
+  --> Video X3D (Visual) Conf  :  11.8%
+  --> FUSED CONFIDENCE         :  11.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 411.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 268.8s -> 287.5s
+  --> Audio CNN (Whistle) Conf :  37.4%
+  --> Video X3D (Visual) Conf  :   2.1%
+  --> FUSED CONFIDENCE         :   2.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 395.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 278.4s -> 297.1s
+  --> Audio CNN (Whistle) Conf :  30.5%
+  --> Video X3D (Visual) Conf  :   0.2%
+  --> FUSED CONFIDENCE         :   0.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 424.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 288.0s -> 306.7s
+  --> Audio CNN (Whistle) Conf :  42.7%
+  --> Video X3D (Visual) Conf  :   7.2%
+  --> FUSED CONFIDENCE         :   7.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 399.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 297.6s -> 316.3s
+  --> Audio CNN (Whistle) Conf :  48.3%
+  --> Video X3D (Visual) Conf  :  85.4%
+  --> FUSED CONFIDENCE         :  85.4% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 409.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 307.2s -> 325.9s
+  --> Audio CNN (Whistle) Conf :  40.3%
+  --> Video X3D (Visual) Conf  :  98.6%
+  --> FUSED CONFIDENCE         :  98.6% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 358.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 316.8s -> 335.5s
+  --> Audio CNN (Whistle) Conf :  34.7%
+  --> Video X3D (Visual) Conf  :  22.4%
+  --> FUSED CONFIDENCE         :  22.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 419.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 326.4s -> 345.1s
+  --> Audio CNN (Whistle) Conf :  59.3%
+  --> Video X3D (Visual) Conf  :  18.4%
+  --> FUSED CONFIDENCE         :  18.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 407.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 336.0s -> 354.7s
+  --> Audio CNN (Whistle) Conf :  52.2%
+  --> Video X3D (Visual) Conf  :   1.6%
+  --> FUSED CONFIDENCE         :   1.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 446.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 345.6s -> 364.3s
+  --> Audio CNN (Whistle) Conf :  36.8%
+  --> Video X3D (Visual) Conf  :   0.7%
+  --> FUSED CONFIDENCE         :   0.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 406.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 355.2s -> 373.9s
+  --> Audio CNN (Whistle) Conf :  44.9%
+  --> Video X3D (Visual) Conf  :   0.9%
+  --> FUSED CONFIDENCE         :   0.9% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 397.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 364.8s -> 383.5s
+  --> Audio CNN (Whistle) Conf :  29.0%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 391.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 374.4s -> 393.1s
+  --> Audio CNN (Whistle) Conf :  90.8%
+  --> Video X3D (Visual) Conf  :  10.1%
+  --> FUSED CONFIDENCE         :  37.3% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 402.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 384.0s -> 402.7s
+  --> Audio CNN (Whistle) Conf :  61.9%
+  --> Video X3D (Visual) Conf  :  24.5%
+  --> FUSED CONFIDENCE         :  24.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 404.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 393.6s -> 412.3s
+  --> Audio CNN (Whistle) Conf :  45.8%
+  --> Video X3D (Visual) Conf  :  75.2%
+  --> FUSED CONFIDENCE         :  75.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 417.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 403.2s -> 421.9s
+  --> Audio CNN (Whistle) Conf :  30.9%
+  --> Video X3D (Visual) Conf  :   5.7%
+  --> FUSED CONFIDENCE         :   5.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 384.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 412.8s -> 431.5s
+  --> Audio CNN (Whistle) Conf :  98.6%
+  --> Video X3D (Visual) Conf  :  94.6%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 515.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 422.4s -> 441.1s
+  --> Audio CNN (Whistle) Conf :  91.3%
+  --> Video X3D (Visual) Conf  :  98.8%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 432.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 432.0s -> 450.7s
+  --> Audio CNN (Whistle) Conf :  98.0%
+  --> Video X3D (Visual) Conf  :  34.8%
+  --> FUSED CONFIDENCE         :  64.2% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 397.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 441.6s -> 460.3s
+  --> Audio CNN (Whistle) Conf :  91.7%
+  --> Video X3D (Visual) Conf  :  94.4%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 454.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 451.2s -> 469.9s
+  --> Audio CNN (Whistle) Conf :  82.4%
+  --> Video X3D (Visual) Conf  :  95.8%
+  --> FUSED CONFIDENCE         :  95.8% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 447.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 460.8s -> 479.5s
+  --> Audio CNN (Whistle) Conf :  77.7%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 400.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 470.4s -> 489.1s
+  --> Audio CNN (Whistle) Conf :  47.0%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 410.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 480.0s -> 498.7s
+  --> Audio CNN (Whistle) Conf :  97.2%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :  29.2% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 444.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 489.6s -> 508.3s
+  --> Audio CNN (Whistle) Conf :  93.8%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :  28.2% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 381.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 499.2s -> 517.9s
+  --> Audio CNN (Whistle) Conf :  41.7%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 394.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 508.8s -> 527.5s
+  --> Audio CNN (Whistle) Conf :  78.8%
+  --> Video X3D (Visual) Conf  :  14.3%
+  --> FUSED CONFIDENCE         :  14.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 462.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 518.4s -> 537.1s
+  --> Audio CNN (Whistle) Conf :  34.4%
+  --> Video X3D (Visual) Conf  :  80.3%
+  --> FUSED CONFIDENCE         :  80.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 448.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 528.0s -> 546.7s
+  --> Audio CNN (Whistle) Conf :  52.0%
+  --> Video X3D (Visual) Conf  :   0.8%
+  --> FUSED CONFIDENCE         :   0.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 446.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 537.6s -> 556.3s
+  --> Audio CNN (Whistle) Conf :  43.6%
+  --> Video X3D (Visual) Conf  :  99.8%
+  --> FUSED CONFIDENCE         :  99.8% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 382.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 547.2s -> 565.9s
+  --> Audio CNN (Whistle) Conf :  46.8%
+  --> Video X3D (Visual) Conf  :   2.2%
+  --> FUSED CONFIDENCE         :   2.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 409.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 556.8s -> 575.5s
+  --> Audio CNN (Whistle) Conf :  39.0%
+  --> Video X3D (Visual) Conf  :   2.1%
+  --> FUSED CONFIDENCE         :   2.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 391.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 566.4s -> 585.1s
+  --> Audio CNN (Whistle) Conf :  52.9%
+  --> Video X3D (Visual) Conf  :   0.6%
+  --> FUSED CONFIDENCE         :   0.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 444.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 576.0s -> 594.7s
+  --> Audio CNN (Whistle) Conf :  63.4%
+  --> Video X3D (Visual) Conf  :   2.4%
+  --> FUSED CONFIDENCE         :   2.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 439.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 585.6s -> 604.3s
+  --> Audio CNN (Whistle) Conf :  64.3%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 395.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 595.2s -> 613.9s
+  --> Audio CNN (Whistle) Conf :  35.7%
+  --> Video X3D (Visual) Conf  :   1.7%
+  --> FUSED CONFIDENCE         :   1.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 430.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 604.8s -> 623.5s
+  --> Audio CNN (Whistle) Conf :  31.4%
+  --> Video X3D (Visual) Conf  :  12.7%
+  --> FUSED CONFIDENCE         :  12.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 402.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 614.4s -> 633.1s
+  --> Audio CNN (Whistle) Conf :  30.8%
+  --> Video X3D (Visual) Conf  :   3.8%
+  --> FUSED CONFIDENCE         :   3.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 414.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 624.0s -> 642.7s
+  --> Audio CNN (Whistle) Conf :  29.6%
+  --> Video X3D (Visual) Conf  :   1.1%
+  --> FUSED CONFIDENCE         :   1.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 411.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 633.6s -> 652.3s
+  --> Audio CNN (Whistle) Conf :  31.3%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 396.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 643.2s -> 661.9s
+  --> Audio CNN (Whistle) Conf :  36.8%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 420.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 652.8s -> 671.5s
+  --> Audio CNN (Whistle) Conf :  47.2%
+  --> Video X3D (Visual) Conf  :   1.5%
+  --> FUSED CONFIDENCE         :   1.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 393.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 662.4s -> 681.1s
+  --> Audio CNN (Whistle) Conf :  94.3%
+  --> Video X3D (Visual) Conf  :   2.0%
+  --> FUSED CONFIDENCE         :  30.3% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 415.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 672.0s -> 690.7s
+  --> Audio CNN (Whistle) Conf :  98.2%
+  --> Video X3D (Visual) Conf  :   0.8%
+  --> FUSED CONFIDENCE         :  30.2% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 423.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 681.6s -> 700.3s
+  --> Audio CNN (Whistle) Conf :  47.5%
+  --> Video X3D (Visual) Conf  :   0.8%
+  --> FUSED CONFIDENCE         :   0.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 416.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 691.2s -> 709.9s
+  --> Audio CNN (Whistle) Conf :  55.9%
+  --> Video X3D (Visual) Conf  :  22.5%
+  --> FUSED CONFIDENCE         :  22.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 406.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 700.8s -> 719.5s
+  --> Audio CNN (Whistle) Conf :  59.4%
+  --> Video X3D (Visual) Conf  :   1.1%
+  --> FUSED CONFIDENCE         :   1.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 437.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 710.4s -> 729.1s
+  --> Audio CNN (Whistle) Conf :  53.9%
+  --> Video X3D (Visual) Conf  :   0.6%
+  --> FUSED CONFIDENCE         :   0.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 428.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 720.0s -> 738.7s
+  --> Audio CNN (Whistle) Conf :  82.1%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 461.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 729.6s -> 748.3s
+  --> Audio CNN (Whistle) Conf :  74.7%
+  --> Video X3D (Visual) Conf  :   1.6%
+  --> FUSED CONFIDENCE         :   1.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 444.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 739.2s -> 757.9s
+  --> Audio CNN (Whistle) Conf :  58.8%
+  --> Video X3D (Visual) Conf  :   0.7%
+  --> FUSED CONFIDENCE         :   0.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 406.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 748.8s -> 767.5s
+  --> Audio CNN (Whistle) Conf :  45.4%
+  --> Video X3D (Visual) Conf  :   0.2%
+  --> FUSED CONFIDENCE         :   0.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 440.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 758.4s -> 777.1s
+  --> Audio CNN (Whistle) Conf :  44.2%
+  --> Video X3D (Visual) Conf  :   0.4%
+  --> FUSED CONFIDENCE         :   0.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 410.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 768.0s -> 786.7s
+  --> Audio CNN (Whistle) Conf :  81.5%
+  --> Video X3D (Visual) Conf  :   0.7%
+  --> FUSED CONFIDENCE         :   0.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 443.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 777.6s -> 796.3s
+  --> Audio CNN (Whistle) Conf :  47.2%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 396.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 787.2s -> 805.9s
+  --> Audio CNN (Whistle) Conf :  34.6%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 408.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 796.8s -> 815.5s
+  --> Audio CNN (Whistle) Conf :  20.2%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 438.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 806.4s -> 825.1s
+  --> Audio CNN (Whistle) Conf :  47.3%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 436.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 816.0s -> 834.7s
+  --> Audio CNN (Whistle) Conf :  58.4%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 430.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 825.6s -> 844.3s
+  --> Audio CNN (Whistle) Conf :  53.8%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 452.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 835.2s -> 853.9s
+  --> Audio CNN (Whistle) Conf :  60.5%
+  --> Video X3D (Visual) Conf  :   3.7%
+  --> FUSED CONFIDENCE         :   3.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 432.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 844.8s -> 863.5s
+  --> Audio CNN (Whistle) Conf :  92.1%
+  --> Video X3D (Visual) Conf  :  91.9%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 400.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 854.4s -> 873.1s
+  --> Audio CNN (Whistle) Conf :  86.5%
+  --> Video X3D (Visual) Conf  :  95.3%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 435.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 864.0s -> 882.7s
+  --> Audio CNN (Whistle) Conf :  36.2%
+  --> Video X3D (Visual) Conf  :  10.0%
+  --> FUSED CONFIDENCE         :  10.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 449.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 873.6s -> 892.3s
+  --> Audio CNN (Whistle) Conf :  25.2%
+  --> Video X3D (Visual) Conf  :   2.8%
+  --> FUSED CONFIDENCE         :   2.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 413.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 883.2s -> 901.9s
+  --> Audio CNN (Whistle) Conf :  37.0%
+  --> Video X3D (Visual) Conf  :   0.5%
+  --> FUSED CONFIDENCE         :   0.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 409.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 892.8s -> 911.5s
+  --> Audio CNN (Whistle) Conf :  37.8%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 419.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 902.4s -> 921.1s
+  --> Audio CNN (Whistle) Conf :  97.6%
+  --> Video X3D (Visual) Conf  :  35.6%
+  --> FUSED CONFIDENCE         :  64.9% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 425.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 912.0s -> 930.7s
+  --> Audio CNN (Whistle) Conf :  75.1%
+  --> Video X3D (Visual) Conf  :   5.4%
+  --> FUSED CONFIDENCE         :   5.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 424.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 921.6s -> 940.3s
+  --> Audio CNN (Whistle) Conf :  26.4%
+  --> Video X3D (Visual) Conf  :  76.4%
+  --> FUSED CONFIDENCE         :  76.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 440.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 931.2s -> 949.9s
+  --> Audio CNN (Whistle) Conf :  33.2%
+  --> Video X3D (Visual) Conf  :   0.7%
+  --> FUSED CONFIDENCE         :   0.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 417.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 940.8s -> 959.5s
+  --> Audio CNN (Whistle) Conf :  37.2%
+  --> Video X3D (Visual) Conf  :   3.5%
+  --> FUSED CONFIDENCE         :   3.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 428.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 950.4s -> 969.1s
+  --> Audio CNN (Whistle) Conf :  45.5%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 408.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 960.0s -> 978.7s
+  --> Audio CNN (Whistle) Conf :  49.0%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 408.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 969.6s -> 988.3s
+  --> Audio CNN (Whistle) Conf :  49.8%
+  --> Video X3D (Visual) Conf  :   0.4%
+  --> FUSED CONFIDENCE         :   0.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 414.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 979.2s -> 997.9s
+  --> Audio CNN (Whistle) Conf :  71.0%
+  --> Video X3D (Visual) Conf  :  11.1%
+  --> FUSED CONFIDENCE         :  11.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 445.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 988.8s -> 1007.5s
+  --> Audio CNN (Whistle) Conf :  43.1%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 416.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 998.4s -> 1017.1s
+  --> Audio CNN (Whistle) Conf :  33.6%
+  --> Video X3D (Visual) Conf  :   4.5%
+  --> FUSED CONFIDENCE         :   4.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 431.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1008.0s -> 1026.7s
+  --> Audio CNN (Whistle) Conf :  33.6%
+  --> Video X3D (Visual) Conf  :  11.5%
+  --> FUSED CONFIDENCE         :  11.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 385.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1017.6s -> 1036.3s
+  --> Audio CNN (Whistle) Conf :  32.8%
+  --> Video X3D (Visual) Conf  :   0.2%
+  --> FUSED CONFIDENCE         :   0.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 403.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1027.2s -> 1045.9s
+  --> Audio CNN (Whistle) Conf :  29.8%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 424.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1036.8s -> 1055.5s
+  --> Audio CNN (Whistle) Conf :  50.3%
+  --> Video X3D (Visual) Conf  :  15.8%
+  --> FUSED CONFIDENCE         :  15.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 441.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1046.4s -> 1065.1s
+  --> Audio CNN (Whistle) Conf :  39.1%
+  --> Video X3D (Visual) Conf  :  11.0%
+  --> FUSED CONFIDENCE         :  11.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 450.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1056.0s -> 1074.7s
+  --> Audio CNN (Whistle) Conf :  45.4%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 379.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1065.6s -> 1084.3s
+  --> Audio CNN (Whistle) Conf :  57.6%
+  --> Video X3D (Visual) Conf  :   0.6%
+  --> FUSED CONFIDENCE         :   0.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 412.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1075.2s -> 1093.9s
+  --> Audio CNN (Whistle) Conf :  35.8%
+  --> Video X3D (Visual) Conf  :   2.1%
+  --> FUSED CONFIDENCE         :   2.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 422.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1084.8s -> 1103.5s
+  --> Audio CNN (Whistle) Conf :  34.2%
+  --> Video X3D (Visual) Conf  :  11.1%
+  --> FUSED CONFIDENCE         :  11.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 424.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1094.4s -> 1113.1s
+  --> Audio CNN (Whistle) Conf :  36.4%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 407.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1104.0s -> 1122.7s
+  --> Audio CNN (Whistle) Conf :  35.1%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 419.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1113.6s -> 1132.3s
+  --> Audio CNN (Whistle) Conf :  49.1%
+  --> Video X3D (Visual) Conf  :  59.6%
+  --> FUSED CONFIDENCE         :  59.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 434.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1123.2s -> 1141.9s
+  --> Audio CNN (Whistle) Conf :  51.0%
+  --> Video X3D (Visual) Conf  :   0.2%
+  --> FUSED CONFIDENCE         :   0.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 429.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1132.8s -> 1151.5s
+  --> Audio CNN (Whistle) Conf :  49.0%
+  --> Video X3D (Visual) Conf  :   7.0%
+  --> FUSED CONFIDENCE         :   7.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 410.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1142.4s -> 1161.1s
+  --> Audio CNN (Whistle) Conf :  49.4%
+  --> Video X3D (Visual) Conf  :  71.7%
+  --> FUSED CONFIDENCE         :  71.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 399.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1152.0s -> 1170.7s
+  --> Audio CNN (Whistle) Conf :  46.6%
+  --> Video X3D (Visual) Conf  :  37.4%
+  --> FUSED CONFIDENCE         :  37.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 410.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1161.6s -> 1180.3s
+  --> Audio CNN (Whistle) Conf :  99.9%
+  --> Video X3D (Visual) Conf  :  99.7%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 407.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1171.2s -> 1189.9s
+  --> Audio CNN (Whistle) Conf :  99.8%
+  --> Video X3D (Visual) Conf  :  41.2%
+  --> FUSED CONFIDENCE         :  71.1% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 443.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1180.8s -> 1199.5s
+  --> Audio CNN (Whistle) Conf :  59.1%
+  --> Video X3D (Visual) Conf  :   0.7%
+  --> FUSED CONFIDENCE         :   0.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 415.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1190.4s -> 1209.1s
+  --> Audio CNN (Whistle) Conf :  85.7%
+  --> Video X3D (Visual) Conf  :  81.7%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 410.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1200.0s -> 1218.7s
+  --> Audio CNN (Whistle) Conf :  78.9%
+  --> Video X3D (Visual) Conf  :  99.8%
+  --> FUSED CONFIDENCE         :  99.8% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 364.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1209.6s -> 1228.3s
+  --> Audio CNN (Whistle) Conf :  30.3%
+  --> Video X3D (Visual) Conf  :  44.6%
+  --> FUSED CONFIDENCE         :  44.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 429.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1219.2s -> 1237.9s
+  --> Audio CNN (Whistle) Conf :  36.8%
+  --> Video X3D (Visual) Conf  :   2.8%
+  --> FUSED CONFIDENCE         :   2.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 389.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1228.8s -> 1247.5s
+  --> Audio CNN (Whistle) Conf :  36.4%
+  --> Video X3D (Visual) Conf  :  22.8%
+  --> FUSED CONFIDENCE         :  22.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 423.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1238.4s -> 1257.1s
+  --> Audio CNN (Whistle) Conf :  27.5%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 451.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1248.0s -> 1266.7s
+  --> Audio CNN (Whistle) Conf :  27.2%
+  --> Video X3D (Visual) Conf  :   0.2%
+  --> FUSED CONFIDENCE         :   0.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 410.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1257.6s -> 1276.3s
+  --> Audio CNN (Whistle) Conf :  33.6%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 436.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1267.2s -> 1285.9s
+  --> Audio CNN (Whistle) Conf :  50.7%
+  --> Video X3D (Visual) Conf  :   1.4%
+  --> FUSED CONFIDENCE         :   1.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 442.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1276.8s -> 1295.5s
+  --> Audio CNN (Whistle) Conf :  45.9%
+  --> Video X3D (Visual) Conf  :  12.5%
+  --> FUSED CONFIDENCE         :  12.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 384.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1286.4s -> 1305.1s
+  --> Audio CNN (Whistle) Conf :  58.0%
+  --> Video X3D (Visual) Conf  :  18.5%
+  --> FUSED CONFIDENCE         :  18.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 401.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1296.0s -> 1314.7s
+  --> Audio CNN (Whistle) Conf :  38.8%
+  --> Video X3D (Visual) Conf  :   0.9%
+  --> FUSED CONFIDENCE         :   0.9% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 409.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1305.6s -> 1324.3s
+  --> Audio CNN (Whistle) Conf :  86.4%
+  --> Video X3D (Visual) Conf  :  98.8%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 381.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1315.2s -> 1333.9s
+  --> Audio CNN (Whistle) Conf :  81.0%
+  --> Video X3D (Visual) Conf  : 100.0%
+  --> FUSED CONFIDENCE         : 100.0% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 454.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1324.8s -> 1343.5s
+  --> Audio CNN (Whistle) Conf :  28.2%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 425.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1334.4s -> 1353.1s
+  --> Audio CNN (Whistle) Conf :  45.2%
+  --> Video X3D (Visual) Conf  :  11.4%
+  --> FUSED CONFIDENCE         :  11.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 436.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1344.0s -> 1362.7s
+  --> Audio CNN (Whistle) Conf :  40.4%
+  --> Video X3D (Visual) Conf  :  10.3%
+  --> FUSED CONFIDENCE         :  10.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 426.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1353.6s -> 1372.3s
+  --> Audio CNN (Whistle) Conf :  29.3%
+  --> Video X3D (Visual) Conf  :   0.4%
+  --> FUSED CONFIDENCE         :   0.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 418.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1363.2s -> 1381.9s
+  --> Audio CNN (Whistle) Conf :  99.6%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :  30.2% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 439.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1372.8s -> 1391.5s
+  --> Audio CNN (Whistle) Conf :  99.7%
+  --> Video X3D (Visual) Conf  :   8.2%
+  --> FUSED CONFIDENCE         :  38.1% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 398.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1382.4s -> 1401.1s
+  --> Audio CNN (Whistle) Conf :  51.3%
+  --> Video X3D (Visual) Conf  :   4.4%
+  --> FUSED CONFIDENCE         :   4.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 387.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1392.0s -> 1410.7s
+  --> Audio CNN (Whistle) Conf :  42.0%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 377.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1401.6s -> 1420.3s
+  --> Audio CNN (Whistle) Conf :  33.6%
+  --> Video X3D (Visual) Conf  :   0.4%
+  --> FUSED CONFIDENCE         :   0.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 363.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1411.2s -> 1429.9s
+  --> Audio CNN (Whistle) Conf :  31.4%
+  --> Video X3D (Visual) Conf  :   0.2%
+  --> FUSED CONFIDENCE         :   0.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 435.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1420.8s -> 1439.5s
+  --> Audio CNN (Whistle) Conf :  57.9%
+  --> Video X3D (Visual) Conf  :  93.5%
+  --> FUSED CONFIDENCE         :  93.5% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 393.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1430.4s -> 1449.1s
+  --> Audio CNN (Whistle) Conf :  78.7%
+  --> Video X3D (Visual) Conf  :  96.8%
+  --> FUSED CONFIDENCE         :  96.8% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 412.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1440.0s -> 1458.7s
+  --> Audio CNN (Whistle) Conf :  23.3%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 418.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1449.6s -> 1468.3s
+  --> Audio CNN (Whistle) Conf :  38.4%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 416.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1459.2s -> 1477.9s
+  --> Audio CNN (Whistle) Conf :  54.7%
+  --> Video X3D (Visual) Conf  :   6.7%
+  --> FUSED CONFIDENCE         :   6.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 394.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1468.8s -> 1487.5s
+  --> Audio CNN (Whistle) Conf :  64.8%
+  --> Video X3D (Visual) Conf  :   2.3%
+  --> FUSED CONFIDENCE         :   2.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 386.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1478.4s -> 1497.1s
+  --> Audio CNN (Whistle) Conf :  86.0%
+  --> Video X3D (Visual) Conf  :  90.3%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 402.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1488.0s -> 1506.7s
+  --> Audio CNN (Whistle) Conf :  80.0%
+  --> Video X3D (Visual) Conf  :  98.8%
+  --> FUSED CONFIDENCE         :  98.8% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 415.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1497.6s -> 1516.3s
+  --> Audio CNN (Whistle) Conf :  72.2%
+  --> Video X3D (Visual) Conf  :   1.1%
+  --> FUSED CONFIDENCE         :   1.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 400.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1507.2s -> 1525.9s
+  --> Audio CNN (Whistle) Conf :  75.9%
+  --> Video X3D (Visual) Conf  :  12.7%
+  --> FUSED CONFIDENCE         :  12.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 406.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1516.8s -> 1535.5s
+  --> Audio CNN (Whistle) Conf :  30.3%
+  --> Video X3D (Visual) Conf  :  54.3%
+  --> FUSED CONFIDENCE         :  54.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 407.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1526.4s -> 1545.1s
+  --> Audio CNN (Whistle) Conf :  37.4%
+  --> Video X3D (Visual) Conf  :   1.8%
+  --> FUSED CONFIDENCE         :   1.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 399.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1536.0s -> 1554.7s
+  --> Audio CNN (Whistle) Conf :  58.3%
+  --> Video X3D (Visual) Conf  :   5.4%
+  --> FUSED CONFIDENCE         :   5.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 386.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1545.6s -> 1564.3s
+  --> Audio CNN (Whistle) Conf :  90.3%
+  --> Video X3D (Visual) Conf  :  10.5%
+  --> FUSED CONFIDENCE         :  37.6% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 416.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1555.2s -> 1573.9s
+  --> Audio CNN (Whistle) Conf :  96.2%
+  --> Video X3D (Visual) Conf  :  98.9%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 395.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1564.8s -> 1583.5s
+  --> Audio CNN (Whistle) Conf :  97.7%
+  --> Video X3D (Visual) Conf  :   3.8%
+  --> FUSED CONFIDENCE         :  33.1% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 417.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1574.4s -> 1593.1s
+  --> Audio CNN (Whistle) Conf :  46.1%
+  --> Video X3D (Visual) Conf  :   3.9%
+  --> FUSED CONFIDENCE         :   3.9% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 444.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1584.0s -> 1602.7s
+  --> Audio CNN (Whistle) Conf :  87.5%
+  --> Video X3D (Visual) Conf  :  28.7%
+  --> FUSED CONFIDENCE         :  55.0% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 403.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1593.6s -> 1612.3s
+  --> Audio CNN (Whistle) Conf :  93.1%
+  --> Video X3D (Visual) Conf  :  99.9%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 377.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1603.2s -> 1621.9s
+  --> Audio CNN (Whistle) Conf :  51.3%
+  --> Video X3D (Visual) Conf  :   0.5%
+  --> FUSED CONFIDENCE         :   0.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 444.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1612.8s -> 1631.5s
+  --> Audio CNN (Whistle) Conf :  37.1%
+  --> Video X3D (Visual) Conf  :   1.7%
+  --> FUSED CONFIDENCE         :   1.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 413.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1622.4s -> 1641.1s
+  --> Audio CNN (Whistle) Conf :  33.4%
+  --> Video X3D (Visual) Conf  :  69.0%
+  --> FUSED CONFIDENCE         :  69.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 445.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1632.0s -> 1650.7s
+  --> Audio CNN (Whistle) Conf :  88.6%
+  --> Video X3D (Visual) Conf  :  71.4%
+  --> FUSED CONFIDENCE         :  97.9% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 392.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1641.6s -> 1660.3s
+  --> Audio CNN (Whistle) Conf :  89.9%
+  --> Video X3D (Visual) Conf  :   7.3%
+  --> FUSED CONFIDENCE         :  34.3% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 374.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1651.2s -> 1669.9s
+  --> Audio CNN (Whistle) Conf :  94.7%
+  --> Video X3D (Visual) Conf  :  80.0%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 400.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1660.8s -> 1679.5s
+  --> Audio CNN (Whistle) Conf :  28.2%
+  --> Video X3D (Visual) Conf  :  83.8%
+  --> FUSED CONFIDENCE         :  83.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 405.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1670.4s -> 1689.1s
+  --> Audio CNN (Whistle) Conf :  55.3%
+  --> Video X3D (Visual) Conf  :  67.2%
+  --> FUSED CONFIDENCE         :  67.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 423.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1680.0s -> 1698.7s
+  --> Audio CNN (Whistle) Conf :  44.1%
+  --> Video X3D (Visual) Conf  :  93.3%
+  --> FUSED CONFIDENCE         :  93.3% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 420.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1689.6s -> 1708.3s
+  --> Audio CNN (Whistle) Conf :  59.7%
+  --> Video X3D (Visual) Conf  :   0.7%
+  --> FUSED CONFIDENCE         :   0.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 409.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1699.2s -> 1717.9s
+  --> Audio CNN (Whistle) Conf :  97.3%
+  --> Video X3D (Visual) Conf  :   1.4%
+  --> FUSED CONFIDENCE         :  30.6% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 388.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1708.8s -> 1727.5s
+  --> Audio CNN (Whistle) Conf :  96.8%
+  --> Video X3D (Visual) Conf  :   0.6%
+  --> FUSED CONFIDENCE         :  29.7% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 432.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1718.4s -> 1737.1s
+  --> Audio CNN (Whistle) Conf :  94.3%
+  --> Video X3D (Visual) Conf  : 100.0%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 410.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1728.0s -> 1746.7s
+  --> Audio CNN (Whistle) Conf :  86.6%
+  --> Video X3D (Visual) Conf  :  99.9%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 409.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1737.6s -> 1756.3s
+  --> Audio CNN (Whistle) Conf :  81.9%
+  --> Video X3D (Visual) Conf  :   1.7%
+  --> FUSED CONFIDENCE         :   1.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 380.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1747.2s -> 1765.9s
+  --> Audio CNN (Whistle) Conf :  33.1%
+  --> Video X3D (Visual) Conf  :   4.0%
+  --> FUSED CONFIDENCE         :   4.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 378.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1756.8s -> 1775.5s
+  --> Audio CNN (Whistle) Conf :  30.1%
+  --> Video X3D (Visual) Conf  :  30.1%
+  --> FUSED CONFIDENCE         :  30.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 429.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1766.4s -> 1785.1s
+  --> Audio CNN (Whistle) Conf :  99.4%
+  --> Video X3D (Visual) Conf  :  99.6%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 437.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1776.0s -> 1794.7s
+  --> Audio CNN (Whistle) Conf :  99.9%
+  --> Video X3D (Visual) Conf  :   4.3%
+  --> FUSED CONFIDENCE         :  34.3% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 432.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1785.6s -> 1804.3s
+  --> Audio CNN (Whistle) Conf :  40.3%
+  --> Video X3D (Visual) Conf  :   0.7%
+  --> FUSED CONFIDENCE         :   0.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 390.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1795.2s -> 1813.9s
+  --> Audio CNN (Whistle) Conf :  84.6%
+  --> Video X3D (Visual) Conf  :   7.1%
+  --> FUSED CONFIDENCE         :   7.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 395.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1804.8s -> 1823.5s
+  --> Audio CNN (Whistle) Conf :  91.0%
+  --> Video X3D (Visual) Conf  : 100.0%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 417.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1814.4s -> 1833.1s
+  --> Audio CNN (Whistle) Conf :  40.6%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 459.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1824.0s -> 1842.7s
+  --> Audio CNN (Whistle) Conf :  53.4%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 421.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1833.6s -> 1852.3s
+  --> Audio CNN (Whistle) Conf :  37.8%
+  --> Video X3D (Visual) Conf  :   5.3%
+  --> FUSED CONFIDENCE         :   5.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 417.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1843.2s -> 1861.9s
+  --> Audio CNN (Whistle) Conf :  42.2%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 418.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1852.8s -> 1871.5s
+  --> Audio CNN (Whistle) Conf :  99.9%
+  --> Video X3D (Visual) Conf  :  57.4%
+  --> FUSED CONFIDENCE         :  87.4% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 378.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1862.4s -> 1881.1s
+  --> Audio CNN (Whistle) Conf :  99.9%
+  --> Video X3D (Visual) Conf  :  39.4%
+  --> FUSED CONFIDENCE         :  69.4% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 402.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1872.0s -> 1890.7s
+  --> Audio CNN (Whistle) Conf :  93.5%
+  --> Video X3D (Visual) Conf  :   0.6%
+  --> FUSED CONFIDENCE         :  28.6% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 407.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1881.6s -> 1900.3s
+  --> Audio CNN (Whistle) Conf :  37.9%
+  --> Video X3D (Visual) Conf  :   1.0%
+  --> FUSED CONFIDENCE         :   1.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 423.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1891.2s -> 1909.9s
+  --> Audio CNN (Whistle) Conf :  43.4%
+  --> Video X3D (Visual) Conf  :  13.3%
+  --> FUSED CONFIDENCE         :  13.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 412.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1900.8s -> 1919.5s
+  --> Audio CNN (Whistle) Conf :  44.0%
+  --> Video X3D (Visual) Conf  :  10.7%
+  --> FUSED CONFIDENCE         :  10.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 383.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1910.4s -> 1929.1s
+  --> Audio CNN (Whistle) Conf :  78.0%
+  --> Video X3D (Visual) Conf  :   3.5%
+  --> FUSED CONFIDENCE         :   3.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 422.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1920.0s -> 1938.7s
+  --> Audio CNN (Whistle) Conf :  29.2%
+  --> Video X3D (Visual) Conf  :  30.4%
+  --> FUSED CONFIDENCE         :  30.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 445.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1929.6s -> 1948.3s
+  --> Audio CNN (Whistle) Conf :  64.1%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 478.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1939.2s -> 1957.9s
+  --> Audio CNN (Whistle) Conf :  47.6%
+  --> Video X3D (Visual) Conf  :   0.2%
+  --> FUSED CONFIDENCE         :   0.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 414.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1948.8s -> 1967.5s
+  --> Audio CNN (Whistle) Conf :  42.3%
+  --> Video X3D (Visual) Conf  :   1.3%
+  --> FUSED CONFIDENCE         :   1.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 360.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1958.4s -> 1977.1s
+  --> Audio CNN (Whistle) Conf :  69.2%
+  --> Video X3D (Visual) Conf  :   6.9%
+  --> FUSED CONFIDENCE         :   6.9% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 414.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1968.0s -> 1986.7s
+  --> Audio CNN (Whistle) Conf :  49.6%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 455.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1977.6s -> 1996.3s
+  --> Audio CNN (Whistle) Conf :  51.4%
+  --> Video X3D (Visual) Conf  :   0.7%
+  --> FUSED CONFIDENCE         :   0.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 385.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1987.2s -> 2005.9s
+  --> Audio CNN (Whistle) Conf :  39.8%
+  --> Video X3D (Visual) Conf  :   1.8%
+  --> FUSED CONFIDENCE         :   1.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 401.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 1996.8s -> 2015.5s
+  --> Audio CNN (Whistle) Conf :  35.5%
+  --> Video X3D (Visual) Conf  :   1.9%
+  --> FUSED CONFIDENCE         :   1.9% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 402.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2006.4s -> 2025.1s
+  --> Audio CNN (Whistle) Conf :  27.3%
+  --> Video X3D (Visual) Conf  :   1.0%
+  --> FUSED CONFIDENCE         :   1.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 419.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2016.0s -> 2034.7s
+  --> Audio CNN (Whistle) Conf :  31.2%
+  --> Video X3D (Visual) Conf  :   1.5%
+  --> FUSED CONFIDENCE         :   1.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 390.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2025.6s -> 2044.3s
+  --> Audio CNN (Whistle) Conf :  45.7%
+  --> Video X3D (Visual) Conf  :   0.5%
+  --> FUSED CONFIDENCE         :   0.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 407.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2035.2s -> 2053.9s
+  --> Audio CNN (Whistle) Conf :  92.9%
+  --> Video X3D (Visual) Conf  :   4.3%
+  --> FUSED CONFIDENCE         :  32.2% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 353.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2044.8s -> 2063.5s
+  --> Audio CNN (Whistle) Conf :  93.0%
+  --> Video X3D (Visual) Conf  :  23.5%
+  --> FUSED CONFIDENCE         :  51.4% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 366.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2054.4s -> 2073.1s
+  --> Audio CNN (Whistle) Conf :  69.8%
+  --> Video X3D (Visual) Conf  :   1.6%
+  --> FUSED CONFIDENCE         :   1.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 435.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2064.0s -> 2082.7s
+  --> Audio CNN (Whistle) Conf :  72.5%
+  --> Video X3D (Visual) Conf  :   0.5%
+  --> FUSED CONFIDENCE         :   0.5% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 413.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2073.6s -> 2092.3s
+  --> Audio CNN (Whistle) Conf :  31.9%
+  --> Video X3D (Visual) Conf  :  24.0%
+  --> FUSED CONFIDENCE         :  24.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 431.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2083.2s -> 2101.9s
+  --> Audio CNN (Whistle) Conf :  35.5%
+  --> Video X3D (Visual) Conf  :  87.9%
+  --> FUSED CONFIDENCE         :  87.9% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 425.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2092.8s -> 2111.5s
+  --> Audio CNN (Whistle) Conf :  22.7%
+  --> Video X3D (Visual) Conf  :   0.3%
+  --> FUSED CONFIDENCE         :   0.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 414.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2102.4s -> 2121.1s
+  --> Audio CNN (Whistle) Conf :  26.7%
+  --> Video X3D (Visual) Conf  :   0.2%
+  --> FUSED CONFIDENCE         :   0.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 398.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2112.0s -> 2130.7s
+  --> Audio CNN (Whistle) Conf :  84.0%
+  --> Video X3D (Visual) Conf  :   0.4%
+  --> FUSED CONFIDENCE         :   0.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 418.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2121.6s -> 2140.3s
+  --> Audio CNN (Whistle) Conf :  86.0%
+  --> Video X3D (Visual) Conf  :   2.0%
+  --> FUSED CONFIDENCE         :  27.8% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 411.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2131.2s -> 2149.9s
+  --> Audio CNN (Whistle) Conf :  77.5%
+  --> Video X3D (Visual) Conf  :  93.4%
+  --> FUSED CONFIDENCE         :  93.4% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 408.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2140.8s -> 2159.5s
+  --> Audio CNN (Whistle) Conf :  99.1%
+  --> Video X3D (Visual) Conf  :   1.5%
+  --> FUSED CONFIDENCE         :  31.2% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 444.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2150.4s -> 2169.1s
+  --> Audio CNN (Whistle) Conf :  46.3%
+  --> Video X3D (Visual) Conf  :  37.1%
+  --> FUSED CONFIDENCE         :  37.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 399.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2160.0s -> 2178.7s
+  --> Audio CNN (Whistle) Conf :  50.1%
+  --> Video X3D (Visual) Conf  :   1.1%
+  --> FUSED CONFIDENCE         :   1.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 405.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2169.6s -> 2188.3s
+  --> Audio CNN (Whistle) Conf :  38.6%
+  --> Video X3D (Visual) Conf  :   3.4%
+  --> FUSED CONFIDENCE         :   3.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 386.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2179.2s -> 2197.9s
+  --> Audio CNN (Whistle) Conf :  57.1%
+  --> Video X3D (Visual) Conf  :   0.8%
+  --> FUSED CONFIDENCE         :   0.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 378.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2188.8s -> 2207.5s
+  --> Audio CNN (Whistle) Conf :  53.3%
+  --> Video X3D (Visual) Conf  :   2.0%
+  --> FUSED CONFIDENCE         :   2.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 398.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2198.4s -> 2217.1s
+  --> Audio CNN (Whistle) Conf :  39.3%
+  --> Video X3D (Visual) Conf  :   2.0%
+  --> FUSED CONFIDENCE         :   2.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 386.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2208.0s -> 2226.7s
+  --> Audio CNN (Whistle) Conf :  36.2%
+  --> Video X3D (Visual) Conf  :   1.7%
+  --> FUSED CONFIDENCE         :   1.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 390.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2217.6s -> 2236.3s
+  --> Audio CNN (Whistle) Conf :  25.3%
+  --> Video X3D (Visual) Conf  :   1.2%
+  --> FUSED CONFIDENCE         :   1.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 410.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2227.2s -> 2245.9s
+  --> Audio CNN (Whistle) Conf :  29.3%
+  --> Video X3D (Visual) Conf  :   3.4%
+  --> FUSED CONFIDENCE         :   3.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 420.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2236.8s -> 2255.5s
+  --> Audio CNN (Whistle) Conf :  38.7%
+  --> Video X3D (Visual) Conf  :  12.7%
+  --> FUSED CONFIDENCE         :  12.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 398.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2246.4s -> 2265.1s
+  --> Audio CNN (Whistle) Conf :  47.9%
+  --> Video X3D (Visual) Conf  :  23.8%
+  --> FUSED CONFIDENCE         :  23.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 385.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2256.0s -> 2274.7s
+  --> Audio CNN (Whistle) Conf :  95.0%
+  --> Video X3D (Visual) Conf  :  13.0%
+  --> FUSED CONFIDENCE         :  41.5% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 403.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2265.6s -> 2284.3s
+  --> Audio CNN (Whistle) Conf :  85.4%
+  --> Video X3D (Visual) Conf  :   3.1%
+  --> FUSED CONFIDENCE         :  28.7% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 431.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2275.2s -> 2293.9s
+  --> Audio CNN (Whistle) Conf :  41.4%
+  --> Video X3D (Visual) Conf  :   0.7%
+  --> FUSED CONFIDENCE         :   0.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 415.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2284.8s -> 2303.5s
+  --> Audio CNN (Whistle) Conf :  46.2%
+  --> Video X3D (Visual) Conf  :   4.8%
+  --> FUSED CONFIDENCE         :   4.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 407.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2294.4s -> 2313.1s
+  --> Audio CNN (Whistle) Conf :  50.9%
+  --> Video X3D (Visual) Conf  :   0.9%
+  --> FUSED CONFIDENCE         :   0.9% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 405.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2304.0s -> 2322.7s
+  --> Audio CNN (Whistle) Conf :  58.5%
+  --> Video X3D (Visual) Conf  :   0.2%
+  --> FUSED CONFIDENCE         :   0.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 409.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2313.6s -> 2332.3s
+  --> Audio CNN (Whistle) Conf :  33.7%
+  --> Video X3D (Visual) Conf  :   1.1%
+  --> FUSED CONFIDENCE         :   1.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 410.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2323.2s -> 2341.9s
+  --> Audio CNN (Whistle) Conf :  92.1%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :  27.7% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 408.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2332.8s -> 2351.5s
+  --> Audio CNN (Whistle) Conf :  76.3%
+  --> Video X3D (Visual) Conf  :  25.8%
+  --> FUSED CONFIDENCE         :  25.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 398.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2342.4s -> 2361.1s
+  --> Audio CNN (Whistle) Conf :  47.5%
+  --> Video X3D (Visual) Conf  :   4.7%
+  --> FUSED CONFIDENCE         :   4.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 388.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2352.0s -> 2370.7s
+  --> Audio CNN (Whistle) Conf :  35.7%
+  --> Video X3D (Visual) Conf  :  50.4%
+  --> FUSED CONFIDENCE         :  50.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 426.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2361.6s -> 2380.3s
+  --> Audio CNN (Whistle) Conf :  25.1%
+  --> Video X3D (Visual) Conf  :   4.1%
+  --> FUSED CONFIDENCE         :   4.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 420.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2371.2s -> 2389.9s
+  --> Audio CNN (Whistle) Conf :  38.4%
+  --> Video X3D (Visual) Conf  :   1.1%
+  --> FUSED CONFIDENCE         :   1.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 438.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2380.8s -> 2399.5s
+  --> Audio CNN (Whistle) Conf :  69.6%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 391.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2390.4s -> 2409.1s
+  --> Audio CNN (Whistle) Conf :  56.6%
+  --> Video X3D (Visual) Conf  :  15.3%
+  --> FUSED CONFIDENCE         :  15.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 432.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2400.0s -> 2418.7s
+  --> Audio CNN (Whistle) Conf :  49.1%
+  --> Video X3D (Visual) Conf  :   4.0%
+  --> FUSED CONFIDENCE         :   4.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 388.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2409.6s -> 2428.3s
+  --> Audio CNN (Whistle) Conf :  71.3%
+  --> Video X3D (Visual) Conf  :   6.0%
+  --> FUSED CONFIDENCE         :   6.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 402.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2419.2s -> 2437.9s
+  --> Audio CNN (Whistle) Conf :  57.8%
+  --> Video X3D (Visual) Conf  :  88.9%
+  --> FUSED CONFIDENCE         :  88.9% 
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 400.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2428.8s -> 2447.5s
+  --> Audio CNN (Whistle) Conf :  26.3%
+  --> Video X3D (Visual) Conf  :  56.1%
+  --> FUSED CONFIDENCE         :  56.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 418.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2438.4s -> 2457.1s
+  --> Audio CNN (Whistle) Conf :  53.1%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 425.6ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2448.0s -> 2466.7s
+  --> Audio CNN (Whistle) Conf :  25.4%
+  --> Video X3D (Visual) Conf  :   0.6%
+  --> FUSED CONFIDENCE         :   0.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 411.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2457.6s -> 2476.3s
+  --> Audio CNN (Whistle) Conf :  28.6%
+  --> Video X3D (Visual) Conf  :   6.0%
+  --> FUSED CONFIDENCE         :   6.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 417.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2467.2s -> 2485.9s
+  --> Audio CNN (Whistle) Conf :  56.6%
+  --> Video X3D (Visual) Conf  :   8.6%
+  --> FUSED CONFIDENCE         :   8.6% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 404.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2476.8s -> 2495.5s
+  --> Audio CNN (Whistle) Conf :  97.9%
+  --> Video X3D (Visual) Conf  :  99.1%
+  --> FUSED CONFIDENCE         : 100.0% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 397.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2486.4s -> 2505.1s
+  --> Audio CNN (Whistle) Conf :  96.8%
+  --> Video X3D (Visual) Conf  :   7.9%
+  --> FUSED CONFIDENCE         :  37.0% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 409.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2496.0s -> 2514.7s
+  --> Audio CNN (Whistle) Conf :  99.4%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :  29.8% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 463.4ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2505.6s -> 2524.3s
+  --> Audio CNN (Whistle) Conf :  73.5%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 420.2ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2515.2s -> 2533.9s
+  --> Audio CNN (Whistle) Conf :  50.9%
+  --> Video X3D (Visual) Conf  :   6.4%
+  --> FUSED CONFIDENCE         :   6.4% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 418.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2524.8s -> 2543.5s
+  --> Audio CNN (Whistle) Conf :  68.1%
+  --> Video X3D (Visual) Conf  :   1.8%
+  --> FUSED CONFIDENCE         :   1.8% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 427.9ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2534.4s -> 2553.1s
+  --> Audio CNN (Whistle) Conf :  60.7%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 396.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2544.0s -> 2562.7s
+  --> Audio CNN (Whistle) Conf :  46.0%
+  --> Video X3D (Visual) Conf  :  17.2%
+  --> FUSED CONFIDENCE         :  17.2% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 435.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2553.6s -> 2572.3s
+  --> Audio CNN (Whistle) Conf :  62.9%
+  --> Video X3D (Visual) Conf  :  60.3%
+  --> FUSED CONFIDENCE         :  60.3% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 435.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2563.2s -> 2581.9s
+  --> Audio CNN (Whistle) Conf :  97.2%
+  --> Video X3D (Visual) Conf  :  18.5%
+  --> FUSED CONFIDENCE         :  47.6% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 393.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2572.8s -> 2591.5s
+  --> Audio CNN (Whistle) Conf :  98.7%
+  --> Video X3D (Visual) Conf  :  38.5%
+  --> FUSED CONFIDENCE         :  68.1% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 405.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2582.4s -> 2601.1s
+  --> Audio CNN (Whistle) Conf :  60.2%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 403.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2592.0s -> 2610.7s
+  --> Audio CNN (Whistle) Conf :  50.4%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 451.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2601.6s -> 2620.3s
+  --> Audio CNN (Whistle) Conf :  98.5%
+  --> Video X3D (Visual) Conf  :  64.2%
+  --> FUSED CONFIDENCE         :  93.7% (Boosted by Whistle!)
+  --> ACTION                   : DETECTED HIGHLIGHT! (Clipping to disk...)
+  [Metrics] Dual-Inference Latency: 393.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2611.2s -> 2629.9s
+  --> Audio CNN (Whistle) Conf :  98.9%
+  --> Video X3D (Visual) Conf  :   3.8%
+  --> FUSED CONFIDENCE         :  33.4% (Boosted by Whistle!)
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 391.8ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2620.8s -> 2639.5s
+  --> Audio CNN (Whistle) Conf :  71.1%
+  --> Video X3D (Visual) Conf  :   2.7%
+  --> FUSED CONFIDENCE         :   2.7% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 414.5ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2630.4s -> 2649.1s
+  --> Audio CNN (Whistle) Conf :  54.9%
+  --> Video X3D (Visual) Conf  :  11.9%
+  --> FUSED CONFIDENCE         :  11.9% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 377.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2640.0s -> 2658.7s
+  --> Audio CNN (Whistle) Conf :  72.7%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 417.0ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2649.6s -> 2668.3s
+  --> Audio CNN (Whistle) Conf :  36.3%
+  --> Video X3D (Visual) Conf  :   0.0%
+  --> FUSED CONFIDENCE         :   0.0% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 401.3ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2659.2s -> 2677.9s
+  --> Audio CNN (Whistle) Conf :  39.1%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 392.7ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2668.8s -> 2687.5s
+  --> Audio CNN (Whistle) Conf :  36.9%
+  --> Video X3D (Visual) Conf  :   0.1%
+  --> FUSED CONFIDENCE         :   0.1% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 434.1ms | Queue Backlog: 0 frames
+============================================================
+
+============================================================
+[LIVE INFERENCE TRIGGERED] Window: 2678.4s -> 2697.1s
+  --> Audio CNN (Whistle) Conf :  23.3%
+  --> Video X3D (Visual) Conf  :   0.9%
+  --> FUSED CONFIDENCE         :   0.9% 
+  --> ACTION                   : Background
+  [Metrics] Dual-Inference Latency: 406.9ms | Queue Backlog: 0 frames
+============================================================
+[Producer] Video ended.
+[Consumer] Finished.
+Live feed simulation terminated.

@@ -115,7 +115,7 @@ def consumer(frame_queue, stop_event, video_model, audio_model, video_path, devi
                 timestamps = [x[1] for x in rolling_buffer[:WINDOW_FRAMES]]
                 
                 t_end = timestamps[-1]
-                t_start_audio = max(0, t_end - 5.0)
+                t_start_video = max(0, t_end - WINDOW_SECONDS)
                 
                 print(f"\n" + "="*60)
                 print(f"[LIVE INFERENCE TRIGGERED] Window: {timestamps[0]:.1f}s -> {t_end:.1f}s")
@@ -123,41 +123,49 @@ def consumer(frame_queue, stop_event, video_model, audio_model, video_path, devi
                 inf_start = time.time()
                 
                 # --- AUDIO PIPELINE ---
-                temp_wav = extract_live_audio(video_path, t_start_audio, duration=5.0)
-                temp_jpg = "live_spec.jpg"
-                audio_prob = 0.0
-                if os.path.exists(temp_wav):
-                    try:
-                        waveform, sample_rate = torchaudio.load(temp_wav)
-                        if waveform.shape[0] > 1:
-                            waveform = waveform.mean(dim=0, keepdim=True)
+                max_audio_prob = 0.0
+                
+                # A foul happens at varying times within the 20s window, and the whistle follows it.
+                # Scan four 5-second audio chunks across the entire window and take the max whistle confidence.
+                for chunk_idx in range(4):
+                    chunk_start = t_start_video + (chunk_idx * 5.0)
+                    temp_wav = extract_live_audio(video_path, chunk_start, duration=5.0, temp_wav=f"live_buffer_{chunk_idx}.wav")
+                    temp_jpg = f"live_spec_{chunk_idx}.jpg"
+                    
+                    if os.path.exists(temp_wav):
+                        try:
+                            waveform, sample_rate = torchaudio.load(temp_wav)
+                            if waveform.shape[0] > 1:
+                                waveform = waveform.mean(dim=0, keepdim=True)
+                                
+                            mel_spec = torchaudio.transforms.MelSpectrogram(
+                                sample_rate=sample_rate, n_fft=2048, hop_length=512, n_mels=128
+                            )(waveform)
+                            mel_spec = torchaudio.transforms.AmplitudeToDB()(mel_spec)
                             
-                        mel_spec = torchaudio.transforms.MelSpectrogram(
-                            sample_rate=sample_rate, n_fft=2048, hop_length=512, n_mels=128
-                        )(waveform)
-                        mel_spec = torchaudio.transforms.AmplitudeToDB()(mel_spec)
-                        
-                        plt.figure(figsize=(2.24, 2.24), dpi=100)
-                        plt.imshow(mel_spec[0].numpy(), aspect='auto', origin='lower', cmap='magma')
-                        plt.axis('off')
-                        plt.tight_layout(pad=0)
-                        plt.savefig(temp_jpg, bbox_inches='tight', pad_inches=0)
-                        plt.close()
-                        
-                        audio_transform = transforms.Compose([
-                            transforms.ToTensor(),
-                            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-                        ])
-                        
-                        audio_img = Image.open(temp_jpg).convert('RGB')
-                        audio_tensor = audio_transform(audio_img).unsqueeze(0).to(device)
-                        
-                        with torch.no_grad():
-                            audio_out = audio_model(audio_tensor)
-                            audio_probs = torch.softmax(audio_out, dim=1)
-                            audio_prob = audio_probs[0, 1].item()
-                    except Exception as e:
-                        print(f"  [!] Audio extraction failed: {e}")
+                            plt.figure(figsize=(2.24, 2.24), dpi=100)
+                            plt.imshow(mel_spec[0].numpy(), aspect='auto', origin='lower', cmap='magma')
+                            plt.axis('off')
+                            plt.tight_layout(pad=0)
+                            plt.savefig(temp_jpg, bbox_inches='tight', pad_inches=0)
+                            plt.close()
+                            
+                            audio_transform = transforms.Compose([
+                                transforms.ToTensor(),
+                                transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+                            ])
+                            
+                            audio_img = Image.open(temp_jpg).convert('RGB')
+                            audio_tensor = audio_transform(audio_img).unsqueeze(0).to(device)
+                            
+                            with torch.no_grad():
+                                audio_out = audio_model(audio_tensor)
+                                audio_probs = torch.softmax(audio_out, dim=1)
+                                max_audio_prob = max(max_audio_prob, audio_probs[0, 1].item())
+                        except Exception as e:
+                            pass
+                
+                audio_prob = max_audio_prob
                 
                 # --- VIDEO PIPELINE ---
                 input_tensor = torch.stack(input_frames, dim=1).unsqueeze(0).to(device)
@@ -184,7 +192,6 @@ def consumer(frame_queue, stop_event, video_model, audio_model, video_path, devi
                 if final_prob > THRESHOLD:
                     status = "DETECTED HIGHLIGHT! (Clipping to disk...)"
                     # Asynchronously save the 20-second window so we don't block the live feed!
-                    t_start_video = max(0, t_end - WINDOW_SECONDS)
                     out_clip = os.path.join(highlights_dir, f"highlight_{t_start_video:.0f}s_to_{t_end:.0f}s.mp4")
                     
                     clip_cmd = [
@@ -214,6 +221,8 @@ def consumer(frame_queue, stop_event, video_model, audio_model, video_path, devi
 
     print("[Consumer] Finished.")
 
+import sys
+
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"System Check: Using {device} for inference")
@@ -221,7 +230,7 @@ def main():
     # 1. Load Video Model
     print("Loading V2 X3D Video Model...")
     video_model = X3DFreeKickModel(num_classes=2, pretrained=False)
-    video_ckpt = "checkpoints/x3d_best.pth"
+    video_ckpt = "checkpoints/x3d_foul_best.pth"
     if os.path.exists(video_ckpt):
         video_model.load_state_dict(torch.load(video_ckpt, map_location=device))
         print("-> Video Weights loaded successfully!")
@@ -243,12 +252,11 @@ def main():
     audio_model = audio_model.to(device)
     audio_model.eval()
 
-    videos = glob.glob(os.path.join(DATA_DIR, "*.mp4")) + glob.glob(os.path.join(DATA_DIR, "*.mkv"))
-    if not videos:
-        print(f"No videos found in {DATA_DIR}.")
-        return
+    if len(sys.argv) > 1:
+        test_video = sys.argv[1]
+    else:
+        test_video = os.path.join(DATA_DIR, "MD1 STP-BVB-012_720p.mp4")
         
-    test_video = os.path.join(DATA_DIR, "MD1 STP-BVB-012_720p.mp4")
     if not os.path.exists(test_video):
         print(f"Requested video not found: {test_video}")
         return
