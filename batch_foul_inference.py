@@ -14,6 +14,23 @@ from torchvision import models
 from model import X3DFreeKickModel
 import shutil
 
+def merge_intervals(intervals, max_gap=10.0):
+    if not intervals: return []
+    intervals.sort(key=lambda x: x[0])
+    merged = [list(intervals[0])]
+    for curr in intervals[1:]:
+        prev = merged[-1]
+        # curr[0] is start_time, prev[1] is end_time
+        if curr[0] <= prev[1] + max_gap:
+            prev[1] = max(prev[1], curr[1])
+            prev[2] = max(prev[2], curr[2]) # audio
+            prev[3] = max(prev[3], curr[3]) # video
+            prev[4] = max(prev[4], curr[4]) # fused
+            prev[5] = prev[5] or curr[5]    # boosted
+        else:
+            merged.append(list(curr))
+    return merged
+
 FPS = 2
 WINDOW_SECONDS = 20
 WINDOW_FRAMES = WINDOW_SECONDS * FPS
@@ -55,6 +72,7 @@ def process_video(video_path, video_model, audio_model, device, out_dir, report_
     
     vid_name = os.path.splitext(os.path.basename(video_path))[0]
     clip_count = 0
+    detected_windows = []
     
     while True:
         ret, frame = cap.read()
@@ -136,34 +154,39 @@ def process_video(video_path, video_model, audio_model, device, out_dir, report_
                     
                 if final_prob > THRESHOLD:
                     clip_start = max(0, t_start_video - 5.0)
-                    out_clip = os.path.join(out_dir, f"{vid_name}_clip{clip_count}_{clip_start:.0f}s.mp4")
+                    clip_end = clip_start + 20.0
+                    detected_windows.append((clip_start, clip_end, audio_prob, video_prob, final_prob, boosted))
                     
-                    clip_cmd = [
-                        "ffmpeg", "-y", "-loglevel", "error",
-                        "-ss", str(clip_start),
-                        "-i", video_path,
-                        "-t", "30",
-                        "-vf", "scale=-2:480",
-                        "-c:v", "libx264", "-crf", "28", "-preset", "fast",
-                        "-c:a", "aac", "-b:a", "128k",
-                        out_clip
-                    ]
-                    subprocess.run(clip_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-                    
-                    with open(report_file, "a") as f:
-                        f.write(f"[{vid_name}] Clip {clip_count} (Window: {t_start_video:.1f}s -> {t_end:.1f}s, Clipped: {clip_start:.1f}s -> {clip_start+30:.1f}s)\n")
-                        f.write(f"  - Audio (Whistle): {audio_prob*100:.1f}%\n")
-                        f.write(f"  - Video (Foul): {video_prob*100:.1f}%\n")
-                        f.write(f"  - Fused: {final_prob*100:.1f}% {'(Boosted)' if boosted else ''}\n\n")
-                    
-                    clip_count += 1
-                
                 # Slide window
                 rolling_buffer = rolling_buffer[STRIDE_FRAMES:]
                 
         frame_idx += 1
     
     cap.release()
+    
+    merged_clips = merge_intervals(detected_windows, max_gap=5.0)
+    for idx, clip in enumerate(merged_clips):
+        c_start, c_end, a_prob, v_prob, f_prob, is_boosted = clip
+        duration = c_end - c_start
+        out_clip = os.path.join(out_dir, f"{vid_name}_clip{idx}_{c_start:.0f}s.mp4")
+        
+        clip_cmd = [
+            "ffmpeg", "-y", "-loglevel", "error",
+            "-ss", str(c_start),
+            "-i", video_path,
+            "-t", str(duration),
+            "-vf", "scale=-2:480",
+            "-c:v", "libx264", "-crf", "28", "-preset", "fast",
+            "-c:a", "aac", "-b:a", "128k",
+            out_clip
+        ]
+        subprocess.run(clip_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
+        with open(report_file, "a") as f:
+            f.write(f"[{vid_name}] Merged Clip {idx} (Clipped: {c_start:.1f}s -> {c_end:.1f}s, Dur: {duration:.1f}s)\n")
+            f.write(f"  - Max Audio (Whistle): {a_prob*100:.1f}%\n")
+            f.write(f"  - Max Video (Foul): {v_prob*100:.1f}%\n")
+            f.write(f"  - Max Fused: {f_prob*100:.1f}% {'(Boosted)' if is_boosted else ''}\n\n")
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

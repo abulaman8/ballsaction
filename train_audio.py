@@ -12,7 +12,18 @@ def main():
     
     # Standard ResNet image transformations
     # ResNet expects 224x224 RGB images with this exact normalization
-    transform = transforms.Compose([
+    # Data Augmentations for Training
+    # We must be careful: Vertical flips destroy frequency bands, but Horizontal flips (reversing time) are safe for whistles.
+    transform_train = transforms.Compose([
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.ColorJitter(brightness=0.2, contrast=0.2), # Simulates varying audio volumes
+        transforms.RandomAffine(degrees=0, translate=(0.1, 0.05)), # Time shift (10%) and minor Pitch shift (5%)
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    ])
+    
+    # Clean transforms for Validation
+    transform_val = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
@@ -26,8 +37,8 @@ def main():
         return
         
     print("Loading datasets...")
-    train_dataset = datasets.ImageFolder(train_dir, transform=transform)
-    val_dataset = datasets.ImageFolder(val_dir, transform=transform)
+    train_dataset = datasets.ImageFolder(train_dir, transform=transform_train)
+    val_dataset = datasets.ImageFolder(val_dir, transform=transform_val)
     
     train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=4)
     val_loader = DataLoader(val_dataset, batch_size=64, shuffle=False, num_workers=4)
@@ -37,14 +48,14 @@ def main():
     
     # Initialize Pretrained ResNet-18
     # We use a pre-trained model because the early convolution layers are already perfect edge/line detectors
-    print("Loading Pretrained ResNet-18...")
-    model = models.resnet18(pretrained=True)
+    print("Loading Pretrained ResNet-34...")
+    model = models.resnet34(pretrained=True)
     
     # Modify the final Fully Connected (fc) layer for our binary task (0: Background, 1: Whistle)
     model.fc = nn.Linear(model.fc.in_features, 2)
     model = model.to(device)
     
-    criterion = nn.CrossEntropyLoss()
+    criterion = nn.CrossEntropyLoss(weight=torch.tensor([1.0, 2.0]).to(device))
     optimizer = optim.AdamW(model.parameters(), lr=1e-4)
     
     # Early Stopping tracking
@@ -54,7 +65,7 @@ def main():
     max_epochs = 15
     
     os.makedirs("checkpoints", exist_ok=True)
-    best_model_path = "checkpoints/audio_resnet18_best.pth"
+    best_model_path = "checkpoints/audio_resnet34_best.pth"
     
     print("\nStarting Training Loop...")
     for epoch in range(max_epochs):

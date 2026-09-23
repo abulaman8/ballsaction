@@ -4,6 +4,8 @@ import random
 import subprocess
 import torchaudio
 import matplotlib.pyplot as plt
+import uuid
+from concurrent.futures import ProcessPoolExecutor
 from SoccerNet.utils import getListGames
 
 DATA_DIR = "/home/pilot/Desktop/ballsaction/soccernet_data"
@@ -16,7 +18,10 @@ os.makedirs(os.path.join(OUTPUT_DIR, "val", "whistle"), exist_ok=True)
 os.makedirs(os.path.join(OUTPUT_DIR, "val", "background"), exist_ok=True)
 
 def extract_and_plot(video_path, start_sec, dur, out_png):
-    wav_path = "/tmp/temp_audio.wav"
+    if os.path.exists(out_png):
+        return True
+        
+    wav_path = f"/tmp/temp_audio_{uuid.uuid4().hex}.wav"
     cmd = [
         "ffmpeg", "-y", "-loglevel", "error", 
         "-ss", str(start_sec), "-i", video_path, 
@@ -46,7 +51,65 @@ def extract_and_plot(video_path, start_sec, dur, out_png):
         os.remove(wav_path)
         return True
     except Exception as e:
+        if os.path.exists(wav_path): os.remove(wav_path)
         return False
+
+def process_game(args):
+    game_idx, game = args
+    split = "val" if game_idx % 5 == 0 else "train"
+    labels_path = os.path.join(DATA_DIR, game, "Labels-v2.json")
+    
+    with open(labels_path, 'r') as f:
+        labels = json.load(f)
+        
+    intervals = []
+    whistle_count = 0
+    bg_count = 0
+    
+    for ann in labels.get("annotations", []):
+        label = ann.get("label")
+        if "gameTime" not in ann: continue
+        time_parts = ann["gameTime"].split(" - ")
+        if len(time_parts) < 2: continue
+        half = time_parts[0]
+        if half not in ["1", "2"]: continue
+        
+        m, s = map(int, time_parts[1].split(':'))
+        time_sec = m * 60 + s
+        
+        start_sec = max(0, time_sec - 2)
+        end_sec = start_sec + 5
+        
+        video_path = os.path.join(DATA_DIR, game, f"{half}_224p.mkv")
+        if not os.path.exists(video_path): continue
+        
+        if label in WHISTLE_CLASSES:
+            png_name = f"{game.replace('/', '_')}_{half}_{time_sec}.jpg"
+            out_path = os.path.join(OUTPUT_DIR, split, "whistle", png_name)
+            if extract_and_plot(video_path, start_sec, 5, out_path):
+                whistle_count += 1
+                intervals.append((half, start_sec, end_sec))
+                
+    # Extract Backgrounds (1:1 ratio)
+    attempts = 0
+    while bg_count < whistle_count and attempts < whistle_count * 3:
+        attempts += 1
+        half = random.choice(["1", "2"])
+        video_path = os.path.join(DATA_DIR, game, f"{half}_224p.mkv")
+        if not os.path.exists(video_path): continue
+        
+        start_sec = random.randint(0, 45*60 - 5)
+        end_sec = start_sec + 5
+        
+        overlap = any(h == half and not (end_sec <= s or start_sec >= e) for h, s, e in intervals)
+        if not overlap:
+            png_name = f"{game.replace('/', '_')}_{half}_bg_{start_sec}.jpg"
+            out_path = os.path.join(OUTPUT_DIR, split, "background", png_name)
+            if extract_and_plot(video_path, start_sec, 5, out_path):
+                bg_count += 1
+                intervals.append((half, start_sec, end_sec))
+                
+    return game, whistle_count, bg_count
 
 def main():
     games = getListGames(["train", "valid", "test"])
@@ -54,59 +117,11 @@ def main():
     
     print(f"Found {len(downloaded)} matches for Audio Extraction...")
     
-    for game_idx, game in enumerate(downloaded):
-        split = "val" if game_idx % 5 == 0 else "train"
-        labels_path = os.path.join(DATA_DIR, game, "Labels-v2.json")
-        
-        with open(labels_path, 'r') as f:
-            labels = json.load(f)
-            
-        intervals = []
-        whistle_count = 0
-        bg_count = 0
-        
-        for ann in labels["annotations"]:
-            label = ann["label"]
-            half = ann["gameTime"].split(" - ")[0]
-            if half not in ["1", "2"]: continue
-            
-            m, s = map(int, ann["gameTime"].split(" - ")[1].split(':'))
-            time_sec = m * 60 + s
-            
-            # 5 second window (2s before, 3s after)
-            start_sec = max(0, time_sec - 2)
-            end_sec = start_sec + 5
-            
-            video_path = os.path.join(DATA_DIR, game, f"{half}_224p.mkv")
-            if not os.path.exists(video_path): continue
-            
-            if label in WHISTLE_CLASSES:
-                png_name = f"{game.replace('/', '_')}_{half}_{time_sec}.jpg"
-                out_path = os.path.join(OUTPUT_DIR, split, "whistle", png_name)
-                if extract_and_plot(video_path, start_sec, 5, out_path):
-                    whistle_count += 1
-                    intervals.append((half, start_sec, end_sec))
-                    
-        # Extract Backgrounds (1:1 ratio)
-        attempts = 0
-        while bg_count < whistle_count and attempts < whistle_count * 3:
-            attempts += 1
-            half = random.choice(["1", "2"])
-            video_path = os.path.join(DATA_DIR, game, f"{half}_224p.mkv")
-            if not os.path.exists(video_path): continue
-            
-            start_sec = random.randint(0, 45*60 - 5)
-            end_sec = start_sec + 5
-            
-            overlap = any(h == half and not (end_sec <= s or start_sec >= e) for h, s, e in intervals)
-            if not overlap:
-                png_name = f"{game.replace('/', '_')}_{half}_bg_{start_sec}.jpg"
-                out_path = os.path.join(OUTPUT_DIR, split, "background", png_name)
-                if extract_and_plot(video_path, start_sec, 5, out_path):
-                    bg_count += 1
-                    intervals.append((half, start_sec, end_sec))
-                    
-        print(f"[{game_idx+1}/{len(downloaded)}] {game} | Whistles: {whistle_count} | BGs: {bg_count}")
+    args = [(i, g) for i, g in enumerate(downloaded)]
+    
+    with ProcessPoolExecutor(max_workers=8) as executor:
+        for game, w_count, b_count in executor.map(process_game, args):
+            print(f"Processed {game} | Whistles: {w_count} | BGs: {b_count}")
 
 if __name__ == "__main__":
     main()

@@ -16,9 +16,9 @@ def main():
     val_dataset = datasets.ImageFolder(val_dir, transform=transform)
     val_loader = DataLoader(val_dataset, batch_size=64, shuffle=False, num_workers=4)
     
-    model = models.resnet18(pretrained=False)
+    model = models.resnet34(pretrained=False)
     model.fc = nn.Linear(model.fc.in_features, 2)
-    model.load_state_dict(torch.load("checkpoints/audio_resnet18_best.pth", map_location=device))
+    model.load_state_dict(torch.load("checkpoints/audio_resnet34_best.pth", map_location=device))
     model = model.to(device)
     model.eval()
     
