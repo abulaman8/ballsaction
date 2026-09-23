@@ -15,7 +15,7 @@ def download_hf(token, password):
     all_games = getListGames(["train", "valid", "test"])
     bundesliga_games = [g for g in all_games if "germany_bundesliga" in g.lower()]
     other_games = [g for g in all_games if "germany_bundesliga" not in g.lower()]
-    target_games = (bundesliga_games + other_games)[:250]
+    target_games = bundesliga_games + other_games
     
     print(f"Downloading Labels-v2.json from KAUST for {len(target_games)} games...")
     for game in target_games:
