@@ -13,6 +13,20 @@ from model import X3DFreeKickModel
 from SoccerNet.utils import getListGames
 import shutil
 
+class FusionNetwork(nn.Module):
+    def __init__(self):
+        super(FusionNetwork, self).__init__()
+        self.net = nn.Sequential(
+            nn.Linear(2, 8),
+            nn.ReLU(),
+            nn.Linear(8, 1),
+            nn.Sigmoid()
+        )
+        
+    def forward(self, x):
+        return self.net(x).squeeze(1)
+
+
 FPS = 2
 WINDOW_SECONDS = 20
 WINDOW_FRAMES = WINDOW_SECONDS * FPS
@@ -54,7 +68,7 @@ def merge_intervals(intervals, max_gap=10.0):
             merged.append(list(curr))
     return merged
 
-def process_video(video_path, video_model, audio_model, device, out_dir, vid_name):
+def process_video(video_path, video_model, audio_model, fusion_model, device, out_dir, vid_name):
     print(f"Processing {os.path.basename(video_path)}...")
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
@@ -134,12 +148,10 @@ def process_video(video_path, video_model, audio_model, device, out_dir, vid_nam
                         video_probs = torch.softmax(video_out, dim=1)
                     video_prob = video_probs[0, 1].item()
                 
-                if audio_prob > 0.85:
-                    final_prob = min(1.0, video_prob + (audio_prob * 0.3))
-                    boosted = True
-                else:
-                    final_prob = video_prob
-                    boosted = False
+                fusion_input = torch.tensor([[video_prob, audio_prob]], dtype=torch.float32).to(device)
+                with torch.no_grad():
+                    final_prob = fusion_model(fusion_input).item()
+                boosted = (final_prob > video_prob + 0.05)
                     
                 if final_prob > THRESHOLD:
                     clip_start = max(0, t_start_video - 5.0)
@@ -200,6 +212,11 @@ def evaluate():
     audio_model = audio_model.to(device)
     audio_model.eval()
     
+    fusion_model = FusionNetwork()
+    fusion_model.load_state_dict(torch.load("checkpoints/fusion_mlp_best.pth", map_location=device))
+    fusion_model = fusion_model.to(device)
+    fusion_model.eval()
+    
     data_dir = "/home/pilot/Desktop/ballsaction/soccernet_data"
     out_dir = "/home/pilot/Desktop/ballsaction/soccernet_eval_highlights"
     report_file = "/home/pilot/Desktop/ballsaction/soccernet_eval_report.txt"
@@ -242,7 +259,7 @@ def evaluate():
             if not os.path.exists(vid_path): continue
             
             vid_name = f"{game.replace('/', '_')}_half{half}"
-            merged_clips = process_video(vid_path, video_model, audio_model, device, out_dir, vid_name)
+            merged_clips = process_video(vid_path, video_model, audio_model, fusion_model, device, out_dir, vid_name)
             gt_half = gt_events[half]
             for gt_time, gt_label in gt_half:
                 total_gt_per_class[gt_label] += 1

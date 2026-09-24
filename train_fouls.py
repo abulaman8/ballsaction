@@ -27,10 +27,18 @@ def train():
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=0)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=0)
     
-    model = X3DFreeKickModel(num_classes=2, pretrained=True).to(device)
+    model = X3DFreeKickModel(num_classes=2, pretrained=True)
+    if os.path.exists("checkpoints/x3d_foul_best.pth"):
+        print("Loading current champion weights for fine-tuning...")
+        model.load_state_dict(torch.load("checkpoints/x3d_foul_best.pth", map_location=device))
+    model = model.to(device)
     
-    # We extracted 12525 highlights and 34058 background. Ratio is 1:2.72
-    class_weights = torch.tensor([1.0, 2.72], dtype=torch.float32).to(device)
+    num_hl = len(os.listdir(os.path.join(train_dir, "set_piece")))
+    num_bg = len(os.listdir(os.path.join(train_dir, "background")))
+    ratio = num_bg / num_hl if num_hl > 0 else 1.0
+    print(f"Highlights: {num_hl}, Backgrounds: {num_bg} -> Ratio: 1:{ratio:.2f}")
+    
+    class_weights = torch.tensor([1.0, ratio], dtype=torch.float32).to(device)
     criterion = nn.CrossEntropyLoss(weight=class_weights)
     
     optimizer = optim.AdamW(model.parameters(), lr=1e-4)

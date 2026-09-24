@@ -98,7 +98,7 @@ def process_game(args):
                 highlight_intervals.append((half, start_sec, end_sec))
         elif label in HARD_NEGATIVE_CLASSES:
             # Save interval for hard negative mining
-            hard_negative_intervals.append((half, start_sec, end_sec))
+            hard_negative_intervals.append((half, start_sec, end_sec, label))
             
     # Second Pass: Extract Background clips
     num_bg_needed = int(len([iv for iv in highlight_intervals if iv[0] in ["1", "2"]]) * BG_RATIO)
@@ -106,12 +106,16 @@ def process_game(args):
         num_bg_needed = 10
         
     attempts = 0
-    target_hn = int(num_bg_needed * 0.6)
+    target_hn = int(num_bg_needed * 0.8) # Increased target to 80% to pack in more Throw-ins
     
     random.shuffle(hard_negative_intervals)
+    # Heavily prioritize Throw-ins by putting them at the very front of the extraction queue
+    throw_ins = [iv for iv in hard_negative_intervals if iv[3] == "Throw-in"]
+    others = [iv for iv in hard_negative_intervals if iv[3] != "Throw-in"]
+    hard_negative_intervals = throw_ins + others
     
     # Extract Hard Negatives first
-    for (half, start_sec, end_sec) in hard_negative_intervals:
+    for (half, start_sec, end_sec, label) in hard_negative_intervals:
         if hn_extracted >= target_hn:
             break
             
