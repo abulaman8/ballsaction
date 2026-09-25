@@ -4,665 +4,742 @@ SOCCERNET EVALUATION REPORT
 
 Evaluating Match: england_epl/2015-2016/2015-12-28 - 20-30 Manchester United 0 - 0 Chelsea
 --------------------------------------------------
-Half 1 | Clip 0 [771s - 791s] -> FALSE POSITIVE
-  Max Audio: 0.0%, Max Video: 96.2%, Max Fused: 98.1% 
+Half 1 | Clip 0 [714s - 734s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 85.7%, Max Fused: 95.6% (Boosted)
 
-Half 1 | Clip 1 [1530s - 1550s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 99.7%, Max Fused: 98.5% 
+Half 1 | Clip 1 [743s - 791s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 99.3%, Max Fused: 98.5% (Boosted)
+
+Half 1 | Clip 2 [1530s - 1559s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% (Boosted)
   Matched GTs: ['Foul @ 1547s']
 
-Half 1 | Clip 2 [1578s - 1636s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 99.9%, Max Fused: 98.6% (Boosted)
+Half 1 | Clip 3 [1578s - 1617s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% (Boosted)
   Matched GTs: ['Indirect free-kick @ 1593s', 'Foul @ 1611s']
 
-Half 1 | Clip 3 [1664s - 1684s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 97.4%, Max Fused: 98.2% 
+Half 1 | Clip 4 [1664s - 1684s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 99.8%, Max Fused: 98.6% 
   Matched GTs: ['Direct free-kick @ 1679s']
 
-Half 1 | Clip 4 [1731s - 1761s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 99.9%, Max Fused: 98.6% (Boosted)
+Half 1 | Clip 5 [1731s - 1761s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% 
   Matched GTs: ['Foul @ 1750s']
 
-Half 1 | Clip 5 [1904s - 1943s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 97.0%, Max Fused: 98.2% (Boosted)
+Half 1 | Clip 6 [1904s - 1943s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 99.9%, Max Fused: 98.6% (Boosted)
   Matched GTs: ['Foul @ 1919s']
 
-Half 1 | Clip 6 [1971s - 1991s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 99.9%, Max Fused: 98.6% 
+Half 1 | Clip 7 [1971s - 1991s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% 
   Matched GTs: ['Foul @ 1987s']
 
-Half 1 | Clip 7 [2019s - 2049s] -> TRUE POSITIVE
+Half 1 | Clip 8 [2029s - 2049s] -> TRUE POSITIVE
   Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% 
   Matched GTs: ['Direct free-kick @ 2042s']
 
-Half 1 | Clip 8 [2144s - 2164s] -> FALSE POSITIVE
-  Max Audio: 0.0%, Max Video: 75.0%, Max Fused: 90.1% (Boosted)
-
-Half 1 | Clip 9 [2355s - 2375s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 99.9%, Max Fused: 98.6% 
+Half 1 | Clip 9 [2355s - 2385s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% (Boosted)
   Matched GTs: ['Direct free-kick @ 2367s']
 
 Half 1 | Clip 10 [2499s - 2519s] -> FALSE POSITIVE
-  Max Audio: 0.0%, Max Video: 93.8%, Max Fused: 97.7% 
+  Max Audio: 0.0%, Max Video: 99.7%, Max Fused: 98.5% 
 
-Half 1 | Clip 11 [2528s - 2548s] -> FALSE POSITIVE
-  Max Audio: 0.0%, Max Video: 79.8%, Max Fused: 93.1% (Boosted)
-
-Half 1 | Clip 12 [2605s - 2625s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 99.1%, Max Fused: 98.5% 
+Half 1 | Clip 11 [2605s - 2625s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 99.9%, Max Fused: 98.6% 
   Matched GTs: ['Foul @ 2623s']
+
+Half 1 | Clip 12 [2643s - 2663s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 86.6%, Max Fused: 95.9% (Boosted)
 
 Half 1 | Clip 13 [2672s - 2692s] -> TRUE POSITIVE
   Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% 
   Matched GTs: ['Foul @ 2688s']
 
 Half 2 | Clip 0 [42s - 62s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 86.8%, Max Fused: 95.9% (Boosted)
+  Max Audio: 0.0%, Max Video: 96.4%, Max Fused: 98.1% 
   Matched GTs: ['Foul @ 55s']
 
 Half 2 | Clip 1 [71s - 100s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% 
+  Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% (Boosted)
   Matched GTs: ['Direct free-kick @ 93s']
 
-Half 2 | Clip 2 [570s - 590s] -> FALSE POSITIVE
-  Max Audio: 0.0%, Max Video: 90.5%, Max Fused: 97.0% (Boosted)
+Half 2 | Clip 2 [205s - 225s] -> FALSE POSITIVE
+  Max Audio: 99.5%, Max Video: 65.7%, Max Fused: 97.3% (Boosted)
 
-Half 2 | Clip 3 [704s - 724s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 91.5%, Max Fused: 97.2% (Boosted)
+Half 2 | Clip 3 [320s - 340s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 92.9%, Max Fused: 97.5% 
+
+Half 2 | Clip 4 [531s - 551s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 72.9%, Max Fused: 88.4% (Boosted)
+
+Half 2 | Clip 5 [570s - 590s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 99.1%, Max Fused: 98.5% 
+
+Half 2 | Clip 6 [704s - 734s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 94.6%, Max Fused: 97.8% (Boosted)
   Matched GTs: ['Foul @ 720s', 'Indirect free-kick @ 731s']
 
-Half 2 | Clip 4 [1040s - 1060s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 97.9%, Max Fused: 98.3% 
+Half 2 | Clip 7 [771s - 791s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 90.8%, Max Fused: 97.0% (Boosted)
+
+Half 2 | Clip 8 [810s - 830s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 70.1%, Max Fused: 85.9% (Boosted)
+
+Half 2 | Clip 9 [915s - 935s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 88.4%, Max Fused: 96.4% (Boosted)
+
+Half 2 | Clip 10 [1040s - 1060s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 99.7%, Max Fused: 98.5% 
   Matched GTs: ['Foul @ 1058s']
 
-Half 2 | Clip 5 [1155s - 1195s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 92.2%, Max Fused: 97.3% (Boosted)
+Half 2 | Clip 11 [1127s - 1147s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 84.3%, Max Fused: 95.1% (Boosted)
+
+Half 2 | Clip 12 [1155s - 1195s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 90.5%, Max Fused: 97.0% (Boosted)
   Matched GTs: ['Foul @ 1174s', 'Indirect free-kick @ 1190s']
 
-Half 2 | Clip 6 [1827s - 1847s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 96.0%, Max Fused: 98.0% 
+Half 2 | Clip 13 [1731s - 1751s] -> FALSE POSITIVE
+  Max Audio: 0.0%, Max Video: 69.4%, Max Fused: 85.2% (Boosted)
+
+Half 2 | Clip 14 [1827s - 1847s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% 
   Matched GTs: ['Foul @ 1818s']
 
-Half 2 | Clip 7 [1866s - 1886s] -> FALSE POSITIVE
-  Max Audio: 0.0%, Max Video: 71.4%, Max Fused: 87.1% (Boosted)
-
-Half 2 | Clip 8 [2096s - 2116s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 89.2%, Max Fused: 96.7% (Boosted)
+Half 2 | Clip 15 [2096s - 2116s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 99.7%, Max Fused: 98.5% 
   Matched GTs: ['Foul @ 2104s']
 
-Half 2 | Clip 9 [2135s - 2155s] -> TRUE POSITIVE
-  Max Audio: 98.9%, Max Video: 76.1%, Max Fused: 98.7% (Boosted)
+Half 2 | Clip 16 [2135s - 2155s] -> TRUE POSITIVE
+  Max Audio: 98.9%, Max Video: 69.9%, Max Fused: 98.1% (Boosted)
   Matched GTs: ['Indirect free-kick @ 2151s']
 
-Half 2 | Clip 10 [2317s - 2375s] -> TRUE POSITIVE
+Half 2 | Clip 17 [2317s - 2375s] -> TRUE POSITIVE
   Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% (Boosted)
   Matched GTs: ['Foul @ 2335s', 'Indirect free-kick @ 2372s', 'Foul @ 2376s']
 
-Half 2 | Clip 11 [2394s - 2414s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 97.9%, Max Fused: 98.3% 
+Half 2 | Clip 18 [2394s - 2414s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 98.2%, Max Fused: 98.4% 
   Matched GTs: ['Direct free-kick @ 2405s']
 
-Half 2 | Clip 12 [2701s - 2721s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 99.9%, Max Fused: 98.6% 
+Half 2 | Clip 19 [2691s - 2721s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 100.0%, Max Fused: 98.6% (Boosted)
   Matched GTs: ['Foul @ 2719s']
 
-Half 2 | Clip 13 [2787s - 2807s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 83.6%, Max Fused: 94.8% (Boosted)
+Half 2 | Clip 20 [2787s - 2807s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 74.7%, Max Fused: 89.9% (Boosted)
   Matched GTs: ['Foul @ 2800s']
 
-Half 2 | Clip 14 [2816s - 2836s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 99.5%, Max Fused: 98.5% 
+Half 2 | Clip 21 [2816s - 2836s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 99.7%, Max Fused: 98.5% 
   Matched GTs: ['Indirect free-kick @ 2829s']
 
-Half 2 | Clip 15 [2874s - 2913s] -> TRUE POSITIVE
-  Max Audio: 0.0%, Max Video: 82.2%, Max Fused: 94.2% (Boosted)
-  Matched GTs: ['Indirect free-kick @ 2872s', 'Foul @ 2882s', 'Direct free-kick @ 2913s']
+Half 2 | Clip 22 [2864s - 2884s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 81.3%, Max Fused: 93.8% (Boosted)
+  Matched GTs: ['Indirect free-kick @ 2872s', 'Foul @ 2882s']
+
+Half 2 | Clip 23 [2893s - 2913s] -> TRUE POSITIVE
+  Max Audio: 0.0%, Max Video: 97.3%, Max Fused: 98.2% 
+  Matched GTs: ['Foul @ 2882s', 'Direct free-kick @ 2913s']
 
 
 Evaluating Match: england_epl/2015-2016/2016-02-03 - 22-45 Watford 0 - 0 Chelsea
 --------------------------------------------------
 Half 1 | Clip 0 [90s - 119s] -> FALSE POSITIVE
-  Max Audio: 99.5%, Max Video: 98.1%, Max Fused: 99.6% 
+  Max Audio: 99.5%, Max Video: 99.5%, Max Fused: 99.6% (Boosted)
 
 Half 1 | Clip 1 [243s - 263s] -> FALSE POSITIVE
-  Max Audio: 90.3%, Max Video: 67.9%, Max Fused: 97.3% (Boosted)
+  Max Audio: 90.3%, Max Video: 57.2%, Max Fused: 93.7% (Boosted)
 
 Half 1 | Clip 2 [339s - 369s] -> TRUE POSITIVE
-  Max Audio: 39.8%, Max Video: 100.0%, Max Fused: 99.3% (Boosted)
+  Max Audio: 39.8%, Max Video: 99.5%, Max Fused: 99.3% (Boosted)
   Matched GTs: ['Direct free-kick @ 358s']
 
-Half 1 | Clip 3 [714s - 734s] -> TRUE POSITIVE
-  Max Audio: 57.5%, Max Video: 73.5%, Max Fused: 96.6% (Boosted)
+Half 1 | Clip 3 [416s - 436s] -> FALSE POSITIVE
+  Max Audio: 47.4%, Max Video: 88.3%, Max Fused: 98.7% (Boosted)
+
+Half 1 | Clip 4 [714s - 753s] -> TRUE POSITIVE
+  Max Audio: 71.8%, Max Video: 75.2%, Max Fused: 97.3% (Boosted)
   Matched GTs: ['Indirect free-kick @ 734s']
 
-Half 1 | Clip 4 [810s - 830s] -> FALSE POSITIVE
-  Max Audio: 73.4%, Max Video: 89.7%, Max Fused: 99.2% (Boosted)
+Half 1 | Clip 5 [762s - 782s] -> FALSE POSITIVE
+  Max Audio: 51.7%, Max Video: 57.9%, Max Fused: 87.4% (Boosted)
 
-Half 1 | Clip 5 [1050s - 1089s] -> TRUE POSITIVE
-  Max Audio: 99.9%, Max Video: 88.4%, Max Fused: 99.3% (Boosted)
+Half 1 | Clip 6 [810s - 830s] -> FALSE POSITIVE
+  Max Audio: 73.4%, Max Video: 83.3%, Max Fused: 98.9% (Boosted)
+
+Half 1 | Clip 7 [1050s - 1089s] -> TRUE POSITIVE
+  Max Audio: 99.9%, Max Video: 89.2%, Max Fused: 99.4% (Boosted)
   Matched GTs: ['Foul @ 1087s']
 
-Half 1 | Clip 6 [1107s - 1137s] -> TRUE POSITIVE
+Half 1 | Clip 8 [1107s - 1137s] -> TRUE POSITIVE
   Max Audio: 98.9%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Direct free-kick @ 1124s']
 
-Half 1 | Clip 7 [1146s - 1166s] -> TRUE POSITIVE
-  Max Audio: 99.3%, Max Video: 97.2%, Max Fused: 99.6% 
+Half 1 | Clip 9 [1146s - 1166s] -> TRUE POSITIVE
+  Max Audio: 99.3%, Max Video: 99.5%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 1161s']
 
-Half 1 | Clip 8 [1194s - 1223s] -> TRUE POSITIVE
-  Max Audio: 91.0%, Max Video: 100.0%, Max Fused: 99.5% 
+Half 1 | Clip 10 [1203s - 1223s] -> TRUE POSITIVE
+  Max Audio: 69.3%, Max Video: 100.0%, Max Fused: 99.5% 
   Matched GTs: ['Direct free-kick @ 1217s']
 
-Half 1 | Clip 9 [1415s - 1444s] -> FALSE POSITIVE
-  Max Audio: 90.0%, Max Video: 99.9%, Max Fused: 99.6% 
+Half 1 | Clip 11 [1290s - 1310s] -> TRUE POSITIVE
+  Max Audio: 82.3%, Max Video: 51.7%, Max Fused: 89.0% (Boosted)
+  Matched GTs: ['Foul @ 1309s']
 
-Half 1 | Clip 10 [1751s - 1771s] -> TRUE POSITIVE
-  Max Audio: 99.4%, Max Video: 85.1%, Max Fused: 99.2% (Boosted)
+Half 1 | Clip 12 [1415s - 1444s] -> FALSE POSITIVE
+  Max Audio: 90.0%, Max Video: 100.0%, Max Fused: 99.6% 
+
+Half 1 | Clip 13 [1751s - 1771s] -> TRUE POSITIVE
+  Max Audio: 99.4%, Max Video: 84.3%, Max Fused: 99.2% (Boosted)
   Matched GTs: ['Foul @ 1771s']
 
-Half 1 | Clip 11 [1789s - 1819s] -> TRUE POSITIVE
-  Max Audio: 94.1%, Max Video: 100.0%, Max Fused: 99.6% 
+Half 1 | Clip 14 [1799s - 1819s] -> TRUE POSITIVE
+  Max Audio: 36.4%, Max Video: 100.0%, Max Fused: 99.3% 
   Matched GTs: ['Direct free-kick @ 1811s']
 
-Half 1 | Clip 12 [2144s - 2164s] -> TRUE POSITIVE
-  Max Audio: 92.4%, Max Video: 96.1%, Max Fused: 99.5% 
+Half 1 | Clip 15 [2144s - 2174s] -> TRUE POSITIVE
+  Max Audio: 94.5%, Max Video: 98.8%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 2162s']
 
-Half 1 | Clip 13 [2183s - 2203s] -> TRUE POSITIVE
+Half 1 | Clip 16 [2183s - 2203s] -> TRUE POSITIVE
   Max Audio: 45.2%, Max Video: 100.0%, Max Fused: 99.3% 
   Matched GTs: ['Direct free-kick @ 2200s']
 
-Half 1 | Clip 14 [2471s - 2500s] -> TRUE POSITIVE
-  Max Audio: 49.4%, Max Video: 99.7%, Max Fused: 99.4% (Boosted)
+Half 1 | Clip 17 [2471s - 2500s] -> TRUE POSITIVE
+  Max Audio: 49.4%, Max Video: 99.9%, Max Fused: 99.4% (Boosted)
   Matched GTs: ['Indirect free-kick @ 2489s']
 
-Half 1 | Clip 15 [2547s - 2587s] -> TRUE POSITIVE
-  Max Audio: 99.2%, Max Video: 98.7%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 18 [2528s - 2548s] -> FALSE POSITIVE
+  Max Audio: 46.3%, Max Video: 65.5%, Max Fused: 92.0% (Boosted)
+
+Half 1 | Clip 19 [2557s - 2587s] -> TRUE POSITIVE
+  Max Audio: 99.2%, Max Video: 99.8%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 2569s', 'Indirect free-kick @ 2592s']
 
-Half 1 | Clip 16 [2653s - 2673s] -> TRUE POSITIVE
-  Max Audio: 97.8%, Max Video: 81.3%, Max Fused: 99.0% (Boosted)
+Half 1 | Clip 20 [2653s - 2673s] -> TRUE POSITIVE
+  Max Audio: 97.8%, Max Video: 53.8%, Max Fused: 93.0% (Boosted)
   Matched GTs: ['Foul @ 2665s', 'Foul @ 2665s']
 
-Half 2 | Clip 0 [320s - 350s] -> TRUE POSITIVE
-  Max Audio: 99.7%, Max Video: 97.3%, Max Fused: 99.6% (Boosted)
+Half 2 | Clip 0 [0s - 20s] -> FALSE POSITIVE
+  Max Audio: 48.0%, Max Video: 56.6%, Max Fused: 85.3% (Boosted)
+
+Half 2 | Clip 1 [320s - 350s] -> TRUE POSITIVE
+  Max Audio: 99.7%, Max Video: 98.7%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 337s', 'Indirect free-kick @ 352s']
 
-Half 2 | Clip 1 [560s - 590s] -> FALSE POSITIVE
-  Max Audio: 65.3%, Max Video: 100.0%, Max Fused: 99.5% 
+Half 2 | Clip 2 [570s - 590s] -> FALSE POSITIVE
+  Max Audio: 65.3%, Max Video: 99.6%, Max Fused: 99.5% 
 
-Half 2 | Clip 2 [819s - 839s] -> FALSE POSITIVE
-  Max Audio: 99.9%, Max Video: 96.4%, Max Fused: 99.6% 
+Half 2 | Clip 3 [819s - 839s] -> FALSE POSITIVE
+  Max Audio: 99.9%, Max Video: 99.6%, Max Fused: 99.6% 
 
-Half 2 | Clip 3 [935s - 955s] -> TRUE POSITIVE
-  Max Audio: 99.3%, Max Video: 93.5%, Max Fused: 99.5% (Boosted)
+Half 2 | Clip 4 [848s - 868s] -> FALSE POSITIVE
+  Max Audio: 47.0%, Max Video: 63.7%, Max Fused: 91.0% (Boosted)
+
+Half 2 | Clip 5 [935s - 955s] -> TRUE POSITIVE
+  Max Audio: 99.3%, Max Video: 99.4%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 951s']
 
-Half 2 | Clip 4 [973s - 1003s] -> TRUE POSITIVE
-  Max Audio: 79.7%, Max Video: 99.7%, Max Fused: 99.5% 
+Half 2 | Clip 6 [973s - 1003s] -> TRUE POSITIVE
+  Max Audio: 79.7%, Max Video: 99.4%, Max Fused: 99.3% (Boosted)
   Matched GTs: ['Direct free-kick @ 995s']
 
-Half 2 | Clip 5 [1491s - 1531s] -> TRUE POSITIVE
-  Max Audio: 98.8%, Max Video: 95.9%, Max Fused: 99.5% (Boosted)
+Half 2 | Clip 7 [1127s - 1147s] -> FALSE POSITIVE
+  Max Audio: 29.9%, Max Video: 84.8%, Max Fused: 97.5% (Boosted)
+
+Half 2 | Clip 8 [1491s - 1531s] -> TRUE POSITIVE
+  Max Audio: 98.8%, Max Video: 99.3%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 1506s', 'Indirect free-kick @ 1526s']
 
-Half 2 | Clip 6 [1789s - 1809s] -> TRUE POSITIVE
-  Max Audio: 88.7%, Max Video: 92.5%, Max Fused: 99.4% (Boosted)
+Half 2 | Clip 9 [1789s - 1809s] -> TRUE POSITIVE
+  Max Audio: 88.7%, Max Video: 97.6%, Max Fused: 99.5% 
   Matched GTs: ['Foul @ 1776s', 'Indirect free-kick @ 1807s']
 
-Half 2 | Clip 7 [1971s - 1991s] -> FALSE POSITIVE
+Half 2 | Clip 10 [1971s - 1991s] -> FALSE POSITIVE
   Max Audio: 49.0%, Max Video: 100.0%, Max Fused: 99.4% 
 
-Half 2 | Clip 8 [2077s - 2097s] -> TRUE POSITIVE
-  Max Audio: 97.7%, Max Video: 91.7%, Max Fused: 99.4% (Boosted)
+Half 2 | Clip 11 [2077s - 2097s] -> TRUE POSITIVE
+  Max Audio: 97.7%, Max Video: 95.0%, Max Fused: 99.5% 
   Matched GTs: ['Foul @ 2096s']
 
-Half 2 | Clip 9 [2115s - 2135s] -> TRUE POSITIVE
-  Max Audio: 40.0%, Max Video: 89.1%, Max Fused: 98.6% (Boosted)
+Half 2 | Clip 12 [2115s - 2135s] -> TRUE POSITIVE
+  Max Audio: 40.0%, Max Video: 95.5%, Max Fused: 99.1% 
   Matched GTs: ['Indirect free-kick @ 2132s']
 
-Half 2 | Clip 10 [2173s - 2231s] -> TRUE POSITIVE
-  Max Audio: 99.8%, Max Video: 97.8%, Max Fused: 99.6% (Boosted)
+Half 2 | Clip 13 [2173s - 2231s] -> TRUE POSITIVE
+  Max Audio: 99.8%, Max Video: 99.8%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 2186s', 'Indirect free-kick @ 2222s']
 
 
 Evaluating Match: england_epl/2015-2016/2016-03-01 - 22-45 Norwich 1 - 2 Chelsea
 --------------------------------------------------
-Half 1 | Clip 0 [205s - 254s] -> TRUE POSITIVE
-  Max Audio: 99.6%, Max Video: 91.9%, Max Fused: 99.4% (Boosted)
+Half 1 | Clip 0 [109s - 129s] -> FALSE POSITIVE
+  Max Audio: 32.4%, Max Video: 66.6%, Max Fused: 90.3% (Boosted)
+
+Half 1 | Clip 1 [205s - 254s] -> TRUE POSITIVE
+  Max Audio: 99.6%, Max Video: 98.0%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 222s', 'Indirect free-kick @ 243s']
 
-Half 1 | Clip 1 [551s - 571s] -> TRUE POSITIVE
-  Max Audio: 97.5%, Max Video: 82.9%, Max Fused: 99.1% (Boosted)
+Half 1 | Clip 2 [407s - 427s] -> FALSE POSITIVE
+  Max Audio: 34.0%, Max Video: 66.1%, Max Fused: 90.2% (Boosted)
+
+Half 1 | Clip 3 [551s - 571s] -> TRUE POSITIVE
+  Max Audio: 97.5%, Max Video: 96.5%, Max Fused: 99.5% 
   Matched GTs: ['Foul @ 567s', 'Indirect free-kick @ 582s']
 
-Half 1 | Clip 2 [608s - 638s] -> TRUE POSITIVE
-  Max Audio: 99.6%, Max Video: 97.5%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 4 [608s - 638s] -> TRUE POSITIVE
+  Max Audio: 99.6%, Max Video: 99.5%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 625s', 'Indirect free-kick @ 635s']
 
-Half 1 | Clip 3 [714s - 743s] -> TRUE POSITIVE
-  Max Audio: 91.4%, Max Video: 99.7%, Max Fused: 99.5% (Boosted)
+Half 1 | Clip 5 [714s - 743s] -> TRUE POSITIVE
+  Max Audio: 91.4%, Max Video: 99.9%, Max Fused: 99.5% 
   Matched GTs: ['Foul @ 734s']
 
-Half 1 | Clip 4 [752s - 772s] -> TRUE POSITIVE
-  Max Audio: 39.0%, Max Video: 98.9%, Max Fused: 99.3% 
+Half 1 | Clip 6 [752s - 772s] -> TRUE POSITIVE
+  Max Audio: 39.0%, Max Video: 99.9%, Max Fused: 99.3% 
   Matched GTs: ['Indirect free-kick @ 767s']
 
-Half 1 | Clip 5 [1040s - 1070s] -> TRUE POSITIVE
-  Max Audio: 98.4%, Max Video: 99.1%, Max Fused: 99.6% 
+Half 1 | Clip 7 [906s - 926s] -> FALSE POSITIVE
+  Max Audio: 37.6%, Max Video: 81.4%, Max Fused: 97.2% (Boosted)
+
+Half 1 | Clip 8 [1040s - 1070s] -> TRUE POSITIVE
+  Max Audio: 98.4%, Max Video: 99.9%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 1052s', 'Indirect free-kick @ 1071s']
 
-Half 1 | Clip 6 [1472s - 1492s] -> FALSE POSITIVE
-  Max Audio: 39.2%, Max Video: 60.1%, Max Fused: 86.4% (Boosted)
+Half 1 | Clip 9 [1472s - 1492s] -> FALSE POSITIVE
+  Max Audio: 39.2%, Max Video: 96.2%, Max Fused: 99.1% 
 
-Half 1 | Clip 7 [1616s - 1636s] -> FALSE POSITIVE
-  Max Audio: 97.1%, Max Video: 96.5%, Max Fused: 99.5% 
+Half 1 | Clip 10 [1616s - 1636s] -> FALSE POSITIVE
+  Max Audio: 97.1%, Max Video: 99.6%, Max Fused: 99.6% 
 
-Half 1 | Clip 8 [1837s - 1857s] -> TRUE POSITIVE
-  Max Audio: 99.9%, Max Video: 63.0%, Max Fused: 96.7% (Boosted)
-  Matched GTs: ['Foul @ 1850s']
-
-Half 1 | Clip 9 [2269s - 2289s] -> TRUE POSITIVE
-  Max Audio: 89.0%, Max Video: 99.2%, Max Fused: 99.6% 
+Half 1 | Clip 11 [2269s - 2289s] -> TRUE POSITIVE
+  Max Audio: 89.0%, Max Video: 99.8%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 2289s']
 
-Half 1 | Clip 10 [2346s - 2375s] -> TRUE POSITIVE
+Half 1 | Clip 12 [2346s - 2375s] -> TRUE POSITIVE
   Max Audio: 98.9%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Direct free-kick @ 2367s']
 
-Half 1 | Clip 11 [2499s - 2529s] -> TRUE POSITIVE
-  Max Audio: 90.1%, Max Video: 96.7%, Max Fused: 99.5% (Boosted)
+Half 1 | Clip 13 [2499s - 2529s] -> TRUE POSITIVE
+  Max Audio: 90.1%, Max Video: 99.1%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 2518s']
 
-Half 1 | Clip 12 [2538s - 2577s] -> TRUE POSITIVE
-  Max Audio: 99.9%, Max Video: 99.3%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 14 [2538s - 2577s] -> TRUE POSITIVE
+  Max Audio: 99.9%, Max Video: 99.7%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Indirect free-kick @ 2551s', 'Foul @ 2560s', 'Indirect free-kick @ 2578s']
 
-Half 1 | Clip 13 [2595s - 2654s] -> TRUE POSITIVE
-  Max Audio: 97.2%, Max Video: 99.9%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 15 [2595s - 2654s] -> TRUE POSITIVE
+  Max Audio: 97.2%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 2609s', 'Indirect free-kick @ 2635s']
 
-Half 1 | Clip 14 [2682s - 2711s] -> TRUE POSITIVE
-  Max Audio: 96.2%, Max Video: 94.7%, Max Fused: 99.3% (Boosted)
+Half 1 | Clip 16 [2682s - 2711s] -> TRUE POSITIVE
+  Max Audio: 96.2%, Max Video: 96.1%, Max Fused: 99.5% 
   Matched GTs: ['Foul @ 2692s', 'Indirect free-kick @ 2701s']
 
-Half 1 | Clip 15 [2759s - 2779s] -> FALSE POSITIVE
-  Max Audio: 43.0%, Max Video: 70.4%, Max Fused: 94.1% (Boosted)
-
-Half 2 | Clip 0 [215s - 254s] -> FALSE POSITIVE
-  Max Audio: 75.2%, Max Video: 98.0%, Max Fused: 99.2% (Boosted)
+Half 2 | Clip 0 [205s - 254s] -> FALSE POSITIVE
+  Max Audio: 99.9%, Max Video: 99.1%, Max Fused: 99.3% (Boosted)
 
 Half 2 | Clip 1 [272s - 292s] -> TRUE POSITIVE
-  Max Audio: 100.0%, Max Video: 64.7%, Max Fused: 97.1% (Boosted)
+  Max Audio: 100.0%, Max Video: 92.6%, Max Fused: 99.5% (Boosted)
   Matched GTs: ['Foul @ 289s']
 
-Half 2 | Clip 2 [1107s - 1147s] -> TRUE POSITIVE
-  Max Audio: 99.5%, Max Video: 95.1%, Max Fused: 99.1% (Boosted)
+Half 2 | Clip 2 [589s - 609s] -> FALSE POSITIVE
+  Max Audio: 30.0%, Max Video: 83.7%, Max Fused: 97.3% (Boosted)
+
+Half 2 | Clip 3 [1107s - 1147s] -> TRUE POSITIVE
+  Max Audio: 99.5%, Max Video: 95.8%, Max Fused: 99.1% (Boosted)
   Matched GTs: ['Foul @ 1120s', 'Indirect free-kick @ 1142s']
 
-Half 2 | Clip 3 [1539s - 1579s] -> TRUE POSITIVE
-  Max Audio: 100.0%, Max Video: 99.8%, Max Fused: 99.6% (Boosted)
+Half 2 | Clip 4 [1511s - 1531s] -> TRUE POSITIVE
+  Max Audio: 83.1%, Max Video: 67.1%, Max Fused: 96.7% (Boosted)
+  Matched GTs: ['Foul @ 1543s']
+
+Half 2 | Clip 5 [1539s - 1579s] -> TRUE POSITIVE
+  Max Audio: 100.0%, Max Video: 99.9%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 1543s', 'Indirect free-kick @ 1570s']
 
-Half 2 | Clip 4 [1587s - 1646s] -> TRUE POSITIVE
-  Max Audio: 62.2%, Max Video: 99.9%, Max Fused: 99.3% (Boosted)
+Half 2 | Clip 6 [1587s - 1646s] -> TRUE POSITIVE
+  Max Audio: 62.2%, Max Video: 100.0%, Max Fused: 99.4% (Boosted)
   Matched GTs: ['Foul @ 1636s']
 
-Half 2 | Clip 5 [1655s - 1675s] -> TRUE POSITIVE
+Half 2 | Clip 7 [1655s - 1675s] -> TRUE POSITIVE
   Max Audio: 99.2%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Direct free-kick @ 1671s']
 
-Half 2 | Clip 6 [1770s - 1790s] -> TRUE POSITIVE
+Half 2 | Clip 8 [1693s - 1713s] -> FALSE POSITIVE
+  Max Audio: 35.8%, Max Video: 72.0%, Max Fused: 93.9% (Boosted)
+
+Half 2 | Clip 9 [1770s - 1790s] -> TRUE POSITIVE
   Max Audio: 96.0%, Max Video: 99.9%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 1785s']
 
-Half 2 | Clip 7 [1837s - 1867s] -> TRUE POSITIVE
+Half 2 | Clip 10 [1837s - 1867s] -> TRUE POSITIVE
   Max Audio: 99.8%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Direct free-kick @ 1858s']
 
-Half 2 | Clip 8 [1885s - 1905s] -> TRUE POSITIVE
-  Max Audio: 99.7%, Max Video: 99.5%, Max Fused: 99.6% 
+Half 2 | Clip 11 [1885s - 1905s] -> TRUE POSITIVE
+  Max Audio: 99.7%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 1903s']
 
-Half 2 | Clip 9 [2144s - 2174s] -> FALSE POSITIVE
-  Max Audio: 42.2%, Max Video: 94.9%, Max Fused: 99.1% (Boosted)
+Half 2 | Clip 12 [2144s - 2174s] -> FALSE POSITIVE
+  Max Audio: 42.2%, Max Video: 99.7%, Max Fused: 99.3% (Boosted)
 
-Half 2 | Clip 10 [2221s - 2241s] -> TRUE POSITIVE
-  Max Audio: 99.2%, Max Video: 77.7%, Max Fused: 98.8% (Boosted)
+Half 2 | Clip 13 [2221s - 2241s] -> TRUE POSITIVE
+  Max Audio: 99.2%, Max Video: 86.0%, Max Fused: 99.2% (Boosted)
   Matched GTs: ['Foul @ 2240s', 'Indirect free-kick @ 2251s']
 
-Half 2 | Clip 11 [2509s - 2529s] -> FALSE POSITIVE
-  Max Audio: 75.2%, Max Video: 89.0%, Max Fused: 99.2% (Boosted)
-
-Half 2 | Clip 12 [2567s - 2587s] -> FALSE POSITIVE
-  Max Audio: 40.3%, Max Video: 88.1%, Max Fused: 98.4% (Boosted)
+Half 2 | Clip 14 [2567s - 2587s] -> FALSE POSITIVE
+  Max Audio: 40.3%, Max Video: 99.9%, Max Fused: 99.3% 
 
 
 Evaluating Match: england_epl/2016-2017/2016-08-27 - 14-30 Tottenham 1 - 1 Liverpool
 --------------------------------------------------
-Half 1 | Clip 0 [128s - 158s] -> FALSE POSITIVE
-  Max Audio: 35.0%, Max Video: 99.1%, Max Fused: 99.2% (Boosted)
+Half 1 | Clip 0 [128s - 148s] -> FALSE POSITIVE
+  Max Audio: 33.8%, Max Video: 99.6%, Max Fused: 99.2% 
 
 Half 1 | Clip 1 [176s - 196s] -> FALSE POSITIVE
-  Max Audio: 35.1%, Max Video: 86.8%, Max Fused: 98.1% (Boosted)
+  Max Audio: 35.1%, Max Video: 97.3%, Max Fused: 99.2% 
 
 Half 1 | Clip 2 [263s - 283s] -> TRUE POSITIVE
-  Max Audio: 87.6%, Max Video: 82.0%, Max Fused: 99.0% (Boosted)
+  Max Audio: 87.6%, Max Video: 90.8%, Max Fused: 99.3% (Boosted)
   Matched GTs: ['Foul @ 278s']
 
-Half 1 | Clip 3 [311s - 331s] -> TRUE POSITIVE
-  Max Audio: 98.1%, Max Video: 61.5%, Max Fused: 96.2% (Boosted)
-  Matched GTs: ['Direct free-kick @ 334s']
+Half 1 | Clip 3 [378s - 407s] -> FALSE POSITIVE
+  Max Audio: 97.5%, Max Video: 99.6%, Max Fused: 99.6% (Boosted)
 
-Half 1 | Clip 4 [378s - 398s] -> FALSE POSITIVE
-  Max Audio: 97.5%, Max Video: 94.9%, Max Fused: 99.5% 
-
-Half 1 | Clip 5 [551s - 590s] -> TRUE POSITIVE
-  Max Audio: 99.6%, Max Video: 99.9%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 4 [551s - 590s] -> TRUE POSITIVE
+  Max Audio: 99.6%, Max Video: 100.0%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 564s', 'Indirect free-kick @ 583s']
 
-Half 1 | Clip 6 [618s - 638s] -> FALSE POSITIVE
-  Max Audio: 96.3%, Max Video: 97.0%, Max Fused: 99.6% 
+Half 1 | Clip 5 [618s - 638s] -> FALSE POSITIVE
+  Max Audio: 96.3%, Max Video: 96.9%, Max Fused: 99.6% 
+
+Half 1 | Clip 6 [666s - 686s] -> FALSE POSITIVE
+  Max Audio: 99.9%, Max Video: 58.9%, Max Fused: 95.5% (Boosted)
 
 Half 1 | Clip 7 [752s - 772s] -> FALSE POSITIVE
-  Max Audio: 44.9%, Max Video: 98.8%, Max Fused: 99.3% 
+  Max Audio: 44.9%, Max Video: 99.4%, Max Fused: 99.3% 
 
 Half 1 | Clip 8 [781s - 801s] -> FALSE POSITIVE
-  Max Audio: 41.4%, Max Video: 84.0%, Max Fused: 97.9% (Boosted)
+  Max Audio: 41.4%, Max Video: 85.1%, Max Fused: 98.1% (Boosted)
 
-Half 1 | Clip 9 [1117s - 1137s] -> TRUE POSITIVE
-  Max Audio: 99.7%, Max Video: 79.3%, Max Fused: 98.9% (Boosted)
+Half 1 | Clip 9 [925s - 945s] -> FALSE POSITIVE
+  Max Audio: 35.8%, Max Video: 60.7%, Max Fused: 86.2% (Boosted)
+
+Half 1 | Clip 10 [1117s - 1137s] -> TRUE POSITIVE
+  Max Audio: 99.7%, Max Video: 95.3%, Max Fused: 99.5% 
   Matched GTs: ['Foul @ 1132s', 'Indirect free-kick @ 1140s']
 
-Half 1 | Clip 10 [1155s - 1195s] -> TRUE POSITIVE
-  Max Audio: 99.8%, Max Video: 98.9%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 11 [1155s - 1223s] -> TRUE POSITIVE
+  Max Audio: 99.8%, Max Video: 100.0%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 1185s', 'Indirect free-kick @ 1204s']
 
-Half 1 | Clip 11 [1203s - 1223s] -> TRUE POSITIVE
-  Max Audio: 25.7%, Max Video: 99.9%, Max Fused: 99.2% 
-  Matched GTs: ['Indirect free-kick @ 1204s']
-
-Half 1 | Clip 12 [1232s - 1262s] -> TRUE POSITIVE
-  Max Audio: 97.7%, Max Video: 99.9%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 12 [1232s - 1252s] -> TRUE POSITIVE
+  Max Audio: 97.7%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 1246s']
 
 Half 1 | Clip 13 [1280s - 1300s] -> TRUE POSITIVE
   Max Audio: 98.8%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Direct free-kick @ 1295s']
 
-Half 1 | Clip 14 [1434s - 1454s] -> TRUE POSITIVE
-  Max Audio: 44.1%, Max Video: 85.2%, Max Fused: 98.2% (Boosted)
+Half 1 | Clip 14 [1319s - 1348s] -> FALSE POSITIVE
+  Max Audio: 97.4%, Max Video: 60.0%, Max Fused: 93.3% (Boosted)
+
+Half 1 | Clip 15 [1415s - 1454s] -> TRUE POSITIVE
+  Max Audio: 99.8%, Max Video: 91.1%, Max Fused: 98.9% (Boosted)
   Matched GTs: ['Indirect free-kick @ 1444s']
 
-Half 1 | Clip 15 [1635s - 1703s] -> TRUE POSITIVE
+Half 1 | Clip 16 [1635s - 1703s] -> TRUE POSITIVE
   Max Audio: 100.0%, Max Video: 100.0%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 1649s', 'Indirect free-kick @ 1661s', 'Foul @ 1673s', 'Indirect free-kick @ 1684s', 'Foul @ 1694s']
 
-Half 1 | Clip 16 [1712s - 1742s] -> TRUE POSITIVE
-  Max Audio: 95.6%, Max Video: 96.6%, Max Fused: 99.5% (Boosted)
+Half 1 | Clip 17 [1712s - 1742s] -> TRUE POSITIVE
+  Max Audio: 95.6%, Max Video: 98.1%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Indirect free-kick @ 1729s']
 
-Half 1 | Clip 17 [1895s - 1953s] -> TRUE POSITIVE
-  Max Audio: 99.0%, Max Video: 100.0%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 18 [1837s - 1857s] -> FALSE POSITIVE
+  Max Audio: 17.5%, Max Video: 76.9%, Max Fused: 94.0% (Boosted)
+
+Half 1 | Clip 19 [1895s - 1915s] -> TRUE POSITIVE
+  Max Audio: 99.0%, Max Video: 100.0%, Max Fused: 99.6% 
+  Matched GTs: ['Foul @ 1910s']
+
+Half 1 | Clip 20 [1923s - 1953s] -> TRUE POSITIVE
+  Max Audio: 90.2%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 1910s', 'Indirect free-kick @ 1943s']
 
-Half 1 | Clip 18 [1962s - 2001s] -> TRUE POSITIVE
-  Max Audio: 99.2%, Max Video: 99.8%, Max Fused: 99.6% 
+Half 1 | Clip 21 [1962s - 2001s] -> TRUE POSITIVE
+  Max Audio: 99.2%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 1981s', 'Indirect free-kick @ 1994s']
 
-Half 1 | Clip 19 [2019s - 2039s] -> TRUE POSITIVE
-  Max Audio: 97.4%, Max Video: 89.6%, Max Fused: 99.4% (Boosted)
+Half 1 | Clip 22 [2019s - 2039s] -> TRUE POSITIVE
+  Max Audio: 97.4%, Max Video: 99.0%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 2033s']
 
-Half 1 | Clip 20 [2067s - 2107s] -> TRUE POSITIVE
-  Max Audio: 96.9%, Max Video: 77.0%, Max Fused: 98.8% (Boosted)
+Half 1 | Clip 23 [2067s - 2126s] -> TRUE POSITIVE
+  Max Audio: 96.9%, Max Video: 96.0%, Max Fused: 99.5% (Boosted)
   Matched GTs: ['Indirect free-kick @ 2103s']
 
-Half 1 | Clip 21 [2163s - 2193s] -> TRUE POSITIVE
-  Max Audio: 100.0%, Max Video: 99.5%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 24 [2163s - 2193s] -> TRUE POSITIVE
+  Max Audio: 100.0%, Max Video: 99.9%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 2175s', 'Indirect free-kick @ 2184s']
 
-Half 1 | Clip 22 [2298s - 2327s] -> FALSE POSITIVE
-  Max Audio: 85.9%, Max Video: 67.3%, Max Fused: 95.7% (Boosted)
+Half 1 | Clip 25 [2298s - 2327s] -> FALSE POSITIVE
+  Max Audio: 85.9%, Max Video: 82.4%, Max Fused: 98.7% (Boosted)
 
-Half 1 | Clip 23 [2336s - 2356s] -> FALSE POSITIVE
-  Max Audio: 65.5%, Max Video: 83.7%, Max Fused: 98.7% (Boosted)
-
-Half 1 | Clip 24 [2384s - 2414s] -> TRUE POSITIVE
-  Max Audio: 99.9%, Max Video: 69.4%, Max Fused: 98.0% (Boosted)
+Half 1 | Clip 26 [2384s - 2414s] -> TRUE POSITIVE
+  Max Audio: 99.9%, Max Video: 95.8%, Max Fused: 99.5% (Boosted)
   Matched GTs: ['Indirect free-kick @ 2416s']
 
-Half 1 | Clip 25 [2451s - 2481s] -> TRUE POSITIVE
-  Max Audio: 96.8%, Max Video: 98.9%, Max Fused: 99.3% (Boosted)
+Half 1 | Clip 27 [2461s - 2481s] -> TRUE POSITIVE
+  Max Audio: 42.2%, Max Video: 99.8%, Max Fused: 99.3% 
   Matched GTs: ['Foul @ 2459s', 'Indirect free-kick @ 2475s']
 
-Half 1 | Clip 26 [2528s - 2577s] -> TRUE POSITIVE
-  Max Audio: 99.5%, Max Video: 99.8%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 28 [2528s - 2577s] -> TRUE POSITIVE
+  Max Audio: 99.5%, Max Video: 97.0%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Penalty @ 2568s']
 
-Half 1 | Clip 27 [2605s - 2625s] -> FALSE POSITIVE
-  Max Audio: 97.7%, Max Video: 94.7%, Max Fused: 99.5% 
+Half 1 | Clip 29 [2605s - 2625s] -> FALSE POSITIVE
+  Max Audio: 97.7%, Max Video: 88.8%, Max Fused: 99.3% (Boosted)
 
-Half 1 | Clip 28 [2711s - 2740s] -> TRUE POSITIVE
-  Max Audio: 100.0%, Max Video: 97.4%, Max Fused: 99.6% 
+Half 1 | Clip 30 [2711s - 2740s] -> TRUE POSITIVE
+  Max Audio: 100.0%, Max Video: 99.8%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 2726s']
 
-Half 1 | Clip 29 [2768s - 2788s] -> TRUE POSITIVE
+Half 1 | Clip 31 [2768s - 2788s] -> TRUE POSITIVE
   Max Audio: 97.8%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Indirect free-kick @ 2756s', 'Foul @ 2782s', 'Indirect free-kick @ 2797s']
 
 Half 2 | Clip 0 [13s - 52s] -> TRUE POSITIVE
-  Max Audio: 99.4%, Max Video: 99.9%, Max Fused: 99.6% 
+  Max Audio: 99.4%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 28s', 'Indirect free-kick @ 50s']
 
 Half 2 | Clip 1 [90s - 110s] -> FALSE POSITIVE
-  Max Audio: 72.3%, Max Video: 98.9%, Max Fused: 99.5% 
+  Max Audio: 72.3%, Max Video: 99.9%, Max Fused: 99.5% 
 
 Half 2 | Clip 2 [186s - 206s] -> TRUE POSITIVE
-  Max Audio: 99.3%, Max Video: 77.7%, Max Fused: 98.9% (Boosted)
+  Max Audio: 99.3%, Max Video: 96.5%, Max Fused: 99.6% 
   Matched GTs: ['Indirect free-kick @ 200s']
 
 Half 2 | Clip 3 [215s - 263s] -> TRUE POSITIVE
-  Max Audio: 98.5%, Max Video: 99.3%, Max Fused: 99.4% (Boosted)
+  Max Audio: 98.5%, Max Video: 99.7%, Max Fused: 99.5% 
   Matched GTs: ['Indirect free-kick @ 200s', 'Foul @ 233s', 'Indirect free-kick @ 255s']
 
 Half 2 | Clip 4 [272s - 302s] -> FALSE POSITIVE
-  Max Audio: 23.4%, Max Video: 92.6%, Max Fused: 98.4% (Boosted)
+  Max Audio: 23.4%, Max Video: 99.3%, Max Fused: 99.1% 
 
-Half 2 | Clip 5 [311s - 331s] -> TRUE POSITIVE
-  Max Audio: 100.0%, Max Video: 99.5%, Max Fused: 99.6% 
+Half 2 | Clip 5 [311s - 340s] -> TRUE POSITIVE
+  Max Audio: 100.0%, Max Video: 99.7%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 331s']
 
-Half 2 | Clip 6 [378s - 407s] -> TRUE POSITIVE
-  Max Audio: 98.2%, Max Video: 100.0%, Max Fused: 99.6% (Boosted)
+Half 2 | Clip 6 [387s - 407s] -> TRUE POSITIVE
+  Max Audio: 97.9%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Direct free-kick @ 401s']
 
 Half 2 | Clip 7 [560s - 599s] -> TRUE POSITIVE
-  Max Audio: 100.0%, Max Video: 99.9%, Max Fused: 99.6% 
+  Max Audio: 100.0%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 581s', 'Indirect free-kick @ 597s']
 
-Half 2 | Clip 8 [685s - 715s] -> TRUE POSITIVE
-  Max Audio: 93.6%, Max Video: 66.9%, Max Fused: 90.7% (Boosted)
-  Matched GTs: ['Foul @ 690s', 'Indirect free-kick @ 724s']
-
-Half 2 | Clip 9 [1021s - 1041s] -> TRUE POSITIVE
+Half 2 | Clip 8 [1021s - 1041s] -> TRUE POSITIVE
   Max Audio: 99.7%, Max Video: 93.5%, Max Fused: 99.5% (Boosted)
   Matched GTs: ['Foul @ 1040s']
 
-Half 2 | Clip 10 [1079s - 1108s] -> TRUE POSITIVE
-  Max Audio: 99.4%, Max Video: 100.0%, Max Fused: 99.6% (Boosted)
+Half 2 | Clip 9 [1088s - 1108s] -> TRUE POSITIVE
+  Max Audio: 99.4%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Direct free-kick @ 1102s']
 
-Half 2 | Clip 11 [1213s - 1233s] -> FALSE POSITIVE
-  Max Audio: 14.9%, Max Video: 99.1%, Max Fused: 98.9% 
+Half 2 | Clip 10 [1213s - 1233s] -> FALSE POSITIVE
+  Max Audio: 14.9%, Max Video: 99.9%, Max Fused: 99.0% 
 
-Half 2 | Clip 12 [1338s - 1377s] -> TRUE POSITIVE
-  Max Audio: 98.8%, Max Video: 97.4%, Max Fused: 99.6% (Boosted)
+Half 2 | Clip 11 [1338s - 1377s] -> TRUE POSITIVE
+  Max Audio: 98.8%, Max Video: 99.7%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 1357s']
 
+Half 2 | Clip 12 [1415s - 1435s] -> FALSE POSITIVE
+  Max Audio: 99.0%, Max Video: 44.5%, Max Fused: 86.3% (Boosted)
+
 Half 2 | Clip 13 [1463s - 1483s] -> FALSE POSITIVE
-  Max Audio: 99.2%, Max Video: 95.1%, Max Fused: 99.5% 
+  Max Audio: 99.2%, Max Video: 97.6%, Max Fused: 99.6% 
 
 Half 2 | Clip 14 [1559s - 1579s] -> FALSE POSITIVE
-  Max Audio: 38.9%, Max Video: 99.5%, Max Fused: 99.3% 
+  Max Audio: 38.9%, Max Video: 100.0%, Max Fused: 99.3% 
 
 Half 2 | Clip 15 [1664s - 1732s] -> TRUE POSITIVE
-  Max Audio: 99.1%, Max Video: 93.6%, Max Fused: 99.1% (Boosted)
+  Max Audio: 99.1%, Max Video: 99.1%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 1722s', 'Indirect free-kick @ 1743s']
 
-Half 2 | Clip 16 [1770s - 1790s] -> FALSE POSITIVE
-  Max Audio: 29.9%, Max Video: 67.2%, Max Fused: 90.3% (Boosted)
-
-Half 2 | Clip 17 [1875s - 1895s] -> TRUE POSITIVE
-  Max Audio: 99.9%, Max Video: 81.5%, Max Fused: 99.1% (Boosted)
+Half 2 | Clip 16 [1875s - 1895s] -> TRUE POSITIVE
+  Max Audio: 99.9%, Max Video: 87.8%, Max Fused: 99.3% (Boosted)
   Matched GTs: ['Foul @ 1887s']
 
-Half 2 | Clip 18 [1904s - 1943s] -> TRUE POSITIVE
-  Max Audio: 99.5%, Max Video: 94.9%, Max Fused: 98.9% (Boosted)
+Half 2 | Clip 17 [1904s - 1934s] -> TRUE POSITIVE
+  Max Audio: 99.5%, Max Video: 99.5%, Max Fused: 99.3% (Boosted)
   Matched GTs: ['Indirect free-kick @ 1922s']
 
-Half 2 | Clip 19 [1981s - 2011s] -> TRUE POSITIVE
-  Max Audio: 77.7%, Max Video: 99.9%, Max Fused: 99.5% 
+Half 2 | Clip 18 [1981s - 2011s] -> TRUE POSITIVE
+  Max Audio: 77.7%, Max Video: 100.0%, Max Fused: 99.5% 
   Matched GTs: ['Foul @ 1997s', 'Indirect free-kick @ 2001s']
 
-Half 2 | Clip 20 [2048s - 2068s] -> FALSE POSITIVE
-  Max Audio: 39.9%, Max Video: 60.7%, Max Fused: 87.2% (Boosted)
+Half 2 | Clip 19 [2048s - 2068s] -> FALSE POSITIVE
+  Max Audio: 39.9%, Max Video: 78.1%, Max Fused: 96.5% (Boosted)
 
-Half 2 | Clip 21 [2259s - 2279s] -> FALSE POSITIVE
-  Max Audio: 97.0%, Max Video: 81.3%, Max Fused: 99.0% (Boosted)
+Half 2 | Clip 20 [2259s - 2279s] -> FALSE POSITIVE
+  Max Audio: 97.0%, Max Video: 97.6%, Max Fused: 99.6% 
+
+Half 2 | Clip 21 [2288s - 2308s] -> TRUE POSITIVE
+  Max Audio: 29.7%, Max Video: 81.1%, Max Fused: 96.6% (Boosted)
+  Matched GTs: ['Indirect free-kick @ 2302s']
 
 Half 2 | Clip 22 [2365s - 2414s] -> TRUE POSITIVE
-  Max Audio: 99.4%, Max Video: 97.9%, Max Fused: 99.6% (Boosted)
+  Max Audio: 99.4%, Max Video: 99.8%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 2383s', 'Indirect free-kick @ 2412s']
 
 Half 2 | Clip 23 [2567s - 2587s] -> FALSE POSITIVE
-  Max Audio: 98.6%, Max Video: 55.1%, Max Fused: 93.7% (Boosted)
+  Max Audio: 98.6%, Max Video: 80.8%, Max Fused: 99.0% (Boosted)
 
-Half 2 | Clip 24 [2816s - 2855s] -> FALSE POSITIVE
-  Max Audio: 99.6%, Max Video: 99.7%, Max Fused: 99.2% (Boosted)
+Half 2 | Clip 24 [2835s - 2855s] -> FALSE POSITIVE
+  Max Audio: 26.6%, Max Video: 99.2%, Max Fused: 99.1% 
 
 Half 2 | Clip 25 [2903s - 2932s] -> FALSE POSITIVE
-  Max Audio: 100.0%, Max Video: 63.5%, Max Fused: 96.8% (Boosted)
+  Max Audio: 100.0%, Max Video: 95.2%, Max Fused: 99.5% (Boosted)
 
 
 Evaluating Match: england_epl/2016-2017/2016-09-24 - 14-30 Manchester United 4 - 1 Leicester
 --------------------------------------------------
-Half 1 | Clip 0 [128s - 177s] -> TRUE POSITIVE
-  Max Audio: 96.1%, Max Video: 99.0%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 0 [138s - 177s] -> TRUE POSITIVE
+  Max Audio: 96.1%, Max Video: 99.9%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 149s', 'Indirect free-kick @ 175s']
 
 Half 1 | Clip 1 [195s - 215s] -> FALSE POSITIVE
-  Max Audio: 35.1%, Max Video: 67.7%, Max Fused: 91.5% (Boosted)
+  Max Audio: 35.1%, Max Video: 80.9%, Max Fused: 96.9% (Boosted)
 
-Half 1 | Clip 2 [464s - 484s] -> TRUE POSITIVE
-  Max Audio: 35.5%, Max Video: 94.9%, Max Fused: 99.0% 
+Half 1 | Clip 2 [291s - 311s] -> TRUE POSITIVE
+  Max Audio: 100.0%, Max Video: 62.4%, Max Fused: 96.6% (Boosted)
+  Matched GTs: ['Foul @ 297s', 'Indirect free-kick @ 314s']
+
+Half 1 | Clip 3 [464s - 484s] -> TRUE POSITIVE
+  Max Audio: 35.5%, Max Video: 93.2%, Max Fused: 98.9% (Boosted)
   Matched GTs: ['Indirect free-kick @ 484s']
 
-Half 1 | Clip 3 [493s - 523s] -> TRUE POSITIVE
-  Max Audio: 41.8%, Max Video: 97.8%, Max Fused: 99.2% (Boosted)
+Half 1 | Clip 4 [493s - 523s] -> TRUE POSITIVE
+  Max Audio: 41.8%, Max Video: 99.5%, Max Fused: 99.3% (Boosted)
   Matched GTs: ['Indirect free-kick @ 484s']
 
-Half 1 | Clip 4 [791s - 811s] -> TRUE POSITIVE
-  Max Audio: 32.0%, Max Video: 71.0%, Max Fused: 93.0% (Boosted)
+Half 1 | Clip 5 [800s - 820s] -> TRUE POSITIVE
+  Max Audio: 37.0%, Max Video: 70.1%, Max Fused: 93.2% (Boosted)
   Matched GTs: ['Indirect free-kick @ 805s']
 
-Half 1 | Clip 5 [915s - 945s] -> TRUE POSITIVE
-  Max Audio: 51.3%, Max Video: 99.0%, Max Fused: 99.3% 
+Half 1 | Clip 6 [915s - 945s] -> TRUE POSITIVE
+  Max Audio: 51.3%, Max Video: 99.4%, Max Fused: 99.3% 
   Matched GTs: ['Foul @ 931s', 'Indirect free-kick @ 947s']
 
-Half 1 | Clip 6 [1059s - 1089s] -> TRUE POSITIVE
-  Max Audio: 54.9%, Max Video: 99.7%, Max Fused: 99.4% (Boosted)
+Half 1 | Clip 7 [1059s - 1089s] -> TRUE POSITIVE
+  Max Audio: 54.9%, Max Video: 100.0%, Max Fused: 99.4% 
   Matched GTs: ['Foul @ 1054s', 'Indirect free-kick @ 1082s']
 
-Half 1 | Clip 7 [1367s - 1396s] -> TRUE POSITIVE
-  Max Audio: 94.8%, Max Video: 91.5%, Max Fused: 99.4% (Boosted)
+Half 1 | Clip 8 [1357s - 1396s] -> TRUE POSITIVE
+  Max Audio: 94.8%, Max Video: 99.3%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 1388s']
 
-Half 1 | Clip 8 [1405s - 1435s] -> TRUE POSITIVE
-  Max Audio: 97.9%, Max Video: 100.0%, Max Fused: 99.6% 
+Half 1 | Clip 9 [1415s - 1435s] -> TRUE POSITIVE
+  Max Audio: 36.5%, Max Video: 100.0%, Max Fused: 99.3% 
   Matched GTs: ['Direct free-kick @ 1427s']
 
-Half 1 | Clip 9 [1635s - 1665s] -> TRUE POSITIVE
-  Max Audio: 83.3%, Max Video: 96.0%, Max Fused: 99.5% (Boosted)
+Half 1 | Clip 10 [1482s - 1502s] -> FALSE POSITIVE
+  Max Audio: 38.7%, Max Video: 64.1%, Max Fused: 89.7% (Boosted)
+
+Half 1 | Clip 11 [1616s - 1665s] -> TRUE POSITIVE
+  Max Audio: 83.3%, Max Video: 99.5%, Max Fused: 99.5% (Boosted)
   Matched GTs: ['Foul @ 1650s', 'Indirect free-kick @ 1664s']
 
-Half 1 | Clip 10 [1712s - 1751s] -> TRUE POSITIVE
+Half 1 | Clip 12 [1712s - 1751s] -> TRUE POSITIVE
   Max Audio: 97.0%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 1737s', 'Indirect free-kick @ 1741s']
 
-Half 1 | Clip 11 [1808s - 1828s] -> FALSE POSITIVE
-  Max Audio: 31.6%, Max Video: 95.1%, Max Fused: 98.9% 
+Half 1 | Clip 13 [1808s - 1828s] -> FALSE POSITIVE
+  Max Audio: 31.6%, Max Video: 98.6%, Max Fused: 99.2% 
 
-Half 1 | Clip 12 [1904s - 1924s] -> TRUE POSITIVE
-  Max Audio: 28.2%, Max Video: 85.2%, Max Fused: 97.5% (Boosted)
-  Matched GTs: ['Indirect free-kick @ 1919s']
-
-Half 1 | Clip 13 [2250s - 2289s] -> TRUE POSITIVE
-  Max Audio: 88.4%, Max Video: 99.5%, Max Fused: 99.5% (Boosted)
+Half 1 | Clip 14 [2250s - 2279s] -> TRUE POSITIVE
+  Max Audio: 88.4%, Max Video: 99.8%, Max Fused: 99.5% 
   Matched GTs: ['Foul @ 2268s', 'Indirect free-kick @ 2280s']
 
-Half 1 | Clip 14 [2663s - 2692s] -> FALSE POSITIVE
-  Max Audio: 98.4%, Max Video: 98.5%, Max Fused: 99.6% (Boosted)
+Half 1 | Clip 15 [2557s - 2577s] -> FALSE POSITIVE
+  Max Audio: 27.8%, Max Video: 86.7%, Max Fused: 97.7% (Boosted)
+
+Half 1 | Clip 16 [2672s - 2692s] -> FALSE POSITIVE
+  Max Audio: 98.4%, Max Video: 98.7%, Max Fused: 99.6% 
 
 Half 2 | Clip 0 [61s - 81s] -> TRUE POSITIVE
-  Max Audio: 99.3%, Max Video: 99.4%, Max Fused: 99.6% 
+  Max Audio: 99.3%, Max Video: 100.0%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 74s', 'Indirect free-kick @ 91s']
 
 Half 2 | Clip 1 [253s - 273s] -> TRUE POSITIVE
-  Max Audio: 98.5%, Max Video: 65.5%, Max Fused: 97.2% (Boosted)
+  Max Audio: 98.5%, Max Video: 80.2%, Max Fused: 99.0% (Boosted)
   Matched GTs: ['Foul @ 268s']
 
-Half 2 | Clip 2 [464s - 494s] -> TRUE POSITIVE
-  Max Audio: 96.4%, Max Video: 77.5%, Max Fused: 98.8% (Boosted)
+Half 2 | Clip 2 [378s - 398s] -> FALSE POSITIVE
+  Max Audio: 35.8%, Max Video: 61.3%, Max Fused: 86.7% (Boosted)
+
+Half 2 | Clip 3 [474s - 494s] -> TRUE POSITIVE
+  Max Audio: 96.4%, Max Video: 51.9%, Max Fused: 91.7% (Boosted)
   Matched GTs: ['Foul @ 478s', 'Indirect free-kick @ 487s']
 
-Half 2 | Clip 3 [570s - 599s] -> TRUE POSITIVE
-  Max Audio: 96.7%, Max Video: 74.0%, Max Fused: 98.6% (Boosted)
+Half 2 | Clip 4 [570s - 599s] -> TRUE POSITIVE
+  Max Audio: 96.7%, Max Video: 91.0%, Max Fused: 99.4% (Boosted)
   Matched GTs: ['Foul @ 590s']
 
-Half 2 | Clip 4 [1309s - 1339s] -> TRUE POSITIVE
-  Max Audio: 90.3%, Max Video: 99.6%, Max Fused: 99.5% 
+Half 2 | Clip 5 [1021s - 1041s] -> FALSE POSITIVE
+  Max Audio: 37.0%, Max Video: 75.8%, Max Fused: 95.6% (Boosted)
+
+Half 2 | Clip 6 [1309s - 1339s] -> TRUE POSITIVE
+  Max Audio: 90.3%, Max Video: 99.9%, Max Fused: 99.6% 
   Matched GTs: ['Foul @ 1327s', 'Indirect free-kick @ 1337s']
 
-Half 2 | Clip 5 [1386s - 1473s] -> TRUE POSITIVE
+Half 2 | Clip 7 [1376s - 1473s] -> TRUE POSITIVE
   Max Audio: 99.9%, Max Video: 99.9%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 1405s', 'Indirect free-kick @ 1435s', 'Foul @ 1456s', 'Indirect free-kick @ 1471s']
 
-Half 2 | Clip 6 [1616s - 1636s] -> TRUE POSITIVE
-  Max Audio: 41.6%, Max Video: 91.2%, Max Fused: 98.8% (Boosted)
+Half 2 | Clip 8 [1616s - 1636s] -> TRUE POSITIVE
+  Max Audio: 41.6%, Max Video: 98.9%, Max Fused: 99.3% 
   Matched GTs: ['Foul @ 1615s', 'Indirect free-kick @ 1630s']
 
-Half 2 | Clip 7 [1664s - 1694s] -> TRUE POSITIVE
-  Max Audio: 96.8%, Max Video: 99.4%, Max Fused: 99.6% (Boosted)
+Half 2 | Clip 9 [1664s - 1713s] -> TRUE POSITIVE
+  Max Audio: 96.8%, Max Video: 99.9%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Foul @ 1682s', 'Indirect free-kick @ 1706s']
 
-Half 2 | Clip 8 [2221s - 2241s] -> TRUE POSITIVE
-  Max Audio: 99.9%, Max Video: 93.6%, Max Fused: 99.5% (Boosted)
+Half 2 | Clip 10 [2211s - 2251s] -> TRUE POSITIVE
+  Max Audio: 99.9%, Max Video: 97.7%, Max Fused: 99.6% (Boosted)
   Matched GTs: ['Indirect free-kick @ 2251s']
 
-Half 2 | Clip 9 [2557s - 2577s] -> FALSE POSITIVE
-  Max Audio: 36.5%, Max Video: 79.0%, Max Fused: 96.5% (Boosted)
+Half 2 | Clip 11 [2557s - 2577s] -> FALSE POSITIVE
+  Max Audio: 36.5%, Max Video: 93.8%, Max Fused: 98.9% (Boosted)
 
-Half 2 | Clip 10 [2624s - 2683s] -> TRUE POSITIVE
-  Max Audio: 99.2%, Max Video: 99.9%, Max Fused: 99.5% (Boosted)
-  Matched GTs: ['Foul @ 2644s', 'Indirect free-kick @ 2678s']
+Half 2 | Clip 12 [2624s - 2654s] -> TRUE POSITIVE
+  Max Audio: 99.2%, Max Video: 98.7%, Max Fused: 99.6% (Boosted)
+  Matched GTs: ['Foul @ 2644s']
+
+Half 2 | Clip 13 [2663s - 2683s] -> TRUE POSITIVE
+  Max Audio: 32.8%, Max Video: 100.0%, Max Fused: 99.2% 
+  Matched GTs: ['Indirect free-kick @ 2678s']
 
 
 ===========================
 OVERALL METRICS
 ===========================
-True Positives: 125
-False Positives: 44
-False Negatives: 28
+True Positives: 127
+False Positives: 67
+False Negatives: 29
 
-Overall Precision: 73.96%
-Overall Recall:    81.70%
-Overall F1 Score:  77.64%
+Overall Precision: 65.46%
+Overall Recall:    81.41%
+Overall F1 Score:  72.57%
 
 PER-CLASS RECALL
 ---------------------------
 Foul: 87.50% (91/104)
-Direct free-kick: 95.24% (20/21)
+Direct free-kick: 90.48% (19/21)
 Indirect free-kick: 83.13% (69/83)
 Penalty: 100.00% (1/1)

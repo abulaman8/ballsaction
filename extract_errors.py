@@ -3,6 +3,60 @@ import shutil
 import subprocess
 import json
 import re
+import cv2
+import torch
+import torchvision.transforms as transforms
+import matplotlib.pyplot as plt
+import numpy as np
+from model import X3DFreeKickModel
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.45, 0.45, 0.45], std=[0.225, 0.225, 0.225])
+])
+
+model = X3DFreeKickModel(num_classes=2, pretrained=False)
+model.load_state_dict(torch.load("checkpoints/x3d_attention_best.pth", map_location=device))
+model = model.to(device)
+model.eval()
+
+def generate_attention_plot(video_path, out_img_path):
+    cap = cv2.VideoCapture(video_path)
+    frames = []
+    while len(frames) < 40:
+        ret, frame = cap.read()
+        if not ret: break
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        frame = cv2.resize(frame, (224, 224))
+        frames.append(transform(frame))
+    cap.release()
+    
+    while len(frames) < 40:
+        if len(frames) > 0: frames.append(frames[-1].clone())
+        else: frames.append(torch.zeros((3, 224, 224)))
+        
+    input_tensor = torch.stack(frames, dim=1).unsqueeze(0).to(device)
+    with torch.no_grad():
+        if device.type == 'cuda':
+            with torch.amp.autocast('cuda'):
+                out = model(input_tensor)
+        else:
+            out = model(input_tensor)
+            
+    weights = model.model.blocks[5].last_weights.squeeze()
+    num_weights = len(weights)
+    
+    plt.figure(figsize=(10, 2))
+    plt.bar(np.arange(num_weights), weights, color='red')
+    plt.xlim(-0.5, num_weights - 0.5)
+    plt.ylim(0, max(0.1, weights.max() * 1.1))
+    plt.title(f"Temporal Attention Weights ({num_weights} steps = 20 seconds)")
+    plt.xlabel(f"Temporal Step (0 to {num_weights-1})")
+    plt.ylabel("Relevance Score")
+    plt.tight_layout()
+    plt.savefig(out_img_path)
+    plt.close()
 
 out_dir = "/home/pilot/.gemini/antigravity/brain/54051a72-f909-4f8f-afda-b38268595c9a/error_clips"
 if os.path.exists(out_dir): shutil.rmtree(out_dir)
@@ -26,8 +80,9 @@ def parse_gt(json_path):
             gt[half].append((sec, ann['label']))
     return gt
 
-fps = [] # {path, info}
-fns = [] # {path, info}
+fps = [] # {path, plot, info}
+fns = [] # {path, plot, info}
+tps = [] # {path, plot, info}
 
 with open(report_file, 'r') as f:
     lines = f.readlines()
@@ -60,7 +115,9 @@ while i < len(lines):
                 dest_clip = os.path.join(out_dir, f"FP_{vid_name}_clip{clip_idx}.mp4")
                 if os.path.exists(src_clip):
                     shutil.copy(src_clip, dest_clip)
-                    fps.append({'path': dest_clip, 'info': f"{vid_name} [{c_start}s-{c_end}s]\n{prob_line}"})
+                    plot_path = os.path.join(out_dir, f"FP_{vid_name}_clip{clip_idx}_attn.png")
+                    generate_attention_plot(dest_clip, plot_path)
+                    fps.append({'path': dest_clip, 'plot': plot_path, 'info': f"{vid_name} [{c_start}s-{c_end}s]\n{prob_line}"})
             elif status == "TRUE POSITIVE":
                 i += 1
                 gt_line = lines[i].strip()
@@ -69,6 +126,13 @@ while i < len(lines):
                     gt_matches = re.findall(r"([\w\s-]+?) @ (\d+)s", gt_line)
                     for lbl, sec_str in gt_matches:
                         matched_gts.add(f"{current_game}_half{half}_{sec_str}")
+                
+                dest_clip = os.path.join(out_dir, f"TP_{vid_name}_clip{clip_idx}.mp4")
+                if os.path.exists(src_clip):
+                    shutil.copy(src_clip, dest_clip)
+                    plot_path = os.path.join(out_dir, f"TP_{vid_name}_clip{clip_idx}_attn.png")
+                    generate_attention_plot(dest_clip, plot_path)
+                    tps.append({'path': dest_clip, 'plot': plot_path, 'info': f"{vid_name} [{c_start}s-{c_end}s]\n{prob_line}\n{gt_line}"})
     i += 1
 
 eval_games = []
@@ -112,6 +176,11 @@ for game in eval_games:
 for p in processes:
     p.wait()
 
+for fn in fns:
+    plot_path = fn['path'].replace('.mp4', '_attn.png')
+    generate_attention_plot(fn['path'], plot_path)
+    fn['plot'] = plot_path
+
 md_path = "/home/pilot/.gemini/antigravity/brain/54051a72-f909-4f8f-afda-b38268595c9a/error_analysis.md"
 
 with open(md_path, 'w') as f:
@@ -124,6 +193,7 @@ with open(md_path, 'w') as f:
         f.write("````carousel\n")
         for idx, fp in enumerate(fps):
             f.write(f"![FP Clip {idx}]({fp['path']})\n")
+            f.write(f"![Attention Weights]({fp['plot']})\n")
             lines_info = fp['info'].split('\n')
             f.write(f"**{lines_info[0]}**\n")
             if len(lines_info) > 1:
@@ -141,14 +211,35 @@ with open(md_path, 'w') as f:
         f.write("````carousel\n")
         for idx, fn in enumerate(fns):
             f.write(f"![FN Clip {idx}]({fn['path']})\n")
+            f.write(f"![Attention Weights]({fn['plot']})\n")
             lines_info = fn['info'].split('\n')
             f.write(f"**{lines_info[0]}**\n")
             if len(lines_info) > 1:
                 f.write(f"*{lines_info[1]}*\n")
             if idx < len(fns) - 1:
                 f.write("<!-- slide -->\n")
+        f.write("````\n\n")
+    else:
+        f.write("No False Negatives found.\n\n")
+        
+    f.write("## True Positives (TPs)\n")
+    f.write("Successful detections of Ground Truth events. 20-second clips showing what the model correctly identified.\n\n")
+    
+    if len(tps) > 0:
+        f.write("````carousel\n")
+        for idx, tp in enumerate(tps):
+            f.write(f"![TP Clip {idx}]({tp['path']})\n")
+            f.write(f"![Attention Weights]({tp['plot']})\n")
+            lines_info = tp['info'].split('\n')
+            f.write(f"**{lines_info[0]}**\n")
+            if len(lines_info) > 1:
+                f.write(f"{lines_info[1]}\n")
+            if len(lines_info) > 2:
+                f.write(f"*{lines_info[2]}*\n")
+            if idx < len(tps) - 1:
+                f.write("<!-- slide -->\n")
         f.write("````\n")
     else:
-        f.write("No False Negatives found.\n")
+        f.write("No True Positives found.\n")
 
-print(f"Extracted {len(fps)} FPs and {len(fns)} FNs.")
+print(f"Extracted {len(tps)} TPs, {len(fps)} FPs, and {len(fns)} FNs.")

@@ -202,7 +202,7 @@ def evaluate():
     print(f"Using device: {device}")
     
     video_model = X3DFreeKickModel(num_classes=2, pretrained=False)
-    video_model.load_state_dict(torch.load("checkpoints/x3d_foul_best.pth", map_location=device))
+    video_model.load_state_dict(torch.load("checkpoints/x3d_attention_best.pth", map_location=device))
     video_model = video_model.to(device)
     video_model.eval()
     
