@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+*.wav
+*.jpg
+
 # Distribution / packaging
 .Python
 build/
@@ -233,3 +236,5 @@ live_highlights/
 foul_dataset/
 custom_highlights/
 soccernet_eval_highlights/
+setpiece_dataset/
+soccernet_eval_dual_highlights/

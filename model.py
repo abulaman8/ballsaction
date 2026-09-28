@@ -3,12 +3,19 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class TemporalAttention(nn.Module):
-    def __init__(self, in_channels):
+    def __init__(self, in_channels, hidden_channels=512):
         super().__init__()
-        self.attention = nn.Linear(in_channels, 1)
+        self.attention = nn.Sequential(
+            nn.Conv1d(in_channels, hidden_channels, kernel_size=3, padding=1),
+            nn.Tanh(),
+            nn.Conv1d(hidden_channels, 1, kernel_size=1)
+        )
 
     def forward(self, x):
-        scores = self.attention(x)
+        # x is (B, T, C) -> permute to (B, C, T) for Conv1d
+        x_t = x.permute(0, 2, 1)
+        scores = self.attention(x_t) # (B, 1, T)
+        scores = scores.permute(0, 2, 1) # (B, T, 1)
         weights = F.softmax(scores, dim=1)
         weighted = x * weights
         out = weighted.sum(dim=1)
