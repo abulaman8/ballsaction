@@ -30,11 +30,10 @@ class X3DBinaryDataset(Dataset):
                     
         print(f"Dataset initialized with {len(self.clips)} valid mp4 clips from {data_dir}.")
         
-        self.transform = transforms.Compose([
-            transforms.ToTensor(),
-            transforms.Resize((224, 224)),
-            transforms.Normalize(mean=[0.45, 0.45, 0.45], std=[0.225, 0.225, 0.225])
-        ])
+        self.to_tensor = transforms.ToTensor()
+        self.resize = transforms.Resize((224, 224))
+        self.normalize = transforms.Normalize(mean=[0.45, 0.45, 0.45], std=[0.225, 0.225, 0.225])
+        self.jitter = transforms.ColorJitter(brightness=0.1, contrast=0.1)
 
     def __len__(self):
         return len(self.clips)
@@ -47,15 +46,41 @@ class X3DBinaryDataset(Dataset):
         cap = cv2.VideoCapture(video_path)
         frames = []
         
-        while len(frames) < 40:
+        # Determine consistent flip for the entire sequence if training
+        do_flip = self.is_training and torch.rand(1).item() < 0.5
+        
+        # Temporal augmentation: randomly skip first 0-2 frames during training
+        if self.is_training:
+            skip_frames = int(torch.randint(0, 3, (1,)).item())
+            for _ in range(skip_frames):
+                ret, _ = cap.read()
+                if not ret: break
+        
+        while len(frames) < 20:
             ret, frame = cap.read()
             if not ret: break
+            
+            if do_flip:
+                frame = cv2.flip(frame, 1)
+                
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            frames.append(self.transform(frame))
+            
+            # 1. Convert to [0, 1] Tensor and Resize
+            t_frame = self.to_tensor(frame)
+            t_frame = self.resize(t_frame)
+            
+            # 2. Apply color jitter frame-by-frame if training (MUST happen before normalization)
+            if self.is_training:
+                t_frame = self.jitter(t_frame)
+                
+            # 3. Normalize (can result in negative values, which breaks ColorJitter)
+            t_frame = self.normalize(t_frame)
+                
+            frames.append(t_frame)
             
         cap.release()
         
-        while len(frames) < 40:
+        while len(frames) < 20:
             if len(frames) > 0:
                 frames.append(frames[-1].clone())
             else:

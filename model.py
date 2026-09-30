@@ -31,18 +31,23 @@ class X3DAttentionHead(nn.Module):
         # We need to get the in_features from original_head.proj
         in_features = original_head.proj.in_features
         self.temporal_attention = TemporalAttention(in_channels=in_features)
-        self.proj = nn.Linear(in_features, num_classes)
+        
+        # Single projection head
+        self.proj_attn = nn.Linear(in_features, num_classes)
 
     def forward(self, x):
         x = self.pool(x)
         x = self.dropout(x)
         x = self.spatial_pool(x)
-        x = x.squeeze(-1).squeeze(-1)
-        x = x.permute(0, 2, 1)
-        out, weights = self.temporal_attention(x)
+        x = x.squeeze(-1).squeeze(-1) # (B, C, T)
+        
+        # Temporal Attention Pooling
+        x_perm = x.permute(0, 2, 1) # (B, T, C)
+        out_attn_feat, weights = self.temporal_attention(x_perm)
         self.last_weights = weights.detach().cpu().numpy()
-        out = self.proj(out)
-        return out
+        out_attn = self.proj_attn(out_attn_feat)
+        
+        return out_attn
 
 class X3DFreeKickModel(nn.Module):
     def __init__(self, num_classes=2, pretrained=True):
@@ -58,12 +63,23 @@ class X3DFreeKickModel(nn.Module):
         # Replace the final block with our custom Attention Head
         original_head = self.model.blocks[5]
         self.model.blocks[5] = X3DAttentionHead(original_head, num_classes)
+
+    def freeze_backbone(self):
+        """Freeze all blocks except the custom head (blocks[5])."""
+        for i in range(5):
+            for param in self.model.blocks[i].parameters():
+                param.requires_grad = False
+    
+    def unfreeze_backbone(self):
+        """Unfreeze all blocks."""
+        for param in self.model.parameters():
+            param.requires_grad = True
         
     def forward(self, x):
         return self.model(x)
 
 if __name__ == "__main__":
     model = X3DFreeKickModel()
-    dummy_input = torch.randn(2, 3, 40, 224, 224)
+    dummy_input = torch.randn(2, 3, 20, 224, 224)
     output = model(dummy_input)
     print("Output shape:", output.shape)

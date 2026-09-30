@@ -1,4 +1,5 @@
 import os
+import argparse
 import cv2
 import torch
 import numpy as np
@@ -12,8 +13,8 @@ import glob
 from tqdm import tqdm
 
 class FrameWindowDataset(Dataset):
-    def __init__(self, frame_dir, num_frames, window_size=40, stride=4):
-        # stride=4 frames at 2fps = 2 seconds
+    def __init__(self, frame_dir, num_frames, window_size=20, stride=10):
+        # stride=10 frames at 2fps = 5 seconds
         self.frame_dir = frame_dir
         self.window_size = window_size
         self.stride = stride
@@ -72,7 +73,7 @@ def process_video(video_path, model, device, output_dir, threshold=0.8, batch_si
     subprocess.run(ffmpeg_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
     extracted_frames = len(glob.glob(os.path.join(temp_dir, "*.jpg")))
-    if extracted_frames < 40:
+    if extracted_frames < 20:
         print("  -> Video too short. Skipping.")
         shutil.rmtree(temp_dir)
         return
@@ -80,7 +81,7 @@ def process_video(video_path, model, device, output_dir, threshold=0.8, batch_si
     print(f"  -> Extracted {extracted_frames} frames.")
     
     # 2. Run Sliding Window Inference
-    dataset = FrameWindowDataset(temp_dir, extracted_frames, window_size=40, stride=4)
+    dataset = FrameWindowDataset(temp_dir, extracted_frames, window_size=20, stride=10)
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=4)
     
     print("  -> Running model inference...")
@@ -156,6 +157,11 @@ def process_video(video_path, model, device, output_dir, threshold=0.8, batch_si
     shutil.rmtree(temp_dir)
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--checkpoint", type=str, default="checkpoints/x3d_foul_best.pth")
+    parser.add_argument("--threshold", type=float, default=0.75)
+    args = parser.parse_args()
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
     
@@ -163,7 +169,7 @@ def main():
     print("Loading X3D model...")
     model = X3DFreeKickModel(num_classes=2, pretrained=False)
     
-    ckpt_path = "checkpoints/x3d_best.pth"
+    ckpt_path = args.checkpoint
     if not os.path.exists(ckpt_path):
         print(f"ERROR: Checkpoint not found at {ckpt_path}")
         return
@@ -186,7 +192,7 @@ def main():
     print(f"Found {len(videos)} videos in custom_data/. Starting inference pipeline...")
     
     for vid in videos:
-        process_video(vid, model, device, out_dir, threshold=0.85, batch_size=32)
+        process_video(vid, model, device, out_dir, threshold=args.threshold, batch_size=32)
         
     print(f"\nAll done! Highlights saved to {out_dir}")
 

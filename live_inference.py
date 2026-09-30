@@ -2,6 +2,7 @@ import os
 import cv2
 import time
 import glob
+import sys
 import torch
 import torch.nn as nn
 import random
@@ -9,18 +10,16 @@ import queue
 import threading
 import subprocess
 import torchvision.transforms as transforms
-from PIL import Image
-import matplotlib.pyplot as plt
 import torchaudio
-from torchvision import models
 from model import X3DFreeKickModel
+from model_audio import WhistleNet
 
 # Configurations
 FPS = 2
-WINDOW_SECONDS = 20
-WINDOW_FRAMES = WINDOW_SECONDS * FPS # 40 frames
-STRIDE_SECONDS = 10
-STRIDE_FRAMES = STRIDE_SECONDS * FPS # 20 frames
+WINDOW_SECONDS = 10
+WINDOW_FRAMES = WINDOW_SECONDS * FPS # 20 frames
+STRIDE_SECONDS = 5
+STRIDE_FRAMES = STRIDE_SECONDS * FPS # 10 frames
 THRESHOLD = 0.85
 DATA_DIR = "/home/pilot/Desktop/ballsaction/custom_data_2_compressed"
 
@@ -32,6 +31,9 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.45, 0.45, 0.45], std=[0.225, 0.225, 0.225])
 ])
+
+mel_transform = torchaudio.transforms.MelSpectrogram(sample_rate=16000, n_mels=128, n_fft=1024, hop_length=512)
+amp_to_db = torchaudio.transforms.AmplitudeToDB()
 
 def producer(video_path, frame_queue, stop_event):
     """Simulates a live broadcast camera feed by reading a video in real-time."""
@@ -80,22 +82,39 @@ def producer(video_path, frame_queue, stop_event):
     cap.release()
     stop_event.set()
 
-def extract_live_audio(video_path, start_sec, duration=5.0, temp_wav="live_buffer.wav"):
-    """Dynamically extracts a 5-second slice of audio using ffmpeg."""
-    cmd = [
-        "ffmpeg", "-y", "-loglevel", "error",
-        "-ss", str(start_sec),
-        "-i", video_path,
-        "-t", str(duration),
-        "-q:a", "0", "-map", "a",
-        temp_wav
-    ]
-    subprocess.run(cmd, capture_output=True)
-    return temp_wav
+def get_audio_window(full_waveform, t_start, t_end):
+    s_start = int(t_start * 16000)
+    s_end = int(t_end * 16000)
+    chunk = full_waveform[:, s_start:s_end]
+    target_len = int((t_end - t_start) * 16000)
+    
+    if chunk.shape[1] < target_len:
+        pad = target_len - chunk.shape[1]
+        chunk = torch.nn.functional.pad(chunk, (0, pad))
+        
+    spec = mel_transform(chunk)
+    spec = amp_to_db(spec)
+    if spec.shape[2] < 313: 
+        spec = torch.nn.functional.pad(spec, (0, 313 - spec.shape[2]))
+    else: 
+        spec = spec[:, :, :313]
+    return spec.unsqueeze(0)
 
 def consumer(frame_queue, stop_event, video_model, audio_model, video_path, device):
-    """Consumes the live frames, builds the 20-second rolling window, and runs Dual Inference."""
-    print("[Consumer] Waiting for frames to build the initial 20-second buffer...")
+    """Consumes the live frames, builds the 10-second rolling window, and runs Dual Inference."""
+    print("[Consumer] Extracting full audio for simulation...")
+    full_audio_wav = "live_full_audio.wav"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", video_path, "-q:a", "0", "-map", "a", full_audio_wav], capture_output=True)
+    
+    try:
+        full_waveform, sr = torchaudio.load(full_audio_wav)
+        if full_waveform.shape[0] > 1: full_waveform = torch.mean(full_waveform, dim=0, keepdim=True)
+        if sr != 16000: full_waveform = torchaudio.transforms.Resample(sr, 16000)(full_waveform)
+    except Exception:
+        print("Warning: Audio extraction failed or no audio track found.")
+        full_waveform = torch.zeros((1, 150 * 60 * 16000))
+    
+    print("[Consumer] Waiting for frames to build the initial 10-second buffer...")
     rolling_buffer = []
     
     # Create output directory for saved highlights
@@ -108,7 +127,7 @@ def consumer(frame_queue, stop_event, video_model, audio_model, video_path, devi
             item = frame_queue.get(timeout=0.1)
             rolling_buffer.append(item)
             
-            # Once we hit exactly 40 frames (20 seconds), run a prediction
+            # Once we hit exactly WINDOW_FRAMES, run a prediction
             if len(rolling_buffer) >= WINDOW_FRAMES:
                 # Unzip frames and timestamps
                 input_frames = [x[0] for x in rolling_buffer[:WINDOW_FRAMES]]
@@ -123,49 +142,11 @@ def consumer(frame_queue, stop_event, video_model, audio_model, video_path, devi
                 inf_start = time.time()
                 
                 # --- AUDIO PIPELINE ---
-                max_audio_prob = 0.0
-                
-                # A foul happens at varying times within the 20s window, and the whistle follows it.
-                # Scan four 5-second audio chunks across the entire window and take the max whistle confidence.
-                for chunk_idx in range(4):
-                    chunk_start = t_start_video + (chunk_idx * 5.0)
-                    temp_wav = extract_live_audio(video_path, chunk_start, duration=5.0, temp_wav=f"live_buffer_{chunk_idx}.wav")
-                    temp_jpg = f"live_spec_{chunk_idx}.jpg"
-                    
-                    if os.path.exists(temp_wav):
-                        try:
-                            waveform, sample_rate = torchaudio.load(temp_wav)
-                            if waveform.shape[0] > 1:
-                                waveform = waveform.mean(dim=0, keepdim=True)
-                                
-                            mel_spec = torchaudio.transforms.MelSpectrogram(
-                                sample_rate=sample_rate, n_fft=2048, hop_length=512, n_mels=128
-                            )(waveform)
-                            mel_spec = torchaudio.transforms.AmplitudeToDB()(mel_spec)
-                            
-                            plt.figure(figsize=(2.24, 2.24), dpi=100)
-                            plt.imshow(mel_spec[0].numpy(), aspect='auto', origin='lower', cmap='magma')
-                            plt.axis('off')
-                            plt.tight_layout(pad=0)
-                            plt.savefig(temp_jpg, bbox_inches='tight', pad_inches=0)
-                            plt.close()
-                            
-                            audio_transform = transforms.Compose([
-                                transforms.ToTensor(),
-                                transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-                            ])
-                            
-                            audio_img = Image.open(temp_jpg).convert('RGB')
-                            audio_tensor = audio_transform(audio_img).unsqueeze(0).to(device)
-                            
-                            with torch.no_grad():
-                                audio_out = audio_model(audio_tensor)
-                                audio_probs = torch.softmax(audio_out, dim=1)
-                                max_audio_prob = max(max_audio_prob, audio_probs[0, 1].item())
-                        except Exception as e:
-                            pass
-                
-                audio_prob = max_audio_prob
+                audio_tensor = get_audio_window(full_waveform, t_start_video, t_end).to(device)
+                with torch.no_grad():
+                    audio_out = audio_model(audio_tensor)
+                    audio_probs = torch.softmax(audio_out, dim=1)
+                    audio_prob = audio_probs[0, 1].item()
                 
                 # --- VIDEO PIPELINE ---
                 input_tensor = torch.stack(input_frames, dim=1).unsqueeze(0).to(device)
@@ -180,10 +161,8 @@ def consumer(frame_queue, stop_event, video_model, audio_model, video_path, devi
                 latency_ms = (inf_end - inf_start) * 1000
                 
                 # --- ASYMMETRIC FUSION ---
-                # If audio hears a whistle (>85%), boost the video confidence.
-                # If audio hears nothing, rely entirely on video (due to low recall).
-                if audio_prob > 0.85:
-                    final_prob = min(1.0, video_prob + (audio_prob * 0.3))
+                if audio_prob > 0.7:
+                    final_prob = min(1.0, video_prob + 0.05)
                     fusion_note = "(Boosted by Whistle!)"
                 else:
                     final_prob = video_prob
@@ -191,7 +170,7 @@ def consumer(frame_queue, stop_event, video_model, audio_model, video_path, devi
                     
                 if final_prob > THRESHOLD:
                     status = "DETECTED HIGHLIGHT! (Clipping to disk...)"
-                    # Asynchronously save the 20-second window so we don't block the live feed!
+                    # Asynchronously save the 10-second window so we don't block the live feed!
                     out_clip = os.path.join(highlights_dir, f"highlight_{t_start_video:.0f}s_to_{t_end:.0f}s.mp4")
                     
                     clip_cmd = [
@@ -213,15 +192,13 @@ def consumer(frame_queue, stop_event, video_model, audio_model, video_path, devi
                 print(f"  [Metrics] Dual-Inference Latency: {latency_ms:.1f}ms | Queue Backlog: {frame_queue.qsize()} frames")
                 print("="*60)
                 
-                # Slide window forward by 10 seconds (drop the oldest 20 frames)
+                # Slide window forward
                 rolling_buffer = rolling_buffer[STRIDE_FRAMES:]
                 
         except queue.Empty:
             continue
 
     print("[Consumer] Finished.")
-
-import sys
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -240,10 +217,9 @@ def main():
     video_model.eval()
     
     # 2. Load Audio Model
-    print("Loading Audio ResNet-18 Model...")
-    audio_model = models.resnet18(pretrained=False)
-    audio_model.fc = nn.Linear(audio_model.fc.in_features, 2)
-    audio_ckpt = "checkpoints/audio_resnet18_best.pth"
+    print("Loading Audio WhistleNet Model...")
+    audio_model = WhistleNet()
+    audio_ckpt = "checkpoints/audio_whistle_best.pth"
     if os.path.exists(audio_ckpt):
         audio_model.load_state_dict(torch.load(audio_ckpt, map_location=device))
         print("-> Audio Weights loaded successfully!")

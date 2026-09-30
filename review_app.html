@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SoccerNet Clip Review</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #121212; color: #fff; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .container { background: #1e1e1e; padding: 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; max-width: 800px; width: 100%; }
+        video { width: 100%; max-height: 480px; border-radius: 8px; margin-bottom: 20px; outline: none; background: #000; }
+        .info { text-align: left; margin-bottom: 20px; background: #2c2c2c; padding: 15px; border-radius: 8px; }
+        .controls { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+        button { background: #3b82f6; border: none; color: white; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        button:hover { background: #2563eb; }
+        .tag-btn { background: #4b5563; }
+        .tag-btn:hover { background: #374151; }
+        .tag-btn.selected { background: #10b981 !important; }
+        .nav-btn { background: #8b5cf6; }
+        .nav-btn:hover { background: #7c3aed; }
+        #export-btn { background: #ef4444; width: 100%; margin-top: 20px; font-weight: bold; }
+        #export-btn:hover { background: #dc2626; }
+        .keyboard-hints { font-size: 12px; color: #888; margin-top: 10px; }
+        .filters { display: flex; gap: 20px; justify-content: center; margin-bottom: 20px; }
+        .filters label { font-weight: bold; }
+        .filters select { background: #333; color: #fff; border: 1px solid #555; padding: 5px 10px; border-radius: 4px; outline: none; }
+    </style>
+</head>
+    <div class="container">
+        <h2>Clip Review (<span id="progress">0/0</span>)</h2>
+        
+        <div class="filters">
+            <label>Label: 
+                <select id="filter-label" onchange="applyFilters()">
+                    <option value="All">All</option>
+                    <option value="Foul">Foul</option>
+                    <option value="SetPiece">SetPiece</option>
+                </select>
+            </label>
+            <label>Type: 
+                <select id="filter-type" onchange="applyFilters()">
+                    <option value="All">All</option>
+                    <option value="TP">TP</option>
+                    <option value="FP">FP</option>
+                    <option value="FN">FN</option>
+                </select>
+            </label>
+        </div>
+
+        <video id="video-player" controls autoplay loop></video>
+        
+        <div class="info">
+            <p><strong>ID:</strong> <span id="clip-id"></span></p>
+            <p><strong>Label:</strong> <span id="clip-label"></span> | <strong>Type:</strong> <span id="clip-type"></span></p>
+            <p><strong>Predicted Prob:</strong> <span id="clip-prob"></span> | <strong>GT Time:</strong> <span id="clip-gt"></span>s</p>
+            <p><strong>Current Tag:</strong> <span id="clip-tag" style="color: #10b981; font-weight: bold;">None</span></p>
+        </div>
+        
+        <div class="controls">
+            <button class="tag-btn" onclick="setTag('TP')">1. TP (True Positive)</button>
+            <button class="tag-btn" onclick="setTag('FP')">2. FP (False Positive)</button>
+            <button class="tag-btn" onclick="setTag('FN')">3. FN (False Negative)</button>
+            <button class="tag-btn" onclick="setTag('TN')">4. TN (True Negative)</button>
+        </div>
+        
+        <div class="controls">
+            <button class="nav-btn" onclick="prevClip()">← Previous</button>
+            <button class="nav-btn" onclick="nextClip()">Next →</button>
+        </div>
+        
+        <p class="keyboard-hints">Pro tip: Use keyboard numbers 1-4 to tag, and Arrow keys to navigate!</p>
+        
+        <button id="export-btn" onclick="exportCSV()">Export CSV</button>
+    </div>
+
+    <script>
+        let allClips = [];
+        let clips = [];
+        let currentIndex = 0;
+        
+        fetch('soccernet_eval_ensemble_highlights/review_metadata.json')
+            .then(res => res.json())
+            .then(data => {
+                allClips = data.map(c => ({...c, tag: 'None'}));
+                applyFilters();
+            })
+            .catch(err => {
+                alert("Error: Could not load review_metadata.json.\nMake sure you are running a local HTTP server (e.g. python -m http.server 8000) and accessing this page through localhost!");
+                console.error(err);
+            });
+
+        function applyFilters() {
+            const labelFilter = document.getElementById('filter-label').value;
+            const typeFilter = document.getElementById('filter-type').value;
+            
+            clips = allClips.filter(c => {
+                const matchLabel = labelFilter === 'All' || c.label === labelFilter;
+                const matchType = typeFilter === 'All' || c.type === typeFilter;
+                return matchLabel && matchType;
+            });
+            
+            currentIndex = 0;
+            updateUI();
+        }
+
+        function updateUI() {
+            if (clips.length === 0) {
+                document.getElementById('progress').innerText = `0 / 0`;
+                document.getElementById('video-player').src = '';
+                document.getElementById('clip-id').innerText = 'No clips found for current filters.';
+                document.getElementById('clip-label').innerText = '-';
+                document.getElementById('clip-type').innerText = '-';
+                document.getElementById('clip-prob').innerText = '-';
+                document.getElementById('clip-gt').innerText = '-';
+                document.getElementById('clip-tag').innerText = '-';
+                return;
+            }
+            const clip = clips[currentIndex];
+            
+            document.getElementById('progress').innerText = `${currentIndex + 1} / ${clips.length}`;
+            document.getElementById('video-player').src = 'soccernet_eval_ensemble_highlights/' + clip.path;
+            document.getElementById('clip-id').innerText = clip.id;
+            document.getElementById('clip-label').innerText = clip.label;
+            
+            const typeColor = clip.type === 'TP' ? '#10b981' : (clip.type === 'FN' ? '#ef4444' : '#f59e0b');
+            document.getElementById('clip-type').innerHTML = `<span style="color: ${typeColor}; font-weight:bold;">${clip.type}</span>`;
+            
+            document.getElementById('clip-prob').innerText = clip.pred_prob.toFixed(4);
+            document.getElementById('clip-gt').innerText = clip.ground_truth_time !== null && clip.ground_truth_time !== undefined ? clip.ground_truth_time : "N/A";
+            document.getElementById('clip-tag').innerText = clip.tag;
+            
+            document.querySelectorAll('.tag-btn').forEach(btn => {
+                btn.classList.toggle('selected', btn.innerText.includes(clip.tag) && clip.tag !== 'None');
+            });
+        }
+
+        function setTag(tag) {
+            if (clips.length === 0) return;
+            clips[currentIndex].tag = tag;
+            updateUI();
+            
+            if (currentIndex < clips.length - 1) {
+                setTimeout(nextClip, 200); // slight delay for visual feedback
+            }
+        }
+
+        function nextClip() {
+            if (currentIndex < clips.length - 1) {
+                currentIndex++;
+                updateUI();
+            }
+        }
+
+        function prevClip() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateUI();
+            }
+        }
+
+        function exportCSV() {
+            if (allClips.length === 0) return;
+            let csv = "id,path,label,type,pred_prob,ground_truth_time,tag\n";
+            allClips.forEach(c => {
+                csv += `${c.id},${c.path},${c.label},${c.type},${c.pred_prob},${c.ground_truth_time !== undefined ? c.ground_truth_time : ''},${c.tag}\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.setAttribute('hidden', '');
+            a.setAttribute('href', url);
+            a.setAttribute('download', 'audit_results.csv');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextClip();
+            if (e.key === 'ArrowLeft') prevClip();
+            if (e.key === '1') setTag('TP');
+            if (e.key === '2') setTag('FP');
+            if (e.key === '3') setTag('FN');
+            if (e.key === '4') setTag('TN');
+        });
+    </script>
+</body>
+</html>
