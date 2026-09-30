@@ -222,7 +222,7 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# BallsAction Datasets and Weights
+# BallsAction Datasets and Video/Image Directories
 soccernet_data/
 custom_data/
 custom_data_2/
@@ -238,3 +238,24 @@ custom_highlights/
 soccernet_eval_highlights/
 setpiece_dataset/
 soccernet_eval_dual_highlights/
+foul_dataset_v2/
+setpiece_dataset_v2/
+audio_dataset_v2/
+attention_heatmaps/
+soccernet_eval_v3_highlights/
+soccernet_eval_ensemble_highlights/
+custom_eval_highlights/
+*_highlights/
+
+# Video, Audio, and Image Media Files
+*.mp4
+*.mkv
+*.avi
+*.webm
+*.mov
+*.wav
+*.flac
+*.mp3
+
+# Generated Evaluation Logs
+soccernet_eval_v3_log.csv

@@ -1,0 +1,221 @@
+
+--- Game: england_epl/2014-2015/2015-05-17 - 18-00 Manchester United 1 - 1 Arsenal ---
+  FP Foul | Conf: 0.81 | Range: [397.5s, 407.5s]
+  FP Foul | Conf: 0.75 | Range: [1112.7s, 1122.7s]
+  FP Foul | Conf: 0.85 | Range: [1434.3s, 1444.3s]
+  TP Foul | Conf: 0.92 | Range: [1703.1s, 1713.1s]
+  TP Foul | Conf: 0.90 | Range: [2135.1s, 2145.1s]
+  FP Foul | Conf: 0.94 | Range: [2154.3s, 2164.3s]
+  TP Foul | Conf: 0.90 | Range: [2221.5s, 2231.5s]
+  TP Foul | Conf: 0.80 | Range: [2639.1s, 2649.1s]
+  FN Foul | Time: 791s
+  FN Foul | Time: 1022s
+  FN Foul | Time: 1538s
+  FN Foul | Time: 2393s
+  FN Foul | Time: 2425s
+  TP SetPiece | Conf: 0.77 | Range: [848.7s, 858.7s]
+  TP Foul | Conf: 0.77 | Range: [47.1s, 57.1s]
+  FP Foul | Conf: 0.75 | Range: [589.5s, 599.5s]
+  TP Foul | Conf: 0.94 | Range: [1285.5s, 1295.5s]
+  FP Foul | Conf: 0.78 | Range: [1626.3s, 1636.3s]
+  FP Foul | Conf: 0.80 | Range: [2015.1s, 2025.1s]
+  TP Foul | Conf: 0.86 | Range: [2048.7s, 2058.7s]
+  FP Foul | Conf: 0.87 | Range: [2130.3s, 2140.3s]
+  TP Foul | Conf: 0.98 | Range: [2475.9s, 2485.9s]
+  TP Foul | Conf: 0.75 | Range: [2730.3s, 2740.3s]
+  FP Foul | Conf: 0.88 | Range: [2759.1s, 2769.1s]
+  FP Foul | Conf: 0.77 | Range: [2811.9s, 2821.9s]
+  FP Foul | Conf: 0.76 | Range: [2869.5s, 2879.5s]
+  TP Foul | Conf: 0.86 | Range: [2984.7s, 2994.7s]
+  FN Foul | Time: 174s
+  FN Foul | Time: 532s
+  FN Foul | Time: 962s
+  FN Foul | Time: 979s
+  FN Foul | Time: 1466s
+  FN Foul | Time: 2172s
+
+--- Game: england_epl/2015-2016/2015-08-16 - 18-00 Manchester City 3 - 0 Chelsea ---
+  TP Foul | Conf: 0.96 | Range: [133.5s, 143.5s]
+  TP Foul | Conf: 0.96 | Range: [479.1s, 489.1s]
+  TP Foul | Conf: 0.96 | Range: [551.1s, 561.1s]
+  TP Foul | Conf: 0.77 | Range: [997.5s, 1007.5s]
+  TP Foul | Conf: 1.00 | Range: [1093.5s, 1103.5s]
+  TP Foul | Conf: 0.81 | Range: [1933.5s, 1943.5s]
+  TP Foul | Conf: 0.89 | Range: [2043.9s, 2053.9s]
+  TP Foul | Conf: 0.81 | Range: [2259.9s, 2269.9s]
+  TP Foul | Conf: 0.92 | Range: [2312.7s, 2322.7s]
+  FP Foul | Conf: 0.81 | Range: [2370.3s, 2380.3s]
+  TP Foul | Conf: 0.91 | Range: [2543.1s, 2553.1s]
+  TP Foul | Conf: 0.92 | Range: [2744.7s, 2754.7s]
+  FN Foul | Time: 266s
+  FN Foul | Time: 415s
+  FN Foul | Time: 633s
+  FN Foul | Time: 1356s
+  FN Foul | Time: 1537s
+  FN Foul | Time: 2780s
+  TP SetPiece | Conf: 0.97 | Range: [512.7s, 522.7s]
+  FP SetPiece | Conf: 0.76 | Range: [781.5s, 791.5s]
+  TP SetPiece | Conf: 0.79 | Range: [1021.5s, 1031.5s]
+  TP SetPiece | Conf: 1.00 | Range: [1141.5s, 1151.5s]
+  TP SetPiece | Conf: 1.00 | Range: [2351.1s, 2361.1s]
+  TP SetPiece | Conf: 0.93 | Range: [2581.5s, 2591.5s]
+  FN SetPiece | Time: 1982s
+  TP Foul | Conf: 0.81 | Range: [51.9s, 61.9s]
+  TP Foul | Conf: 0.96 | Range: [128.7s, 138.7s]
+  TP Foul | Conf: 0.80 | Range: [349.5s, 359.5s]
+  FP Foul | Conf: 0.82 | Range: [488.7s, 498.7s]
+  FP Foul | Conf: 0.79 | Range: [872.7s, 882.7s]
+  FP Foul | Conf: 0.91 | Range: [1333.5s, 1343.5s]
+  FP Foul | Conf: 0.84 | Range: [1415.1s, 1425.1s]
+  FP Foul | Conf: 0.89 | Range: [1467.9s, 1477.9s]
+  TP Foul | Conf: 1.00 | Range: [2120.7s, 2130.7s]
+  TP Foul | Conf: 1.00 | Range: [2495.1s, 2505.1s]
+  TP Foul | Conf: 1.00 | Range: [2615.1s, 2625.1s]
+  TP Foul | Conf: 1.00 | Range: [2739.9s, 2749.9s]
+  FN Foul | Time: 382s
+  FN Foul | Time: 431s
+  FN Foul | Time: 818s
+  FN Foul | Time: 2680s
+  TP SetPiece | Conf: 0.82 | Range: [85.5s, 95.5s]
+  TP SetPiece | Conf: 0.95 | Range: [421.5s, 431.5s]
+  TP SetPiece | Conf: 0.92 | Range: [479.1s, 489.1s]
+  FP SetPiece | Conf: 0.85 | Range: [1261.5s, 1271.5s]
+  TP SetPiece | Conf: 0.98 | Range: [2538.3s, 2548.3s]
+  FN SetPiece | Time: 169s
+
+--- Game: england_epl/2015-2016/2015-08-23 - 15-30 West Brom 2 - 3 Chelsea ---
+  FP Foul | Conf: 0.95 | Range: [608.7s, 618.7s]
+  FP Foul | Conf: 0.89 | Range: [647.1s, 657.1s]
+  TP Foul | Conf: 1.00 | Range: [738.3s, 748.3s]
+  TP Foul | Conf: 1.00 | Range: [954.3s, 964.3s]
+  TP Foul | Conf: 0.79 | Range: [978.3s, 988.3s]
+  FP Foul | Conf: 1.00 | Range: [1367.1s, 1377.1s]
+  TP Foul | Conf: 1.00 | Range: [1491.9s, 1501.9s]
+  TP Foul | Conf: 1.00 | Range: [2658.3s, 2668.3s]
+  FN Foul | Time: 817s
+  FN Foul | Time: 934s
+  FN Foul | Time: 2153s
+  FN Foul | Time: 2163s
+  TP SetPiece | Conf: 0.77 | Range: [776.7s, 786.7s]
+  TP SetPiece | Conf: 0.99 | Range: [1026.3s, 1036.3s]
+  FP SetPiece | Conf: 0.88 | Range: [2687.1s, 2697.1s]
+  FN SetPiece | Time: 2197s
+  TP Foul | Conf: 0.92 | Range: [42.3s, 52.3s]
+  TP Foul | Conf: 0.88 | Range: [263.1s, 273.1s]
+  FP Foul | Conf: 0.88 | Range: [402.3s, 412.3s]
+  TP Foul | Conf: 1.00 | Range: [498.3s, 508.3s]
+  FP Foul | Conf: 0.91 | Range: [637.5s, 647.5s]
+  TP Foul | Conf: 1.00 | Range: [671.1s, 681.1s]
+  TP Foul | Conf: 0.92 | Range: [786.3s, 796.3s]
+  FP Foul | Conf: 0.89 | Range: [911.1s, 921.1s]
+  TP Foul | Conf: 1.00 | Range: [1247.1s, 1257.1s]
+  FP Foul | Conf: 0.95 | Range: [1338.3s, 1348.3s]
+  TP Foul | Conf: 1.00 | Range: [1515.9s, 1525.9s]
+  FP Foul | Conf: 0.80 | Range: [1664.7s, 1674.7s]
+  TP Foul | Conf: 1.00 | Range: [1957.5s, 1967.5s]
+  TP Foul | Conf: 0.99 | Range: [2274.3s, 2284.3s]
+  TP Foul | Conf: 0.88 | Range: [2639.1s, 2649.1s]
+  FP Foul | Conf: 0.99 | Range: [2667.9s, 2677.9s]
+  FN Foul | Time: 328s
+  FN Foul | Time: 1739s
+  TP SetPiece | Conf: 0.80 | Range: [287.1s, 297.1s]
+  TP SetPiece | Conf: 0.85 | Range: [618.3s, 628.3s]
+  TP SetPiece | Conf: 0.76 | Range: [719.1s, 729.1s]
+
+--- Game: england_epl/2015-2016/2015-08-29 - 17-00 Liverpool 0 - 3 West Ham ---
+  TP Foul | Conf: 0.98 | Range: [599.1s, 609.1s]
+  TP Foul | Conf: 0.98 | Range: [709.5s, 719.5s]
+  TP Foul | Conf: 1.00 | Range: [839.1s, 849.1s]
+  FP Foul | Conf: 1.00 | Range: [1333.5s, 1343.5s]
+  TP Foul | Conf: 0.86 | Range: [1611.9s, 1621.9s]
+  TP Foul | Conf: 0.83 | Range: [2096.7s, 2106.7s]
+  FP Foul | Conf: 0.79 | Range: [2115.9s, 2125.9s]
+  TP Foul | Conf: 0.97 | Range: [2235.9s, 2245.9s]
+  TP Foul | Conf: 1.00 | Range: [2259.9s, 2269.9s]
+  FP Foul | Conf: 0.77 | Range: [2375.1s, 2385.1s]
+  FP Foul | Conf: 0.76 | Range: [2821.5s, 2831.5s]
+  TP Foul | Conf: 0.82 | Range: [2903.1s, 2913.1s]
+  TP Foul | Conf: 1.00 | Range: [2922.3s, 2932.3s]
+  FN Foul | Time: 1199s
+  FN Foul | Time: 2051s
+  FN Foul | Time: 2358s
+  FN Foul | Time: 2402s
+  FP SetPiece | Conf: 0.80 | Range: [781.5s, 791.5s]
+  TP SetPiece | Conf: 0.79 | Range: [2130.3s, 2140.3s]
+  FN SetPiece | Time: 751s
+  TP Foul | Conf: 0.88 | Range: [157.5s, 167.5s]
+  TP Foul | Conf: 0.96 | Range: [383.1s, 393.1s]
+  TP Foul | Conf: 1.00 | Range: [594.3s, 604.3s]
+  TP Foul | Conf: 1.00 | Range: [675.9s, 685.9s]
+  TP Foul | Conf: 0.90 | Range: [752.7s, 762.7s]
+  TP Foul | Conf: 0.92 | Range: [973.5s, 983.5s]
+  TP Foul | Conf: 0.91 | Range: [1405.5s, 1415.5s]
+  TP Foul | Conf: 0.98 | Range: [1453.5s, 1463.5s]
+  TP Foul | Conf: 1.00 | Range: [1674.3s, 1684.3s]
+  TP Foul | Conf: 0.98 | Range: [1962.3s, 1972.3s]
+  TP Foul | Conf: 1.00 | Range: [2125.5s, 2135.5s]
+  TP Foul | Conf: 1.00 | Range: [2403.9s, 2413.9s]
+  FP Foul | Conf: 0.83 | Range: [2691.9s, 2701.9s]
+  FN Foul | Time: 1335s
+  FN Foul | Time: 1709s
+  FN Foul | Time: 1748s
+  FN Foul | Time: 2066s
+  FN Foul | Time: 2305s
+  FN Foul | Time: 2734s
+  FN Foul | Time: 2743s
+  TP SetPiece | Conf: 0.97 | Range: [1741.5s, 1751.5s]
+
+--- Game: england_epl/2015-2016/2015-09-20 - 18-00 Southampton 2 - 3 Manchester United ---
+  FP Foul | Conf: 0.80 | Range: [18.3s, 28.3s]
+  TP Foul | Conf: 0.92 | Range: [152.7s, 162.7s]
+  TP Foul | Conf: 0.84 | Range: [1664.7s, 1674.7s]
+  TP Foul | Conf: 0.77 | Range: [1731.9s, 1741.9s]
+  FP Foul | Conf: 1.00 | Range: [2653.5s, 2663.5s]
+  FN Foul | Time: 87s
+  FN Foul | Time: 409s
+  FN Foul | Time: 704s
+  FN Foul | Time: 1132s
+  TP Foul | Conf: 0.99 | Range: [109.5s, 119.5s]
+  TP Foul | Conf: 0.93 | Range: [349.5s, 359.5s]
+  FP Foul | Conf: 0.85 | Range: [411.9s, 421.9s]
+  TP Foul | Conf: 0.97 | Range: [498.3s, 508.3s]
+  TP Foul | Conf: 0.99 | Range: [594.3s, 604.3s]
+  FP Foul | Conf: 0.93 | Range: [632.7s, 642.7s]
+  FP Foul | Conf: 0.91 | Range: [728.7s, 738.7s]
+  FP Foul | Conf: 0.77 | Range: [1467.9s, 1477.9s]
+  FP Foul | Conf: 0.76 | Range: [1587.9s, 1597.9s]
+  TP Foul | Conf: 1.00 | Range: [1645.5s, 1655.5s]
+  TP Foul | Conf: 0.84 | Range: [1832.7s, 1842.7s]
+  TP Foul | Conf: 1.00 | Range: [1928.7s, 1938.7s]
+  FP Foul | Conf: 0.83 | Range: [1971.9s, 1981.9s]
+  FP Foul | Conf: 0.85 | Range: [2235.9s, 2245.9s]
+  TP Foul | Conf: 1.00 | Range: [2355.9s, 2365.9s]
+  FP Foul | Conf: 0.87 | Range: [2466.3s, 2476.3s]
+  TP Foul | Conf: 0.98 | Range: [2586.3s, 2596.3s]
+  FN Foul | Time: 79s
+  FN Foul | Time: 220s
+  FN Foul | Time: 933s
+  FN Foul | Time: 1675s
+  TP SetPiece | Conf: 1.00 | Range: [527.1s, 537.1s]
+  FP SetPiece | Conf: 0.98 | Range: [637.5s, 647.5s]
+  TP SetPiece | Conf: 0.82 | Range: [1674.3s, 1684.3s]
+  TP SetPiece | Conf: 0.81 | Range: [1693.5s, 1703.5s]
+  TP SetPiece | Conf: 0.77 | Range: [1981.5s, 1991.5s]
+  TP SetPiece | Conf: 1.00 | Range: [2375.1s, 2385.1s]
+  TP SetPiece | Conf: 1.00 | Range: [2615.1s, 2625.1s]
+
+===========================
+OVERALL EVALUATION SUMMARY
+===========================
+--- Foul ---
+TP: 76 | FP: 41 | FN: 46
+Precision: 64.96%
+Recall:    62.30%
+F1 Score:  63.60%
+
+--- SetPiece ---
+TP: 23 | FP: 5 | FN: 4
+Precision: 82.14%
+Recall:    85.19%
+F1 Score:  83.64%
+

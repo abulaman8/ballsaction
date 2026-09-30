@@ -30,7 +30,6 @@ amp_to_db = torchaudio.transforms.AmplitudeToDB()
 def temporal_nms(detections, nms_window=15.0):
     """Keep highest confidence detection and suppress all within nms_window seconds."""
     if not detections: return []
-    # Sort by probability descending
     detections.sort(key=lambda x: x[2], reverse=True)
     kept = []
     suppressed = set()
@@ -45,11 +44,11 @@ def temporal_nms(detections, nms_window=15.0):
             other_center = (detections[j][0] + detections[j][1]) / 2
             if abs(t_center - other_center) < nms_window:
                 suppressed.add(j)
-    kept.sort(key=lambda x: x[0])  # Re-sort by time
+    kept.sort(key=lambda x: x[0])
     return kept
 
 def process_half(video_path, v_foul, v_sp, a_whistle, device, args):
-    full_audio_wav = "eval_v3_full_audio.wav"
+    full_audio_wav = f"eval_v3_temp_{os.getpid()}.wav"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", video_path, "-q:a", "0", "-map", "a", full_audio_wav], capture_output=True)
     
     try:
@@ -58,6 +57,10 @@ def process_half(video_path, v_foul, v_sp, a_whistle, device, args):
         if sr != 16000: full_waveform = torchaudio.transforms.Resample(sr, 16000)(full_waveform)
     except Exception:
         full_waveform = torch.zeros((1, 150 * 60 * 16000))
+    finally:
+        if os.path.exists(full_audio_wav):
+            try: os.remove(full_audio_wav)
+            except: pass
         
     def get_audio_window(t_start, t_end):
         s_start = int(t_start * 16000)
@@ -107,9 +110,10 @@ def process_half(video_path, v_foul, v_sp, a_whistle, device, args):
                 audio_tensor = get_audio_window(t_start, t_end).to(device)
                 
                 with torch.no_grad():
-                    foul_prob = torch.softmax(v_foul(vid_tensor), dim=1)[0, 1].item()
-                    sp_prob = torch.softmax(v_sp(vid_tensor), dim=1)[0, 1].item()
-                    audio_prob = torch.softmax(a_whistle(audio_tensor), dim=1)[0, 1].item()
+                    with torch.amp.autocast('cuda'):
+                        foul_prob = torch.softmax(v_foul(vid_tensor), dim=1)[0, 1].item()
+                        sp_prob = torch.softmax(v_sp(vid_tensor), dim=1)[0, 1].item()
+                        audio_prob = torch.softmax(a_whistle(audio_tensor), dim=1)[0, 1].item()
                     
                     if audio_prob > 0.7:
                         foul_prob = min(1.0, foul_prob + 0.05)
@@ -164,23 +168,37 @@ def parse_labels_v2(json_path):
 
 def evaluate(args):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Using device: {device}")
     
     v_foul = X3DFreeKickModel(num_classes=2, pretrained=False).to(device)
     v_foul.load_state_dict(torch.load("checkpoints/x3d_foul_best.pth", map_location=device))
     v_foul.eval()
+    print("Loaded Foul model checkpoint: checkpoints/x3d_foul_best.pth")
     
     v_sp = X3DFreeKickModel(num_classes=2, pretrained=False).to(device)
     v_sp.load_state_dict(torch.load("checkpoints/x3d_setpiece_best.pth", map_location=device))
     v_sp.eval()
+    print("Loaded SetPiece model checkpoint: checkpoints/x3d_setpiece_best.pth")
     
     a_whistle = WhistleNet().to(device)
     a_whistle.load_state_dict(torch.load("checkpoints/audio_whistle_best.pth", map_location=device))
     a_whistle.eval()
+    print("Loaded WhistleNet model checkpoint: checkpoints/audio_whistle_best.pth")
     
-    os.makedirs(args.output_dir, exist_ok=True)
+    if args.save_clips:
+        os.makedirs(args.output_dir, exist_ok=True)
     
-    games = getListGames(args.split)[:args.num_games]
+    all_games = getListGames(args.split)
+    if args.num_games > 0:
+        games = all_games[:args.num_games]
+    else:
+        games = all_games
+    
     soccernet_dir = "/home/pilot/Desktop/ballsaction/soccernet_data"
+    
+    # Filter to games that have videos and labels
+    valid_games = [g for g in games if os.path.exists(os.path.join(soccernet_dir, g, "1_224p.mkv")) and os.path.exists(os.path.join(soccernet_dir, g, "Labels-v2.json"))]
+    print(f"Evaluating on {len(valid_games)} {args.split} matches (Foul Thresh: {args.foul_threshold}, SetPiece Thresh: {args.sp_threshold})")
     
     metrics = {
         "Foul": {"TP": 0, "FP": 0, "FN": 0},
@@ -195,9 +213,9 @@ def evaluate(args):
         writer.writeheader()
         
         with open('soccernet_eval_v3_report.txt', 'w') as report:
-            for game in games:
-                print(f"Evaluating game: {game}")
-                report.write(f"--- Game: {game} ---\n")
+            for g_idx, game in enumerate(valid_games):
+                print(f"[{g_idx+1}/{len(valid_games)}] Evaluating: {game}")
+                report.write(f"\n--- Game: {game} ---\n")
                 
                 game_dir = os.path.join(soccernet_dir, game)
                 label_path = os.path.join(game_dir, "Labels-v2.json")
@@ -224,9 +242,6 @@ def evaluate(args):
                             p_start, p_end, p_prob, p_label = p
                             hit = [g for g in gts if p_start - TOLERANCE_SECONDS <= g <= p_end + TOLERANCE_SECONDS]
                             
-                            clip_name = f"{game.replace('/','_')}_H{half}_{label_type}_{p_start:.0f}s.mp4"
-                            clip_path = os.path.join(args.output_dir, clip_name)
-                            
                             is_tp = False
                             if hit:
                                 is_tp = True
@@ -237,26 +252,28 @@ def evaluate(args):
                                 metrics[label_type]["FP"] += 1
                                 report.write(f"  FP {label_type} | Conf: {p_prob:.2f} | Range: [{p_start:.1f}s, {p_end:.1f}s]\n")
                                 
-                            duration = p_end - p_start
-                            clip_cmd = [
-                                "ffmpeg", "-y", "-loglevel", "error",
-                                "-ss", str(p_start), "-i", video_path, "-t", str(duration),
-                                "-map", "0:v:0?", "-map", "0:a:0?",
-                                "-vf", "scale=-2:480", "-c:v", "libx264", "-crf", "28", "-preset", "fast",
-                                "-c:a", "aac", "-b:a", "128k",
-                                clip_path
-                            ]
-                            subprocess.run(clip_cmd)
-                            
-                            review_data.append({
-                                "id": clip_name,
-                                "path": clip_name,
-                                "type": "TP" if is_tp else "FP",
-                                "label": label_type,
-                                "pred_prob": p_prob,
-                                "clip_start": p_start,
-                                "clip_end": p_end
-                            })
+                            if args.save_clips:
+                                clip_name = f"{game.replace('/','_')}_H{half}_{label_type}_{p_start:.0f}s.mp4"
+                                clip_path = os.path.join(args.output_dir, clip_name)
+                                duration = p_end - p_start
+                                clip_cmd = [
+                                    "ffmpeg", "-y", "-loglevel", "error",
+                                    "-ss", str(p_start), "-i", video_path, "-t", str(duration),
+                                    "-map", "0:v:0?", "-map", "0:a:0?",
+                                    "-vf", "scale=-2:480", "-c:v", "libx264", "-crf", "28", "-preset", "fast",
+                                    "-c:a", "aac", "-b:a", "128k",
+                                    clip_path
+                                ]
+                                subprocess.run(clip_cmd)
+                                review_data.append({
+                                    "id": clip_name,
+                                    "path": clip_name,
+                                    "type": "TP" if is_tp else "FP",
+                                    "label": label_type,
+                                    "pred_prob": p_prob,
+                                    "clip_start": p_start,
+                                    "clip_end": p_end
+                                })
                             
                         for g in gts:
                             if g not in matched_gts:
@@ -266,7 +283,12 @@ def evaluate(args):
                     match_predictions(pred_fouls, half_gt_fouls, "Foul")
                     match_predictions(pred_sps, half_gt_sps, "SetPiece")
 
-            report.write("\n=== OVERALL SUMMARY ===\n")
+            report.write("\n===========================\n")
+            report.write("OVERALL EVALUATION SUMMARY\n")
+            report.write("===========================\n")
+            print("\n===========================")
+            print("OVERALL EVALUATION SUMMARY")
+            print("===========================")
             for cls in ["Foul", "SetPiece"]:
                 tp = metrics[cls]["TP"]
                 fp = metrics[cls]["FP"]
@@ -275,22 +297,28 @@ def evaluate(args):
                 rec = tp / (tp + fn) if tp + fn > 0 else 0
                 f1 = 2 * prec * rec / (prec + rec) if prec + rec > 0 else 0
                 
-                report.write(f"{cls}:\n")
-                report.write(f"  TP: {tp}, FP: {fp}, FN: {fn}\n")
-                report.write(f"  Precision: {prec:.4f}\n")
-                report.write(f"  Recall:    {rec:.4f}\n")
-                report.write(f"  F1 Score:  {f1:.4f}\n")
+                summary_str = (
+                    f"--- {cls} ---\n"
+                    f"TP: {tp} | FP: {fp} | FN: {fn}\n"
+                    f"Precision: {prec * 100:.2f}%\n"
+                    f"Recall:    {rec * 100:.2f}%\n"
+                    f"F1 Score:  {f1 * 100:.2f}%\n"
+                )
+                report.write(summary_str + "\n")
+                print(summary_str)
                 
-    with open(os.path.join(args.output_dir, "review_metadata.json"), "w") as f:
-        json.dump(review_data, f, indent=4)
+    if args.save_clips:
+        with open(os.path.join(args.output_dir, "review_metadata.json"), "w") as f:
+            json.dump(review_data, f, indent=4)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--split", type=str, default="test")
-    parser.add_argument("--num-games", type=int, default=4)
+    parser.add_argument("--num-games", type=int, default=10, help="Number of games to evaluate (-1 for all)")
     parser.add_argument("--foul-threshold", type=float, default=0.75)
     parser.add_argument("--sp-threshold", type=float, default=0.80)
     parser.add_argument("--output-dir", type=str, default="soccernet_eval_v3_highlights")
+    parser.add_argument("--save-clips", action="store_true", help="Save highlight video clips")
     args = parser.parse_args()
     
     evaluate(args)
