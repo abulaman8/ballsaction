@@ -19,7 +19,7 @@ def train_foul_model():
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=True)
     
     model = X3DFreeKickModel().to(device)
-    criterion = FocalLoss(alpha=0.5, gamma=2.0)
+    criterion = FocalLoss(alpha=0.65, gamma=2.0)
     scaler = torch.amp.GradScaler('cuda')
     
     best_val_f1 = -1.0

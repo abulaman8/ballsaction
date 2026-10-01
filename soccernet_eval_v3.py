@@ -111,20 +111,25 @@ def process_half(video_path, v_foul, v_sp, a_whistle, device, args):
                 
                 with torch.no_grad():
                     with torch.amp.autocast('cuda'):
-                        foul_prob = torch.softmax(v_foul(vid_tensor), dim=1)[0, 1].item()
-                        sp_prob = torch.softmax(v_sp(vid_tensor), dim=1)[0, 1].item()
+                        raw_foul_prob = torch.softmax(v_foul(vid_tensor), dim=1)[0, 1].item()
+                        raw_sp_prob = torch.softmax(v_sp(vid_tensor), dim=1)[0, 1].item()
                         audio_prob = torch.softmax(a_whistle(audio_tensor), dim=1)[0, 1].item()
                     
-                    if audio_prob > 0.7:
-                        foul_prob = min(1.0, foul_prob + 0.05)
-                        sp_prob = min(1.0, sp_prob + 0.05)
+                    foul_prob = raw_foul_prob
+                    sp_prob = raw_sp_prob
+                    
+                    if audio_prob > args.audio_threshold:
+                        foul_prob = min(1.0, foul_prob + args.foul_audio_bonus)
+                        sp_prob = min(1.0, sp_prob + args.sp_audio_bonus)
                 
                 windows_log.append({
                     "window_start": t_start,
                     "window_end": t_end,
                     "foul_prob": foul_prob,
                     "sp_prob": sp_prob,
-                    "audio_prob": audio_prob
+                    "audio_prob": audio_prob,
+                    "raw_foul_prob": raw_foul_prob,
+                    "raw_sp_prob": raw_sp_prob
                 })
                 
                 if foul_prob > args.foul_threshold:
@@ -208,7 +213,7 @@ def evaluate(args):
     review_data = []
     
     with open('soccernet_eval_v3_log.csv', 'w', newline='') as csvfile:
-        fieldnames = ['match', 'half', 'window_start', 'window_end', 'foul_prob', 'sp_prob', 'audio_prob']
+        fieldnames = ['match', 'half', 'window_start', 'window_end', 'foul_prob', 'sp_prob', 'audio_prob', 'raw_foul_prob', 'raw_sp_prob']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         
@@ -317,6 +322,9 @@ if __name__ == "__main__":
     parser.add_argument("--num-games", type=int, default=10, help="Number of games to evaluate (-1 for all)")
     parser.add_argument("--foul-threshold", type=float, default=0.75)
     parser.add_argument("--sp-threshold", type=float, default=0.80)
+    parser.add_argument("--audio-threshold", type=float, default=0.70, help="Minimum whistle probability to trigger audio bonus")
+    parser.add_argument("--foul-audio-bonus", type=float, default=0.05, help="Audio bonus added to foul probability")
+    parser.add_argument("--sp-audio-bonus", type=float, default=0.05, help="Audio bonus added to set-piece probability")
     parser.add_argument("--output-dir", type=str, default="soccernet_eval_v3_highlights")
     parser.add_argument("--save-clips", action="store_true", help="Save highlight video clips")
     args = parser.parse_args()
