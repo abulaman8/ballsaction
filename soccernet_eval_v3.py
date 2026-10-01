@@ -47,7 +47,7 @@ def temporal_nms(detections, nms_window=15.0):
     kept.sort(key=lambda x: x[0])
     return kept
 
-def process_half(video_path, v_foul, v_sp, a_whistle, device, args):
+def process_half(video_path, v_foul, v_sp, a_whistle, device, args, av_gate=None):
     full_audio_wav = f"eval_v3_temp_{os.getpid()}.wav"
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", video_path, "-q:a", "0", "-map", "a", full_audio_wav], capture_output=True)
     
@@ -142,6 +142,27 @@ def process_half(video_path, v_foul, v_sp, a_whistle, device, args):
     
     cap.release()
     
+    if av_gate is not None and len(windows_log) > 0:
+        from model_av_gate import extract_gate_features
+        gate_windows = [{'raw_foul': w['raw_foul_prob'], 'raw_sp': w['raw_sp_prob'], 'audio': w['audio_prob']} for w in windows_log]
+        feats = extract_gate_features(gate_windows).to(device)
+        raw_vf = torch.tensor([w['raw_foul_prob'] for w in windows_log], dtype=torch.float32).to(device)
+        raw_vsp = torch.tensor([w['raw_sp_prob'] for w in windows_log], dtype=torch.float32).to(device)
+        with torch.no_grad():
+            p_f, p_sp = av_gate(feats, raw_vf, raw_vsp)
+            p_f = p_f.cpu().numpy()
+            p_sp = p_sp.cpu().numpy()
+            
+        detected_fouls = []
+        detected_sp = []
+        for i, w in enumerate(windows_log):
+            w['foul_prob'] = float(p_f[i])
+            w['sp_prob'] = float(p_sp[i])
+            if w['foul_prob'] > args.foul_threshold:
+                detected_fouls.append((w['window_start'], w['window_end'], w['foul_prob'], "Foul"))
+            if w['sp_prob'] > args.sp_threshold:
+                detected_sp.append((w['window_start'], w['window_end'], w['sp_prob'], "SetPiece"))
+                
     final_fouls = temporal_nms(detected_fouls)
     final_sp = temporal_nms(detected_sp)
     
@@ -190,6 +211,15 @@ def evaluate(args):
     a_whistle.eval()
     print("Loaded WhistleNet model checkpoint: checkpoints/audio_whistle_best.pth")
     
+    av_gate = None
+    if getattr(args, 'av_gate_checkpoint', None) and os.path.exists(args.av_gate_checkpoint):
+        from model_av_gate import AVGateNet
+        av_gate = AVGateNet(in_features=15, hidden_dim=32, dropout=0.0).to(device)
+        ckpt = torch.load(args.av_gate_checkpoint, map_location=device)
+        av_gate.load_state_dict(ckpt['model_state_dict'])
+        av_gate.eval()
+        print(f"Loaded AVGate model checkpoint: {args.av_gate_checkpoint}")
+    
     if args.save_clips:
         os.makedirs(args.output_dir, exist_ok=True)
     
@@ -212,12 +242,12 @@ def evaluate(args):
     
     review_data = []
     
-    with open('soccernet_eval_v3_log.csv', 'w', newline='') as csvfile:
+    with open(args.log_file, 'w', newline='') as csvfile:
         fieldnames = ['match', 'half', 'window_start', 'window_end', 'foul_prob', 'sp_prob', 'audio_prob', 'raw_foul_prob', 'raw_sp_prob']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         
-        with open('soccernet_eval_v3_report.txt', 'w') as report:
+        with open(args.report_file, 'w') as report:
             for g_idx, game in enumerate(valid_games):
                 print(f"[{g_idx+1}/{len(valid_games)}] Evaluating: {game}")
                 report.write(f"\n--- Game: {game} ---\n")
@@ -234,7 +264,7 @@ def evaluate(args):
                     half_gt_fouls = [g[1] for g in gt_fouls if g[0] == half]
                     half_gt_sps = [g[1] for g in gt_sps if g[0] == half]
                     
-                    pred_fouls, pred_sps, windows_log = process_half(video_path, v_foul, v_sp, a_whistle, device, args)
+                    pred_fouls, pred_sps, windows_log = process_half(video_path, v_foul, v_sp, a_whistle, device, args, av_gate=av_gate)
                     
                     for row in windows_log:
                         row['match'] = game
@@ -325,6 +355,9 @@ if __name__ == "__main__":
     parser.add_argument("--audio-threshold", type=float, default=0.70, help="Minimum whistle probability to trigger audio bonus")
     parser.add_argument("--foul-audio-bonus", type=float, default=0.05, help="Audio bonus added to foul probability")
     parser.add_argument("--sp-audio-bonus", type=float, default=0.05, help="Audio bonus added to set-piece probability")
+    parser.add_argument("--log-file", type=str, default="soccernet_eval_v3_log.csv", help="Path to save window log CSV")
+    parser.add_argument("--report-file", type=str, default="soccernet_eval_v3_report.txt", help="Path to save evaluation report text")
+    parser.add_argument("--av-gate-checkpoint", type=str, default=None, help="Path to trained AVGateNet checkpoint")
     parser.add_argument("--output-dir", type=str, default="soccernet_eval_v3_highlights")
     parser.add_argument("--save-clips", action="store_true", help="Save highlight video clips")
     args = parser.parse_args()

@@ -257,5 +257,9 @@ custom_eval_highlights/
 *.flac
 *.mp3
 
-# Generated Evaluation Logs
+# Generated Evaluation Logs & Caches
 soccernet_eval_v3_log.csv
+soccernet_*_log.csv
+soccernet_*_report.txt
+hard_negatives_*.json
+checkpoints/*_pre_mining.pth
