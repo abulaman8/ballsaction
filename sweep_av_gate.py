@@ -61,4 +61,6 @@ def sweep_gate(checkpoint_path="checkpoints/av_gate_best.pth", test_csv="soccern
     print(f"Best SetPiece: Thresh={best_sp_row[0]:.2f} | TP={best_sp_row[1]['tp']}, FP={best_sp_row[1]['fp']}, FN={best_sp_row[1]['fn']} | P={best_sp_row[1]['prec']*100:.2f}%, R={best_sp_row[1]['rec']*100:.2f}%, F1={best_sp_row[1]['f1']*100:.2f}%")
 
 if __name__ == "__main__":
-    sweep_gate()
+    import sys
+    test_file = sys.argv[1] if len(sys.argv) > 1 else "soccernet_eval_v3_log.csv"
+    sweep_gate(test_csv=test_file)

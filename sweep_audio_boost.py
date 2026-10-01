@@ -200,4 +200,6 @@ def evaluate_thresholds(csv_log_path="soccernet_eval_v3_log.csv", soccernet_dir=
         print(f"#{i+1:<4} | {c['video_th']:<10.2f} | {c['audio_th']:<10.2f} | {c['bonus']:<6.2f} | {c['tp']:<4} {c['fp']:<4} {c['fn']:<4} | {c['prec']*100:>7.2f}% | {c['rec']*100:>7.2f}% | {c['f1']*100:>7.2f}%")
 
 if __name__ == "__main__":
-    evaluate_thresholds()
+    import sys
+    log_path = sys.argv[1] if len(sys.argv) > 1 else "soccernet_eval_v3_log.csv"
+    evaluate_thresholds(csv_log_path=log_path)

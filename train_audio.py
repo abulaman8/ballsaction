@@ -24,17 +24,30 @@ def train_audio_model(model_name, data_dirs, num_epochs=15, batch_size=64):
     class_weights = torch.tensor(class_weights, dtype=torch.float).to(device)
     print(f"{model_name} Class Weights: {class_weights}")
     
-    model = WhistleNet().to(device)
+    model = WhistleNet(use_attention=True).to(device)
     
     criterion = nn.CrossEntropyLoss(weight=class_weights)
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
+    
+    backbone_params = [
+        p for name, p in model.named_parameters() 
+        if not any(k in name for k in ['se', 'temporal_attn', 'fc'])
+    ]
+    head_params = [
+        p for name, p in model.named_parameters() 
+        if any(k in name for k in ['se', 'temporal_attn', 'fc'])
+    ]
+    optimizer = torch.optim.AdamW([
+        {'params': backbone_params, 'lr': 1e-4},
+        {'params': head_params, 'lr': 3e-4}
+    ], weight_decay=1e-4)
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=num_epochs)
     scaler = torch.amp.GradScaler('cuda')
     
     best_val_f1 = -1.0
     save_path = f"checkpoints/audio_{model_name}_best.pth"
     os.makedirs("checkpoints", exist_ok=True)
     
-    patience = 3 # How many epochs to wait for improvement
+    patience = 4 # How many epochs to wait for improvement
     epochs_no_improve = 0
     
     for epoch in range(num_epochs):
@@ -68,6 +81,7 @@ def train_audio_model(model_name, data_dirs, num_epochs=15, batch_size=64):
         avg_loss = epoch_loss / len(train_loader)
         avg_acc = 100. * correct / total
         print(f"--- Epoch {epoch+1} Train Summary | Avg Loss: {avg_loss:.4f} | Avg Acc: {avg_acc:.2f}% ---")
+        scheduler.step()
         
         # Validation
         model.eval()
