@@ -12,7 +12,7 @@ from model import X3DFreeKickModel
 from model_audio import WhistleNet
 
 FPS = 2
-WINDOW_SECONDS = 10
+WINDOW_SECONDS = 15
 WINDOW_FRAMES = WINDOW_SECONDS * FPS
 STRIDE_SECONDS = 5
 STRIDE_FRAMES = STRIDE_SECONDS * FPS
@@ -62,6 +62,11 @@ def process_half(video_path, v_foul, v_sp, a_whistle, device, args, av_gate=None
             try: os.remove(full_audio_wav)
             except: pass
         
+    win_sec = getattr(args, 'window_seconds', WINDOW_SECONDS)
+    stride_sec = getattr(args, 'stride_seconds', STRIDE_SECONDS)
+    win_frames = int(win_sec * FPS)
+    stride_frames = int(stride_sec * FPS)
+
     def get_audio_window(t_start, t_end):
         s_start = int(t_start * 16000)
         s_end = int(t_end * 16000)
@@ -74,8 +79,8 @@ def process_half(video_path, v_foul, v_sp, a_whistle, device, args, av_gate=None
             
         spec = mel_transform(chunk)
         spec = amp_to_db(spec)
-        if spec.shape[2] < 313: spec = torch.nn.functional.pad(spec, (0, 313 - spec.shape[2]))
-        else: spec = spec[:, :, :313]
+        if spec.shape[2] < 313: 
+            spec = torch.nn.functional.pad(spec, (0, 313 - spec.shape[2]))
         return spec.unsqueeze(0)
     
     cap = cv2.VideoCapture(video_path)
@@ -101,10 +106,10 @@ def process_half(video_path, v_foul, v_sp, a_whistle, device, args, av_gate=None
             img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             rolling_buffer.append((vid_transform(img), current_sec))
             
-            if len(rolling_buffer) >= WINDOW_FRAMES:
-                input_frames = [x[0] for x in rolling_buffer[:WINDOW_FRAMES]]
-                t_end = rolling_buffer[WINDOW_FRAMES-1][1]
-                t_start = max(0, t_end - WINDOW_SECONDS)
+            if len(rolling_buffer) >= win_frames:
+                input_frames = [x[0] for x in rolling_buffer[:win_frames]]
+                t_end = rolling_buffer[win_frames-1][1]
+                t_start = max(0, t_end - win_sec)
                 
                 vid_tensor = torch.stack(input_frames, dim=1).unsqueeze(0).to(device)
                 audio_tensor = get_audio_window(t_start, t_end).to(device)
@@ -137,8 +142,9 @@ def process_half(video_path, v_foul, v_sp, a_whistle, device, args, av_gate=None
                 if sp_prob > args.sp_threshold:
                     detected_sp.append((t_start, t_end, sp_prob, "SetPiece"))
                     
-                rolling_buffer = rolling_buffer[STRIDE_FRAMES:]
+                rolling_buffer = rolling_buffer[stride_frames:]
         frame_idx += 1
+
     
     cap.release()
     
@@ -358,6 +364,8 @@ if __name__ == "__main__":
     parser.add_argument("--log-file", type=str, default="soccernet_eval_v3_log.csv", help="Path to save window log CSV")
     parser.add_argument("--report-file", type=str, default="soccernet_eval_v3_report.txt", help="Path to save evaluation report text")
     parser.add_argument("--av-gate-checkpoint", type=str, default=None, help="Path to trained AVGateNet checkpoint")
+    parser.add_argument("--window-seconds", type=float, default=15.0, help="Sliding window duration in seconds")
+    parser.add_argument("--stride-seconds", type=float, default=5.0, help="Sliding window stride in seconds")
     parser.add_argument("--output-dir", type=str, default="soccernet_eval_v3_highlights")
     parser.add_argument("--save-clips", action="store_true", help="Save highlight video clips")
     args = parser.parse_args()

@@ -10,8 +10,8 @@ def train_setpiece_model():
     print("========== Training SET-PIECE Video Model ==========")
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    train_dataset = X3DBinaryDataset(data_dir='setpiece_dataset_v2/train', is_training=True)
-    val_dataset = X3DBinaryDataset(data_dir='setpiece_dataset_v2/val', is_training=False)
+    train_dataset = X3DBinaryDataset(data_dir='setpiece_dataset_v3/train', is_training=True, target_frames=30)
+    val_dataset = X3DBinaryDataset(data_dir='setpiece_dataset_v3/val', is_training=False, target_frames=30)
     
     batch_size = 8
     num_workers = 4

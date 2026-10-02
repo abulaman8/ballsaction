@@ -220,4 +220,13 @@ def train_gate(train_csv="soccernet_valid_log.csv", test_csv="soccernet_eval_v3_
     print(f"Best Combined F1: {best_combined_f1*100:.2f}% | Best Foul F1: {best_foul_f1*100:.2f}%")
 
 if __name__ == "__main__":
-    train_gate()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--train-csv", type=str, default="soccernet_valid_15s_log.csv")
+    parser.add_argument("--test-csv", type=str, default="soccernet_eval_15s_test_log.csv")
+    parser.add_argument("--epochs", type=int, default=80)
+    parser.add_argument("--lr", type=float, default=1e-3)
+    parser.add_argument("--save-path", type=str, default="checkpoints/av_gate_best.pth")
+    args = parser.parse_args()
+    
+    train_gate(train_csv=args.train_csv, test_csv=args.test_csv, epochs=args.epochs, lr=args.lr)

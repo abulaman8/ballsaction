@@ -264,3 +264,4 @@ soccernet_*_report.txt
 hard_negatives_*.json
 checkpoints/*_pre_mining.pth
 checkpoints/*_pre_attention.pth
+checkpoints/*_10s.pth

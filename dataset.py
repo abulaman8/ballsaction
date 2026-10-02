@@ -6,9 +6,10 @@ from torch.utils.data import Dataset
 import torchvision.transforms as transforms
 
 class X3DBinaryDataset(Dataset):
-    def __init__(self, data_dir, is_training=True):
+    def __init__(self, data_dir, is_training=True, target_frames=30):
         self.data_dir = data_dir
         self.is_training = is_training
+        self.target_frames = target_frames
         
         subdirs = [d for d in os.listdir(data_dir) if os.path.isdir(os.path.join(data_dir, d))]
         pos_dir = [d for d in subdirs if d != "background"][0]
@@ -56,7 +57,7 @@ class X3DBinaryDataset(Dataset):
                 ret, _ = cap.read()
                 if not ret: break
         
-        while len(frames) < 20:
+        while len(frames) < self.target_frames:
             ret, frame = cap.read()
             if not ret: break
             
@@ -80,7 +81,7 @@ class X3DBinaryDataset(Dataset):
             
         cap.release()
         
-        while len(frames) < 20:
+        while len(frames) < self.target_frames:
             if len(frames) > 0:
                 frames.append(frames[-1].clone())
             else:
@@ -88,3 +89,4 @@ class X3DBinaryDataset(Dataset):
                 
         video_tensor = torch.stack(frames, dim=1)
         return video_tensor, torch.tensor(label, dtype=torch.long)
+
