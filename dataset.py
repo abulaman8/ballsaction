@@ -6,7 +6,7 @@ from torch.utils.data import Dataset
 import torchvision.transforms as transforms
 
 class X3DBinaryDataset(Dataset):
-    def __init__(self, data_dir, is_training=True, target_frames=30):
+    def __init__(self, data_dir, is_training=True, target_frames=30, max_bg_ratio=None):
         self.data_dir = data_dir
         self.is_training = is_training
         self.target_frames = target_frames
@@ -29,6 +29,16 @@ class X3DBinaryDataset(Dataset):
                         "label": cls_idx
                     })
                     
+        if max_bg_ratio is not None and self.is_training:
+            pos_clips = [c for c in self.clips if c["label"] == 1]
+            bg_clips = [c for c in self.clips if c["label"] == 0]
+            max_bgs = int(len(pos_clips) * max_bg_ratio)
+            if len(bg_clips) > max_bgs:
+                import random
+                random.seed(42)
+                bg_clips = random.sample(bg_clips, max_bgs)
+                self.clips = pos_clips + bg_clips
+                    
         print(f"Dataset initialized with {len(self.clips)} valid mp4 clips from {data_dir}.")
         
         self.to_tensor = transforms.ToTensor()
@@ -50,9 +60,9 @@ class X3DBinaryDataset(Dataset):
         # Determine consistent flip for the entire sequence if training
         do_flip = self.is_training and torch.rand(1).item() < 0.5
         
-        # Temporal augmentation: randomly skip first 0-2 frames during training
+        # Temporal augmentation: randomly skip first 0-4 frames (0 to 2 seconds) during training
         if self.is_training:
-            skip_frames = int(torch.randint(0, 3, (1,)).item())
+            skip_frames = int(torch.randint(0, 5, (1,)).item())
             for _ in range(skip_frames):
                 ret, _ = cap.read()
                 if not ret: break

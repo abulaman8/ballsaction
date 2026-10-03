@@ -47,14 +47,30 @@ def load_15s_frames(video_path, num_frames=30):
     vid_tensor = torch.stack(tensor_frames, dim=1).unsqueeze(0).to(device)
     return vid_tensor, raw_frames
 
-def generate_heatmap(video_path, model_type='foul', save_path='foul_heatmap_v3.png'):
+def generate_heatmap(video_path, model_type='foul', save_path='foul_heatmap_v4.png'):
     model = X3DFreeKickModel(num_classes=2, pretrained=False).to(device)
     if model_type == 'foul':
         ckpt = 'checkpoints/x3d_foul_best.pth'
-        title_prefix = 'Foul Detection (15s Window: [-5s, +10s])'
+        title_prefix = 'Foul Detection: Spatial Attention (15s Window: [-5s, +10s])'
+        key_event_sec = 5.0 # contact at 5.0s
+        key_event_label = "Contact Moment (t=0s)"
+        step_offsets = [(-5.0 + i * 0.5) for i in range(30)]
+        rep_indices = [0, 5, 10, 15, 20, 25] # 0s, 2.5s, 5s (contact), 7.5s, 10s, 12.5s
+        rep_labels = ["-5.0s (Approach)", "-2.5s (Tackle Start)", "0.0s (Contact Moment)", "+2.5s (Tumble)", "+5.0s (Reaction)", "+7.5s (Whistle/Play Stop)"]
+        key_frame_idx = 2
     else:
         ckpt = 'checkpoints/x3d_setpiece_best.pth'
-        title_prefix = 'Set-Piece Detection (15s Window: [-5s, +10s])'
+        title_prefix = 'Set-Piece Detection: Pre-Kick Buildup (15s Window: [-10s, +5s])'
+        key_event_sec = 10.0 # kick at 10.0s
+        key_event_label = "Kick Moment (t=0s)"
+        step_offsets = [(-10.0 + i * 0.5) for i in range(30)]
+        rep_indices = [0, 6, 12, 18, 20, 26] # -10s, -7s, -4s, -1s (runup), 0s (kick), +3s (flight)
+        rep_labels = ["-10.0s (Wall Setup)", "-7.0s (Ball Placed)", "-4.0s (Referee Stance)", "-1.0s (Run-up)", "0.0s (Kick Moment)", "+3.0s (Ball Flight)"]
+        key_frame_idx = 4
+        
+    if not os.path.exists(ckpt):
+        print(f"Checkpoint {ckpt} not found, skipping heatmap.")
+        return
         
     model.load_state_dict(torch.load(ckpt, map_location=device))
     model.eval()
@@ -63,59 +79,70 @@ def generate_heatmap(video_path, model_type='foul', save_path='foul_heatmap_v3.p
     
     with torch.no_grad():
         with torch.amp.autocast('cuda'):
-            out = model(vid_tensor)
+            out, head_weights = model(vid_tensor, return_head_weights=True)
             prob = torch.softmax(out, dim=1)[0, 1].item()
             
-    weights = model.model.blocks[5].last_weights[0, :, 0] # shape: (15,)
-    num_steps = len(weights)
+    # head_weights: (1, 4, 30)
+    hw = head_weights[0].cpu().numpy() # (4, 30)
+    avg_weights = hw.mean(axis=0)       # (30,)
     
-    # Temporal labels relative to contact (contact at ~5.0s into clip)
-    step_labels = [f"{-5+i}s..{-4+i}s" for i in range(num_steps)]
-    peak_idx = int(np.argmax(weights))
+    fig = plt.figure(figsize=(20, 11))
+    gs = fig.add_gridspec(3, 6, height_ratios=[1.3, 1.0, 0.9])
     
-    fig = plt.figure(figsize=(18, 9))
-    gs = fig.add_gridspec(2, 6, height_ratios=[1.2, 1])
-    
-    # Pick 6 representative frames across the 15-second window
-    rep_indices = [0, 5, 10, 15, 20, 25] # frames at 0s, 2.5s, 5s (contact), 7.5s, 10s, 12.5s
-    rep_labels = ["-5.0s (Build-up)", "-2.5s (Approach)", "0.0s (Contact Moment)", "+2.5s (Reaction)", "+5.0s (Referee Signal)", "+7.5s (Aftermath)"]
-    
+    # Row 1: Representative video frames
     for i, f_idx in enumerate(rep_indices):
         ax = fig.add_subplot(gs[0, i])
         if f_idx < len(raw_frames):
             ax.imshow(raw_frames[f_idx])
         ax.axis('off')
-        is_contact = (i == 2)
-        border_color = 'red' if is_contact else 'gray'
-        lw = 3 if is_contact else 1
+        is_key = (i == key_frame_idx)
+        border_color = 'red' if is_key else '#444444'
+        lw = 3.5 if is_key else 1
         for spine in ax.spines.values():
             spine.set_edgecolor(border_color)
             spine.set_linewidth(lw)
             spine.set_visible(True)
-        ax.set_title(rep_labels[i], fontsize=10, fontweight='bold' if is_contact else 'normal', color='red' if is_contact else 'black')
+        ax.set_title(rep_labels[i], fontsize=10, fontweight='bold' if is_key else 'normal', color='red' if is_key else 'black')
     
-    # Row 2: Attention Heatmap Bar Chart across 15 seconds
+    # Row 2: Aggregate Multi-Head Attention Bar Chart (30 steps = 15 seconds)
     ax_bar = fig.add_subplot(gs[1, :])
-    norm_w = weights / (max(weights) + 1e-6)
-    colors = plt.cm.viridis(norm_w)
-    bars = ax_bar.bar(range(num_steps), weights * 100, color=colors, edgecolor='black', width=0.6)
-    ax_bar.set_xticks(range(num_steps))
-    ax_bar.set_xticklabels(step_labels, rotation=35, ha='right', fontsize=9)
-    ax_bar.set_ylabel('Attention Weight (%)', fontsize=12, fontweight='bold')
-    ax_bar.set_xlabel('Temporal Offset Relative to Ground Truth Contact Spot (0.0s)', fontsize=12, fontweight='bold')
+    norm_w = avg_weights / (max(avg_weights) + 1e-6)
+    colors = plt.cm.plasma(norm_w)
+    bars = ax_bar.bar(range(30), avg_weights * 100, color=colors, edgecolor='black', width=0.7)
+    
+    step_labels = [f"{offset:+.1f}s" for offset in step_offsets]
+    ax_bar.set_xticks(range(30))
+    ax_bar.set_xticklabels(step_labels, rotation=45, ha='right', fontsize=9)
+    ax_bar.set_ylabel('Avg Attention (%)', fontsize=11, fontweight='bold')
+    ax_bar.set_xlabel('Time Relative to Event Timestamp (0.0s)', fontsize=11, fontweight='bold')
     ax_bar.grid(axis='y', linestyle='--', alpha=0.5)
     
-    # Mark contact region
-    ax_bar.axvspan(4.5, 5.5, color='red', alpha=0.15, label='Contact Moment (t=0s)')
+    # Mark the key event frame
+    key_step = int(key_event_sec * 2)
+    ax_bar.axvspan(key_step - 0.5, key_step + 0.5, color='red', alpha=0.2, label=key_event_label)
     
-    for bar, w in zip(bars, weights):
+    for bar, w in zip(bars, avg_weights):
         h = bar.get_height()
-        ax_bar.text(bar.get_x() + bar.get_width()/2., h + 0.3, f"{w*100:.1f}%", ha='center', va='bottom', fontsize=8, fontweight='bold')
-        
+        if h > 2.5:
+            ax_bar.text(bar.get_x() + bar.get_width()/2., h + 0.2, f"{w*100:.1f}%", ha='center', va='bottom', fontsize=7.5, fontweight='bold')
     ax_bar.legend(loc='upper right')
     
+    # Row 3: 4 Individual Head Subplots showing diversity and phase specialization
+    head_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
+    for h in range(4):
+        ax_h = fig.add_subplot(gs[2, h if h < 3 else slice(3, 6) if False else h])
+        # We place each head in its own sub-column
+        ax_h.plot(range(30), hw[h] * 100, color=head_colors[h], lw=2.0, marker='o', markersize=3, label=f"Head {h}")
+        ax_h.axvline(key_step, color='red', linestyle='--', alpha=0.5)
+        ax_h.set_title(f"Head {h} Specialization", fontsize=10, fontweight='bold')
+        ax_h.set_ylabel('Weight (%)', fontsize=9)
+        ax_h.set_xticks([0, 10, 20, 29])
+        ax_h.set_xticklabels([step_labels[0], step_labels[10], step_labels[20], step_labels[29]], fontsize=8)
+        ax_h.grid(True, linestyle=':', alpha=0.5)
+        ax_h.set_ylim(0, max(hw[h].max() * 120, 10))
+
     clip_basename = os.path.basename(video_path)
-    fig.suptitle(f"{title_prefix}\nClip: {clip_basename} | Model Probability: {prob*100:.1f}% | Peak Attention: {step_labels[peak_idx]} ({weights[peak_idx]*100:.1f}%)",
+    fig.suptitle(f"{title_prefix}\nClip: {clip_basename} | Confidence: {prob*100:.1f}% | 30 Frames @ 2 FPS (Spatial Pool + Diversity Loss)",
                  fontsize=13, fontweight='bold')
     
     plt.tight_layout()
@@ -126,8 +153,8 @@ def generate_heatmap(video_path, model_type='foul', save_path='foul_heatmap_v3.p
 if __name__ == "__main__":
     foul_clips = glob.glob('foul_dataset_v3/val/foul/*.mp4')
     if foul_clips:
-        generate_heatmap(foul_clips[0], model_type='foul', save_path='foul_heatmap_v3.png')
+        generate_heatmap(foul_clips[0], model_type='foul', save_path='foul_heatmap_v4.png')
         
-    sp_clips = glob.glob('setpiece_dataset_v3/val/set_piece/*.mp4')
+    sp_clips = glob.glob('setpiece_dataset_v4/val/set_piece/*.mp4')
     if sp_clips:
-        generate_heatmap(sp_clips[0], model_type='setpiece', save_path='setpiece_heatmap_v3.png')
+        generate_heatmap(sp_clips[0], model_type='setpiece', save_path='setpiece_heatmap_v4.png')

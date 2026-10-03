@@ -7,7 +7,9 @@ import torch.nn.functional as F
 import numpy as np
 from SoccerNet.utils import getListGames
 from model_av_gate import AVGateNet, extract_gate_features
-from sweep_audio_boost import parse_labels_v2, temporal_nms, TOLERANCE_SECONDS, NMS_WINDOW
+from sweep_audio_boost import parse_labels_v2, temporal_nms, NMS_WINDOW
+
+TOLERANCE_SECONDS = 10.0
 
 def load_dataset_from_log(csv_log_path, soccernet_dir="soccernet_data"):
     """
@@ -51,8 +53,9 @@ def load_dataset_from_log(csv_log_path, soccernet_dir="soccernet_data"):
         target_f = []
         target_sp = []
         for w in windows:
-            hit_f = any(w['start'] - TOLERANCE_SECONDS <= g <= w['end'] + TOLERANCE_SECONDS for g in half_gt_f)
-            hit_sp = any(w['start'] - TOLERANCE_SECONDS <= g <= w['end'] + TOLERANCE_SECONDS for g in half_gt_sp)
+            w_center = (w['start'] + w['end']) / 2.0
+            hit_f = any(abs(w_center - g) <= TOLERANCE_SECONDS for g in half_gt_f)
+            hit_sp = any(abs(w_center - g) <= TOLERANCE_SECONDS for g in half_gt_sp)
             target_f.append(1.0 if hit_f else 0.0)
             target_sp.append(1.0 if hit_sp else 0.0)
             
@@ -99,7 +102,8 @@ def evaluate_gate_on_halves(model, halves_data, foul_thresh=0.85, sp_thresh=0.85
             kept_f = temporal_nms(dets_f, NMS_WINDOW)
             matched_gt_f = set()
             for p_start, p_end, p_prob, _ in kept_f:
-                hit = [g for g in d['gt_f'] if p_start - TOLERANCE_SECONDS <= g <= p_end + TOLERANCE_SECONDS]
+                p_center = (p_start + p_end) / 2.0
+                hit = [g for g in d['gt_f'] if abs(p_center - g) <= TOLERANCE_SECONDS]
                 if hit:
                     tp_f += 1
                     for g in hit: matched_gt_f.add(g)
@@ -116,7 +120,8 @@ def evaluate_gate_on_halves(model, halves_data, foul_thresh=0.85, sp_thresh=0.85
             kept_sp = temporal_nms(dets_sp, NMS_WINDOW)
             matched_gt_sp = set()
             for p_start, p_end, p_prob, _ in kept_sp:
-                hit = [g for g in d['gt_sp'] if p_start - TOLERANCE_SECONDS <= g <= p_end + TOLERANCE_SECONDS]
+                p_center = (p_start + p_end) / 2.0
+                hit = [g for g in d['gt_sp'] if abs(p_center - g) <= TOLERANCE_SECONDS]
                 if hit:
                     tp_sp += 1
                     for g in hit: matched_gt_sp.add(g)
@@ -137,15 +142,25 @@ def evaluate_gate_on_halves(model, halves_data, foul_thresh=0.85, sp_thresh=0.85
         'sp': {'tp': tp_sp, 'fp': fp_sp, 'fn': fn_sp, 'prec': sp_prec, 'rec': sp_rec, 'f1': f1_sp}
     }
 
-def train_gate(train_csv="soccernet_valid_log.csv", test_csv="soccernet_eval_v3_log.csv", epochs=80, lr=1e-3):
+def train_gate(train_csv="soccernet_valid_15s_log.csv", test_csv=None, epochs=80, lr=1e-3, save_path="checkpoints/av_gate_best.pth"):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"Loading training data from {train_csv}...")
-    train_halves = load_dataset_from_log(train_csv)
-    print(f"Loaded {len(train_halves)} halves for training.")
+    print(f"Loading validation data from {train_csv}...")
+    all_halves = load_dataset_from_log(train_csv)
+    print(f"Loaded {len(all_halves)} halves total.")
+    
+    # Split into train-halves and val-halves by match to prevent data leakage
+    unique_games = sorted(list(set(d['game'] for d in all_halves)))
+    val_game_count = max(1, len(unique_games) // 3) # e.g. 2 games out of 6 for validation
+    val_games = set(unique_games[-val_game_count:])
+    train_games = set(unique_games[:-val_game_count])
+    
+    train_halves = [d for d in all_halves if d['game'] in train_games]
+    val_halves = [d for d in all_halves if d['game'] in val_games]
+    print(f"Split: {len(train_halves)} halves for gate training ({len(train_games)} games), {len(val_halves)} halves for gate validation ({len(val_games)} games).")
     
     test_halves = None
-    if os.path.exists(test_csv):
-        print(f"Loading test data from {test_csv} for validation tracking...")
+    if test_csv and os.path.exists(test_csv):
+        print(f"Loading test data from {test_csv} for final post-training evaluation ONLY...")
         test_halves = load_dataset_from_log(test_csv)
         print(f"Loaded {len(test_halves)} test halves.")
         
@@ -153,18 +168,17 @@ def train_gate(train_csv="soccernet_valid_log.csv", test_csv="soccernet_eval_v3_
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
     
-    os.makedirs("checkpoints", exist_ok=True)
-    best_combined_f1 = 0.0
-    best_foul_f1 = 0.0
+    os.makedirs(os.path.dirname(save_path) or ".", exist_ok=True)
+    best_val_combined_f1 = 0.0
+    best_metrics = None
     
-    print("\nStarting AVGateNet Training...")
-    print("=" * 70)
+    print("\nStarting AVGateNet Training (Validation-Only Checkpointing)...")
+    print("=" * 75)
     
     for epoch in range(1, epochs + 1):
         model.train()
         total_loss = 0.0
         
-        # Permute halves for stochasticity
         perm = torch.randperm(len(train_halves))
         for idx in perm:
             d = train_halves[idx]
@@ -177,7 +191,6 @@ def train_gate(train_csv="soccernet_valid_log.csv", test_csv="soccernet_eval_v3_
             optimizer.zero_grad()
             logit_f, logit_sp = model(feats, raw_vf, raw_vsp, return_logits=True)
             
-            # Loss on window predictions with balanced pos_weight
             loss_f = F.binary_cross_entropy_with_logits(logit_f, target_f, pos_weight=torch.tensor([2.0], device=device))
             loss_sp = F.binary_cross_entropy_with_logits(logit_sp, target_sp, pos_weight=torch.tensor([2.0], device=device))
             loss = loss_f + loss_sp
@@ -190,34 +203,48 @@ def train_gate(train_csv="soccernet_valid_log.csv", test_csv="soccernet_eval_v3_
         scheduler.step()
         avg_loss = total_loss / len(train_halves)
         
-        # Evaluate on test set every 5 epochs or last epoch
+        # Evaluate STRICTLY on val_halves every 5 epochs
         if epoch % 5 == 0 or epoch == epochs:
-            eval_metrics = evaluate_gate_on_halves(model, test_halves if test_halves else train_halves,
-                                                   foul_thresh=0.82, sp_thresh=0.85, device=device)
-            f_m = eval_metrics['foul']
-            sp_m = eval_metrics['sp']
+            val_metrics = evaluate_gate_on_halves(model, val_halves, foul_thresh=0.82, sp_thresh=0.85, device=device)
+            f_m = val_metrics['foul']
+            sp_m = val_metrics['sp']
             comb_f1 = (f_m['f1'] + sp_m['f1']) / 2.0
             
             print(f"Epoch {epoch:2d}/{epochs:2d} | Loss: {avg_loss:.4f} | "
-                  f"Foul F1: {f_m['f1']*100:.2f}% (P: {f_m['prec']*100:.2f}%, R: {f_m['rec']*100:.2f}%) | "
-                  f"SP F1: {sp_m['f1']*100:.2f}% (P: {sp_m['prec']*100:.2f}%, R: {sp_m['rec']*100:.2f}%) | "
-                  f"Comb: {comb_f1*100:.2f}%")
+                  f"Val Foul F1: {f_m['f1']*100:.2f}% (P: {f_m['prec']*100:.2f}%, R: {f_m['rec']*100:.2f}%) | "
+                  f"Val SP F1: {sp_m['f1']*100:.2f}% (P: {sp_m['prec']*100:.2f}%, R: {sp_m['rec']*100:.2f}%) | "
+                  f"Val Comb: {comb_f1*100:.2f}%")
                   
-            if comb_f1 > best_combined_f1:
-                best_combined_f1 = comb_f1
-                best_foul_f1 = f_m['f1']
+            if comb_f1 > best_val_combined_f1:
+                best_val_combined_f1 = comb_f1
+                best_metrics = val_metrics
                 torch.save({
                     'epoch': epoch,
                     'model_state_dict': model.state_dict(),
-                    'foul_f1': f_m['f1'],
-                    'sp_f1': sp_m['f1'],
-                    'combined_f1': comb_f1,
-                    'eval_metrics': eval_metrics
-                }, "checkpoints/av_gate_best.pth")
-                print(f"  --> Saved new best AVGate model to checkpoints/av_gate_best.pth (Comb F1: {comb_f1*100:.2f}%)")
+                    'val_foul_f1': f_m['f1'],
+                    'val_sp_f1': sp_m['f1'],
+                    'val_combined_f1': comb_f1,
+                    'val_metrics': val_metrics
+                }, save_path)
+                print(f"  --> Saved new best AVGate model to {save_path} (Val Comb F1: {comb_f1*100:.2f}%)")
 
     print("\nTraining completed.")
-    print(f"Best Combined F1: {best_combined_f1*100:.2f}% | Best Foul F1: {best_foul_f1*100:.2f}%")
+    print(f"Best Validation Combined F1: {best_val_combined_f1*100:.2f}%")
+    
+    # Load best checkpoint and evaluate on test_halves ONLY ONCE if provided
+    if test_halves:
+        print("\n" + "=" * 75)
+        print("FINAL EVALUATION ON UNSEEN TEST HALVES (Frozen Best Checkpoint):")
+        print("=" * 75)
+        ckpt = torch.load(save_path, map_location=device)
+        model.load_state_dict(ckpt['model_state_dict'])
+        test_eval = evaluate_gate_on_halves(model, test_halves, foul_thresh=0.82, sp_thresh=0.85, device=device)
+        tf_m = test_eval['foul']
+        tsp_m = test_eval['sp']
+        print(f"Test Foul F1: {tf_m['f1']*100:.2f}% (P: {tf_m['prec']*100:.2f}%, R: {tf_m['rec']*100:.2f}%) | "
+              f"Test SP F1: {tsp_m['f1']*100:.2f}% (P: {tsp_m['prec']*100:.2f}%, R: {tsp_m['rec']*100:.2f}%) | "
+              f"Test Comb: {((tf_m['f1'] + tsp_m['f1']) / 2.0)*100:.2f}%")
+
 
 if __name__ == "__main__":
     import argparse

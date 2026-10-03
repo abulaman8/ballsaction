@@ -6,12 +6,21 @@ from dataset import X3DBinaryDataset
 from model import X3DFreeKickModel
 from focal_loss import FocalLoss
 
+def compute_diversity_loss(head_weights):
+    # head_weights: (B, num_heads, T)
+    B, H, T = head_weights.shape
+    norm_w = torch.nn.functional.normalize(head_weights, p=2, dim=-1)
+    sim_matrix = torch.bmm(norm_w, norm_w.transpose(1, 2))
+    eye = torch.eye(H, device=head_weights.device).unsqueeze(0)
+    off_diag = sim_matrix * (1.0 - eye)
+    return (off_diag ** 2).sum() / (B * H * (H - 1))
+
 def train_setpiece_model():
-    print("========== Training SET-PIECE Video Model ==========")
+    print("========== Training SET-PIECE Video Model (Spatial Pool + Diversity Loss) ==========")
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    train_dataset = X3DBinaryDataset(data_dir='setpiece_dataset_v3/train', is_training=True, target_frames=30)
-    val_dataset = X3DBinaryDataset(data_dir='setpiece_dataset_v3/val', is_training=False, target_frames=30)
+    train_dataset = X3DBinaryDataset(data_dir='setpiece_dataset_v4/train', is_training=True, target_frames=30)
+    val_dataset = X3DBinaryDataset(data_dir='setpiece_dataset_v4/val', is_training=False, target_frames=30)
     
     batch_size = 8
     num_workers = 4
@@ -64,8 +73,11 @@ def train_setpiece_model():
             optimizer.zero_grad()
             
             with torch.amp.autocast('cuda'):
-                outputs = model(videos)
-                loss = criterion(outputs, targets)
+                outputs, head_weights = model(videos, return_head_weights=True)
+                cls_loss = criterion(outputs, targets)
+                div_loss = compute_diversity_loss(head_weights)
+                loss = cls_loss + 0.05 * div_loss
+
             
             scaler.scale(loss).backward()
             scaler.unscale_(optimizer)

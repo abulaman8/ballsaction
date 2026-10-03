@@ -6,11 +6,20 @@ from dataset import X3DBinaryDataset
 from model import X3DFreeKickModel
 from focal_loss import FocalLoss
 
+def compute_diversity_loss(head_weights):
+    # head_weights: (B, num_heads, T)
+    B, H, T = head_weights.shape
+    norm_w = torch.nn.functional.normalize(head_weights, p=2, dim=-1)
+    sim_matrix = torch.bmm(norm_w, norm_w.transpose(1, 2))
+    eye = torch.eye(H, device=head_weights.device).unsqueeze(0)
+    off_diag = sim_matrix * (1.0 - eye)
+    return (off_diag ** 2).sum() / (B * H * (H - 1))
+
 def train_foul_model():
-    print("========== Training FOUL Video Model ==========")
+    print("========== Training FOUL Video Model (Spatial Pool + Diversity Loss) ==========")
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    train_dataset = X3DBinaryDataset(data_dir='foul_dataset_v3/train', is_training=True, target_frames=30)
+    train_dataset = X3DBinaryDataset(data_dir='foul_dataset_v3/train', is_training=True, target_frames=30, max_bg_ratio=2.5)
     val_dataset = X3DBinaryDataset(data_dir='foul_dataset_v3/val', is_training=False, target_frames=30)
     
     batch_size = 8
@@ -26,8 +35,8 @@ def train_foul_model():
     save_path = "checkpoints/x3d_foul_best.pth"
     os.makedirs("checkpoints", exist_ok=True)
     
-    epochs = 15
-    patience = 3
+    epochs = 10
+    patience = 2
     epochs_no_improve = 0
     stage2_started = False
     
@@ -40,16 +49,16 @@ def train_foul_model():
     
     for epoch in range(1, epochs + 1):
         t_epoch_start = time.time()
-        if epoch <= 3:
+        if epoch <= 2:
             print(f"\n--- Stage 1: Frozen Backbone (Epoch {epoch}/{epochs}) ---")
-        elif epoch == 4:
+        elif epoch == 3:
             print(f"\n--- Stage 2: Fine-Tuning Backbone (Epoch {epoch}/{epochs}) ---")
             model.unfreeze_backbone()
             optimizer = torch.optim.AdamW([
                 {'params': [p for i in range(5) for p in model.model.blocks[i].parameters()], 'lr': 1e-5},
                 {'params': model.model.blocks[5].parameters(), 'lr': 1e-4}
             ], weight_decay=1e-4)
-            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=12)
+            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=8)
             stage2_started = True
         else:
             print(f"\n--- Stage 2: Fine-Tuning Backbone (Epoch {epoch}/{epochs}) ---")
@@ -64,8 +73,11 @@ def train_foul_model():
             optimizer.zero_grad()
             
             with torch.amp.autocast('cuda'):
-                outputs = model(videos)
-                loss = criterion(outputs, targets)
+                outputs, head_weights = model(videos, return_head_weights=True)
+                cls_loss = criterion(outputs, targets)
+                div_loss = compute_diversity_loss(head_weights)
+                loss = cls_loss + 0.05 * div_loss
+
             
             scaler.scale(loss).backward()
             scaler.unscale_(optimizer)

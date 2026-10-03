@@ -279,9 +279,11 @@ def evaluate(args):
                         
                     def match_predictions(preds, gts, label_type):
                         matched_gts = set()
+                        tol = getattr(args, 'tolerance_seconds', 10.0)
                         for p in preds:
                             p_start, p_end, p_prob, p_label = p
-                            hit = [g for g in gts if p_start - TOLERANCE_SECONDS <= g <= p_end + TOLERANCE_SECONDS]
+                            p_center = (p_start + p_end) / 2.0
+                            hit = [g for g in gts if abs(p_center - g) <= tol]
                             
                             is_tp = False
                             if hit:
@@ -366,6 +368,7 @@ if __name__ == "__main__":
     parser.add_argument("--av-gate-checkpoint", type=str, default=None, help="Path to trained AVGateNet checkpoint")
     parser.add_argument("--window-seconds", type=float, default=15.0, help="Sliding window duration in seconds")
     parser.add_argument("--stride-seconds", type=float, default=5.0, help="Sliding window stride in seconds")
+    parser.add_argument("--tolerance-seconds", type=float, default=10.0, help="Matching tolerance in seconds from pred center to GT")
     parser.add_argument("--output-dir", type=str, default="soccernet_eval_v3_highlights")
     parser.add_argument("--save-clips", action="store_true", help="Save highlight video clips")
     args = parser.parse_args()

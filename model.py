@@ -58,13 +58,17 @@ class MultiHeadTemporalAttention(nn.Module):
         
         # Average weights across heads for visualization: (B, T, 1)
         avg_weights = torch.stack(head_weights, dim=0).mean(dim=0)
+        # All individual head weights: (B, num_heads, T)
+        all_head_weights = torch.stack(head_weights, dim=1).squeeze(-1)
         
-        return out, avg_weights
+        return out, avg_weights, all_head_weights
 
 class X3DAttentionHead(nn.Module):
     def __init__(self, original_head, num_classes, num_heads=4):
         super().__init__()
         self.pool = original_head.pool
+        # Spatial-only pool: replace 16-frame temporal blur with kernel=(1, 7, 7)
+        self.pool.pool = nn.AvgPool3d(kernel_size=(1, 7, 7), stride=1, padding=0)
         self.dropout = original_head.dropout
         self.spatial_pool = nn.AdaptiveAvgPool3d((None, 1, 1))
         
@@ -77,7 +81,7 @@ class X3DAttentionHead(nn.Module):
         # Single projection head
         self.proj_attn = nn.Linear(in_features, num_classes)
 
-    def forward(self, x):
+    def forward(self, x, return_head_weights=False):
         x = self.pool(x)
         x = self.dropout(x)
         x = self.spatial_pool(x)
@@ -85,10 +89,13 @@ class X3DAttentionHead(nn.Module):
         
         # Multi-Head Temporal Attention Pooling
         x_perm = x.permute(0, 2, 1) # (B, T, C)
-        out_attn_feat, weights = self.temporal_attention(x_perm)
+        out_attn_feat, weights, head_weights = self.temporal_attention(x_perm)
         self.last_weights = weights.detach().cpu().numpy()
+        self.last_head_weights = head_weights.detach().cpu().numpy()
         out_attn = self.proj_attn(out_attn_feat)
         
+        if return_head_weights:
+            return out_attn, head_weights
         return out_attn
 
 class X3DFreeKickModel(nn.Module):
@@ -117,8 +124,14 @@ class X3DFreeKickModel(nn.Module):
         for param in self.model.parameters():
             param.requires_grad = True
         
-    def forward(self, x):
+    def forward(self, x, return_head_weights=False):
+        if return_head_weights:
+            f = x
+            for i in range(5):
+                f = self.model.blocks[i](f)
+            return self.model.blocks[5](f, return_head_weights=True)
         return self.model(x)
+
 
 if __name__ == "__main__":
     model = X3DFreeKickModel(num_heads=4)
