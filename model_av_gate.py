@@ -16,17 +16,17 @@ def extract_gate_features(windows):
         w_prev = windows[i-1] if i > 0 else w
         w_next = windows[i+1] if i < N - 1 else w
         
-        vf_prev = float(w_prev['raw_foul'])
-        vf_curr = float(w['raw_foul'])
-        vf_next = float(w_next['raw_foul'])
+        vf_prev = float(w_prev.get('raw_foul', w_prev.get('raw_foul_prob', 0)))
+        vf_curr = float(w.get('raw_foul', w.get('raw_foul_prob', 0)))
+        vf_next = float(w_next.get('raw_foul', w_next.get('raw_foul_prob', 0)))
         
-        vsp_prev = float(w_prev['raw_sp'])
-        vsp_curr = float(w['raw_sp'])
-        vsp_next = float(w_next['raw_sp'])
+        vsp_prev = float(w_prev.get('raw_sp', w_prev.get('raw_sp_prob', 0)))
+        vsp_curr = float(w.get('raw_sp', w.get('raw_sp_prob', 0)))
+        vsp_next = float(w_next.get('raw_sp', w_next.get('raw_sp_prob', 0)))
         
-        a_prev = float(w_prev['audio'])
-        a_curr = float(w['audio'])
-        a_next = float(w_next['audio'])
+        a_prev = float(w_prev.get('audio', w_prev.get('audio_prob', 0)))
+        a_curr = float(w.get('audio', w.get('audio_prob', 0)))
+        a_next = float(w_next.get('audio', w_next.get('audio_prob', 0)))
         
         a_max = max(a_prev, a_curr, a_next)
         a_min = min(a_prev, a_curr, a_next)
